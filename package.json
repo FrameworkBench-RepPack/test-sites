@@ -1,0 +1,16 @@
+{
+  "name": "test-sites",
+  "homepage": "https://github.com/FrameworkBench-RepPack/test-sites#readme",
+  "bugs": {
+    "url": "https://github.com/FrameworkBench-RepPack/test-sites/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrameworkBench-RepPack/test-sites.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "workspaces": [
+    "./sites/*"
+  ]
+}
