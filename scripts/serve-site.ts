@@ -29,6 +29,10 @@ fastify.addHook("onSend", async (request, reply, payload) => {
   return payload;
 });
 
+fastify.setNotFoundHandler(async (request, reply) => {
+  return reply.sendFile("index.html");
+});
+
 fastify.register(fastifyStatic, {
   root: sitePath,
   prefix: "/",
