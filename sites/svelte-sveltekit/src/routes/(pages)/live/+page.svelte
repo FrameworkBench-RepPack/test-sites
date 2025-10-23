@@ -1,23 +1,5 @@
 <script lang="ts">
-	import liveData from '$lib/assets/liveData.json' with { type: 'json' };
 	import Live from '$lib/components/live.svelte';
-	import { onDestroy, onMount } from 'svelte';
-
-	const INTERVAL = 1000;
-
-	let index = $state(0);
-	let timeoutId: number | NodeJS.Timeout;
-	function stepData() {
-		index = (index + 1) % (liveData.length - 1);
-		timeoutId = setTimeout(stepData, INTERVAL);
-	}
-
-	onMount(() => {
-		stepData();
-	});
-	onDestroy(() => {
-		clearTimeout(timeoutId);
-	});
 </script>
 
 <h1>Live data</h1>
