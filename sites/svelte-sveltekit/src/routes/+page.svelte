@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import listData from '$lib/assets/listDataPrimary.json';
-	import Tooltip from '$lib/components/tooltip.svelte';
+	import listData from '$lib/assets/listDataPrimary.json' with {type: "json"};
 	import Links from '$lib/components/links.svelte';
+	import Tooltip from '$lib/components/tooltip.svelte';
 	import Live from '$lib/components/live.svelte';
 	import Details from '$lib/components/details.svelte';
 	import List from '$lib/components/list.svelte';

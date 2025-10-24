@@ -1,8 +1,8 @@
 <script lang="ts">
   import { route } from "@mateothegreat/svelte5-router";
   import listData from "../assets/listDataPrimary.json" with { type: "json" };
-  import Tooltip from "../components/tooltip.svelte";
   import Links from "../components/links.svelte";
+  import Tooltip from "../components/tooltip.svelte";
   import Live from "../components/live.svelte";
   import Details from "../components/details.svelte";
   import List from "../components/list.svelte";
