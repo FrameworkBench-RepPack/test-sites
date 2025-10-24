@@ -1,6 +1,9 @@
 # Custom
 /build
 
+# Fix MacOS
+.DS_Store
+
 # Logs
 logs
 *.log
