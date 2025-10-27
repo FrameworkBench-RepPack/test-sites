@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Details from '$lib/components/details.svelte';
+	import Details from '$lib/components/Details.svelte';
 </script>
 
 <h1>Expandable FAQ</h1>

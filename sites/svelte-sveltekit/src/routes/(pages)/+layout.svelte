@@ -1,6 +1,6 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
-	import Links from '$lib/components/links.svelte';
+	import Links from '$lib/components/Links.svelte';
 	import { resolve } from '$app/paths';
 
 	let { children } = $props();

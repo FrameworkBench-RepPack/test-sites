@@ -10,7 +10,7 @@
   import Tooltips from "./Tooltips.svelte";
   import FAQ from "./FAQ.svelte";
   import List from "./List.svelte";
-  import Links from "../../components/links.svelte";
+  import Links from "../../components/Links.svelte";
 
   const routes: RouteConfig[] = [
     { path: "/static-1", component: Static1 },

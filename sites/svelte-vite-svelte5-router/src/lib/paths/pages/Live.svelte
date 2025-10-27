@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Live from "../../components/live.svelte";
+  import Live from "../../components/Live.svelte";
 </script>
 
 <h1>Live data</h1>

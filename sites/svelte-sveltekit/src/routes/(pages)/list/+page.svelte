@@ -1,6 +1,6 @@
 <script lang="ts">
 	import listData from '$lib/assets/listData.json' with { type: 'json' };
-	import List from '$lib/components/list.svelte';
+	import List from '$lib/components/List.svelte';
 </script>
 
 <h1>Filterable list</h1>

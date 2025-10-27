@@ -6,7 +6,7 @@
   } from "@mateothegreat/svelte5-router";
   import Home from "./lib/paths/Home.svelte";
   import Pages from "./lib/paths/pages/Pages.svelte";
-  import Links from "./lib/components/links.svelte";
+  import Links from "./lib/components/Links.svelte";
 
   const routes: RouteConfig[] = [
     {
