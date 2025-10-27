@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Tooltip from '$lib/components/tooltip.svelte';
 </script>
 

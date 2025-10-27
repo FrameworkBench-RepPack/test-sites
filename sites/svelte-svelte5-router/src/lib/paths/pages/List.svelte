@@ -22,6 +22,3 @@
   arcu condimentum nec. Aenean finibus, leo at accumsan sollicitudin, velit est
   facilisis quam, et sagittis ligula nisi at mi.
 </p>
-
-<style>
-</style>

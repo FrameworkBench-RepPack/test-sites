@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Details from "../../components/details.svelte";
 </script>
 
