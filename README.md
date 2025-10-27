@@ -17,5 +17,5 @@ You can also specify `--port PORT_NUMBER` if you want to. When not specified, po
 Add a new folder to `sites`. Initialize the project in that folder, using whatever tool is provided byt the developers of the framework. Make sure that the project adheres to these requirements:
 
 1. The `name` inside the `package.json` file is identical to the name of the folder.
-2. Calling `npm run build` will build a production-grade version of the site and put it in the `build` folder inside the project folder.
+2. Calling `npm run build` will build a production-grade version of the site and put it in the `dist` folder inside the project folder.
 3. The final build uses only static files that can be served by a static file server.

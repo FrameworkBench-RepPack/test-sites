@@ -16,7 +16,7 @@ if (!args.site) {
   throw new Error("❌ You must provide a site name.");
 }
 
-const sitePath = path.join(import.meta.dirname, "..", "build", args.site);
+const sitePath = path.join(import.meta.dirname, "..", "dist", args.site);
 
 const fastify = Fastify();
 
