@@ -51,4 +51,7 @@
 		aspect-ratio: 1;
 		padding: 1em;
 	}
+	main {
+		margin-top: var(--header-height);
+	}
 </style>

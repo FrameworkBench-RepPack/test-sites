@@ -89,9 +89,9 @@
 				{/each}
 			</tbody>
 		</table>
-		 {#if filteredList.length === 0}
-		 <p class="no-data-message">No entries matched the filter settings.</p>
-		 {/if}
+		{#if filteredList.length === 0}
+			<p class="no-data-message">No entries matched the filter settings.</p>
+		{/if}
 	</div>
 </div>
 
@@ -129,7 +129,7 @@
 					height: 3.5em;
 				}
 			}
-			
+
 			& .no-data-message {
 				text-align: center;
 			}
