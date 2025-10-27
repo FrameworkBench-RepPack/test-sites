@@ -22,9 +22,9 @@
 <table id="live-data">
 	<tbody>
 		<tr>
-			<td>{liveData[index][0]}</td>
-			<td>{liveData[index][1]}</td>
-			<td>{liveData[index][2]}</td>
+			<td>{liveData?.[index]?.[0]}</td>
+			<td>{liveData?.[index]?.[1]}</td>
+			<td>{liveData?.[index]?.[2]}</td>
 		</tr>
 	</tbody>
 </table>

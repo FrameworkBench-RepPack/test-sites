@@ -6,24 +6,14 @@
 	let clicked = $state(false);
 	let hovered = $state(false);
 	let open = $derived(clicked || hovered);
-
-	function handleclick() {
-		clicked = !clicked;
-	}
-	function handleMouseEnter() {
-		hovered = true;
-	}
-	function handleMouseLeave() {
-		hovered = false;
-	}
 </script>
 
 <button
 	class="tooltip"
 	class:clicked
-	onclickcapture={handleclick}
-	onmouseenter={handleMouseEnter}
-	onmouseleave={handleMouseLeave}><p>?</p></button
+	onclick={() => clicked = !clicked}
+	onmouseenter={() => hovered = true}
+	onmouseleave={() => hovered = false}><p>?</p></button
 >
 {#if open}
 	<div class="contents">

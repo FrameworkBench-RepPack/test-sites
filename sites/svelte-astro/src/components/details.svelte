@@ -4,14 +4,10 @@
 	let { summary, children }: { summary: string; children: Snippet<[]> } = $props();
 
 	let open = $state(false);
-
-	function clickHandler() {
-		open = !open;
-	}
 </script>
 
 <div class="details" class:open>
-	<button class="summary" onclickcapture={clickHandler}>{summary}</button>
+	<button class="summary" onclick={() => open = !open}>{summary}</button>
 	{#if open}
 		<div class="contents">
 			{@render children?.()}
