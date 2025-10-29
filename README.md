@@ -4,6 +4,10 @@
 
 You can run `npm install` from the top-level directory to install dependencies for all sites and the server.
 
+## List all sites
+
+You can list all available site names by running `npm run list`.
+
 ## Serve a site for testing
 
 First, run `npm run build` to build all sites.

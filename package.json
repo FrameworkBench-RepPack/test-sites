@@ -15,6 +15,7 @@
   ],
   "scripts": {
     "format": "prettier -w ./README.md ./scripts",
+    "list": "ts-node scripts/list-sites.ts",
     "build": "ts-node scripts/build-sites.ts",
     "serve": "ts-node scripts/serve-site.ts"
   },
