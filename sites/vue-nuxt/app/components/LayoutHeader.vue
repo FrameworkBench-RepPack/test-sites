@@ -7,9 +7,9 @@ import LinksComponent from "./LinksComponent.vue";
     <nav>
       <ul>
         <li>
-          <NuxtLink href="/"
-            ><img id="icon" src="/favicon.svg" alt="Front page"
-          /></NuxtLink>
+          <NuxtLink href="/">
+            <img id="icon" src="/favicon.svg" alt="Front page" />
+          </NuxtLink>
         </li>
         <LinksComponent />
       </ul>

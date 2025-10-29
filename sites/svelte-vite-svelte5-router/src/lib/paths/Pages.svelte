@@ -4,13 +4,13 @@
     Router,
     type RouteConfig,
   } from "@mateothegreat/svelte5-router";
-  import Static1 from "./Static1.svelte";
-  import Static2 from "./Static2.svelte";
-  import Live from "./Live.svelte";
-  import Tooltips from "./Tooltips.svelte";
-  import FAQ from "./FAQ.svelte";
-  import List from "./List.svelte";
-  import Links from "../../components/Links.svelte";
+  import Static1 from "./pages/Static1.svelte";
+  import Static2 from "./pages/Static2.svelte";
+  import Live from "./pages/Live.svelte";
+  import Tooltips from "./pages/Tooltips.svelte";
+  import FAQ from "./pages/FAQ.svelte";
+  import List from "./pages/List.svelte";
+  import Links from "../components/Links.svelte";
 
   const routes: RouteConfig[] = [
     { path: "/static-1", component: Static1 },
@@ -26,9 +26,9 @@
   <nav>
     <ul>
       <li>
-        <a href="/" use:route
-          ><img id="icon" src="/favicon.svg" alt="Front page" /></a
-        >
+        <a href="/" use:route>
+          <img id="icon" src="/favicon.svg" alt="Front page" />
+        </a>
       </li>
       <Links />
     </ul>

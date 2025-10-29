@@ -9,7 +9,7 @@
 <header>
 	<nav>
 		<ul>
-			<li><a href={resolve('/')}><img id="icon" src={favicon} alt="Front page" /></a></li>
+			<li> <a href={resolve('/')}> <img id="icon" src={favicon} alt="Front page" /> </a> </li>
 			<Links />
 		</ul>
 	</nav>

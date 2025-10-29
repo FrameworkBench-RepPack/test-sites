@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Links from "./LinksComponent.vue";
+import LinksComponent from "./LinksComponent.vue";
 </script>
 
 <template>
@@ -7,7 +7,7 @@ import Links from "./LinksComponent.vue";
     <div id="footer-content">
       <NuxtLink id="footer-logo" href="/">Test site</NuxtLink>
       <ul>
-        <Links />
+        <LinksComponent />
       </ul>
       <blockquote>
         Sed blandit est nec quam vulputate, id vulputate ipsum scelerisque.
