@@ -10,6 +10,11 @@
   },
   "license": "MIT",
   "type": "module",
+  "exports": {
+    "./listSites.ts": "./scripts/lib/listSites.ts",
+    "./buildSites.ts": "./scripts/lib/buildSites.ts",
+    "./serveSite.ts": "./scripts/lib/serveSite.ts"
+  },
   "workspaces": [
     "./sites/*"
   ],

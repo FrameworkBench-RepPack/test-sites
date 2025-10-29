@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { getSites } from "./lib/getSites.ts";
+import { getSites } from "./lib/listSites.ts";
 
 console.log("\nSites:");
 
