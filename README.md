@@ -8,13 +8,40 @@ You can run `npm install` from the top-level directory to install dependencies f
 
 You can list all available site names by running `npm run list`.
 
+Or you can import the list for programmatic use:
+
+```ts
+import { listSites } from "test-sites/listSites.ts";
+
+const sites = await listSites();
+```
+
 ## Serve a site for testing
 
 First, run `npm run build` to build all sites.
 
-Then run `npm run serve -- --site SITE_NAME` to serve a specific site. `SITE_NAME` must be the name of the subfolder in the `sites` folder that you want to serve.
+Then run `npm run serve -- --site SITE_NAME` to serve a specific site. `SITE_NAME` is the name of the site to serve, and you can list all available names as shown in the previous chapter.
 
 You can also specify `--port PORT_NUMBER` if you want to. When not specified, port 3000 is used.
+
+Or you can import and run the steps programatically:
+
+```ts
+import { buildSites } from "test-sites/buildSites.ts";
+import { serveSite } from "test-sites/serveSite.ts";
+
+await buildSites({
+  // Choose whether or not to log build progress to the console
+  log: false,
+});
+
+await serveSite({
+  // Choose which of the sites to serve
+  site: "vanilla",
+  // Optionally, change the port
+  port: undefined,
+});
+```
 
 ## Adding a new site
 

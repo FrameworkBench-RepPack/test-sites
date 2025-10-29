@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 
-import { getSites } from "./lib/listSites.ts";
+import { listSites } from "./lib/listSites.ts";
 
-console.log("\nSites:");
+console.log("\nSites:\n");
 
-for (const siteFolder of await getSites()) {
+for (const siteFolder of await listSites()) {
   console.log(siteFolder);
 }
+
+console.log("");

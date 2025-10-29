@@ -2,7 +2,7 @@ import { join } from "node:path";
 import fs from "fs-extra";
 import { execa } from "execa";
 import { sitesFolder, topDistFolder, topLevelFolder } from "./dirs.ts";
-import { getSites } from "./listSites.ts";
+import { listSites } from "./listSites.ts";
 
 export type BuildOptions = {
   log: boolean;
@@ -14,7 +14,7 @@ export async function buildSites(options: BuildOptions) {
   log("\nPreparing to build...");
   await fs.emptyDir(topDistFolder);
 
-  const siteFolders = await getSites();
+  const siteFolders = await listSites();
 
   for (const folderName of siteFolders) {
     const sitePath = join(sitesFolder, folderName);

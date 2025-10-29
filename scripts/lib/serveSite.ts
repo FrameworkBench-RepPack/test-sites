@@ -6,7 +6,6 @@ import { topDistFolder } from "./dirs";
 export const DEFAULT_PORT = 3000;
 
 export type ServeOptions = {
-  log: boolean;
   site: string;
   port?: number;
 };
@@ -14,8 +13,6 @@ export type ServeOptions = {
 export async function serveSites(
   options: ServeOptions,
 ): Promise<FastifyInstance> {
-  const log = options.log ? console.log : () => {};
-
   const port = options.port ?? DEFAULT_PORT;
 
   const siteFolder = path.join(topDistFolder, options.site);
@@ -42,7 +39,6 @@ export async function serveSites(
   });
 
   await fastify.listen({ port: Number(port) });
-  log(`Serving ${options.site} at http://localhost:${port}`);
 
   return fastify;
 }
