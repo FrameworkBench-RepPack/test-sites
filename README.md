@@ -18,7 +18,7 @@ const sites = await listSites();
 
 ## Serve a site for testing
 
-First, run `npm run build` to build all sites.
+First, run `npm run build` to build all sites. Builds are cached and reused between builds. If you want to force a rebuild without any caches, you can do so by running `npm run build -- --clean`.
 
 Then run `npm run serve -- --site SITE_NAME` to serve a specific site. `SITE_NAME` is the name of the site to serve, and you can list all available names as shown in the previous chapter.
 
@@ -33,6 +33,9 @@ import { serveSite } from "test-sites/serveSite.ts";
 await buildSites({
   // Choose whether or not to log build progress to the console
   log: false,
+  // Set to true to force a rebuild of every app, even if their build has already been cached.
+  // Beware that this does not clear any caches that the individual build systems have produced internally.
+  clean: false,
 });
 
 await serveSite({
