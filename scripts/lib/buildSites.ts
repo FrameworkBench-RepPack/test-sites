@@ -16,12 +16,12 @@ export async function buildSites(options: BuildOptions) {
 
   const siteFolders = await listSites();
 
-  for (const folderName of siteFolders) {
+  for (const [index, folderName] of siteFolders.entries()) {
     const sitePath = join(sitesFolder, folderName);
     const siteDistDir = join(sitePath, "dist");
     const destDistDir = join(topDistFolder, folderName);
 
-    log(`\nBuilding ${folderName}...`);
+    log(`\nBuilding ${folderName}... (${index + 1}/${siteFolders.length})`);
     await fs.remove(siteDistDir);
 
     try {
