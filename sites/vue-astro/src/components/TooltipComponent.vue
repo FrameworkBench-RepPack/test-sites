@@ -1,23 +1,35 @@
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
-const clicked = ref(false);
-const hovered = ref(false);
-const open = computed(() => clicked.value || hovered.value);
+const open = ref(false);
+const tooltip = ref<HTMLElement | undefined>();
+const contents = ref<HTMLElement | undefined>(undefined);
+
+function handleLightDismiss(event: MouseEvent) {
+  const target = event.target as Node;
+  if (
+    contents.value &&
+    target !== tooltip.value &&
+    target !== contents.value &&
+    !contents.value.contains(target)
+  ) {
+    open.value = false;
+  }
+}
+
+onMounted(() => {
+  document.addEventListener("click", handleLightDismiss);
+});
+
+onBeforeUnmount(() => {
+  document.removeEventListener("click", handleLightDismiss);
+});
 </script>
 
 <template>
   <span>
-    <button
-      class="tooltip"
-      :class="{ clicked }"
-      @click="clicked = !clicked"
-      @mouseenter="hovered = true"
-      @mouseleave="hovered = false"
-    >
-      <p>?</p>
-    </button>
-    <div v-if="open" class="contents"><slot /></div>
+    <button ref="tooltip" class="tooltip" @click="open = !open">?</button>
+    <span v-if="open" ref="contents" class="contents"><slot /></span>
   </span>
 </template>
 
@@ -25,31 +37,22 @@ const open = computed(() => clicked.value || hovered.value);
 .tooltip {
   --size: 1.5em;
 
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
   padding: 0;
   border: 0.1em solid black;
   border-radius: 100%;
   width: var(--size);
   height: var(--size);
   background-color: var(--color-secondary);
-
-  &.clicked {
-    background-color: var(--color-tertiary);
-  }
-
-  & p {
-    margin: 0;
-    padding: 0;
-    font-size: 0.9em;
-  }
+  cursor: pointer;
 }
 .contents {
-  --width: 40rem;
-  position: absolute;
-  left: calc(50vw - calc(var(--width) / 2));
-  width: var(--width);
+  display: block;
+  position: fixed;
+  max-width: 40rem;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  inset: 0px;
   padding: 0.5em;
   border: 0.1em solid black;
   border-radius: 0.3em;

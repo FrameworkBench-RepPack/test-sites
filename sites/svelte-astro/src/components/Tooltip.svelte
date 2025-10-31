@@ -3,53 +3,55 @@
 
   let { children }: { children: Snippet<[]> } = $props();
 
-  let clicked = $state(false);
-  let hovered = $state(false);
-  let open = $derived(clicked || hovered);
+  let open = $state(false);
+
+  let tooltip: HTMLElement | undefined = $state();
+  let contents: HTMLElement | undefined = $state(undefined);
+
+  function handleLightDismiss(event: MouseEvent) {
+    const target = event.target as Node;
+    if (
+      contents &&
+      target !== tooltip &&
+      target !== contents &&
+      !contents.contains(target)
+    ) {
+      open = false;
+    }
+  }
 </script>
 
-<button
-  class="tooltip"
-  class:clicked
-  onclick={() => (clicked = !clicked)}
-  onmouseenter={() => (hovered = true)}
-  onmouseleave={() => (hovered = false)}><p>?</p></button
->
+<svelte:document onclick={handleLightDismiss} />
+
+<button class="tooltip" onclick={() => (open = !open)} bind:this={tooltip}>
+  ?
+</button>
 {#if open}
-  <div class="contents">
+  <span class="contents" bind:this={contents}>
     {@render children?.()}
-  </div>
+  </span>
 {/if}
 
 <style>
   .tooltip {
     --size: 1.5em;
 
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
     padding: 0;
     border: 0.1em solid black;
     border-radius: 100%;
     width: var(--size);
     height: var(--size);
     background-color: var(--color-secondary);
-
-    &.clicked {
-      background-color: var(--color-tertiary);
-    }
-
-    & p {
-      margin: 0;
-      padding: 0;
-      font-size: 0.9em;
-    }
+    cursor: pointer;
   }
   .contents {
-    --width: 40rem;
-    position: absolute;
-    left: calc(50vw - calc(var(--width) / 2));
-    width: var(--width);
+    display: block;
+    position: fixed;
+    max-width: 40rem;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    inset: 0px;
     padding: 0.5em;
     border: 0.1em solid black;
     border-radius: 0.3em;
