@@ -1,7 +1,7 @@
 import path from "node:path";
 import Fastify, { type FastifyInstance } from "fastify";
 import fastifyStatic from "@fastify/static";
-import { topDistFolder } from "./dirs";
+import { topDistFolder } from "./dirs.ts";
 
 export const DEFAULT_PORT = 3000;
 
