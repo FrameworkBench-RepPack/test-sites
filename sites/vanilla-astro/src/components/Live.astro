@@ -1,0 +1,46 @@
+<script>
+  import liveData from "../assets/liveData.json" with { type: "json" };
+
+  const INTERVAL = 1000;
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const dataElements = document.querySelectorAll(
+      "#live-data td",
+    ) as NodeListOf<HTMLElement>;
+    let index = 0;
+    function stepData() {
+      index = (index + 1) % (liveData.length - 1);
+      for (let elementIndex = 0; elementIndex < 3; elementIndex++) {
+        dataElements[elementIndex].innerText = String(
+          liveData?.[index]?.[elementIndex],
+        );
+      }
+      setTimeout(stepData, INTERVAL);
+    }
+    stepData();
+  });
+</script>
+
+<table id="live-data">
+  <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<style>
+  #live-data {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+
+    & td {
+      height: 3.5em;
+      border: 0.08em solid black;
+      background-color: var(--color-secondary);
+    }
+  }
+</style>
