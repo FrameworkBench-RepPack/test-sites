@@ -3,22 +3,20 @@
 
   const INTERVAL = 1000;
 
-  window.addEventListener("DOMContentLoaded", () => {
-    const dataElements = document.querySelectorAll(
-      "#live-data td",
-    ) as NodeListOf<HTMLElement>;
-    let index = 0;
-    function stepData() {
-      index = (index + 1) % (liveData.length - 1);
-      for (let elementIndex = 0; elementIndex < 3; elementIndex++) {
-        dataElements[elementIndex].innerText = String(
-          liveData?.[index]?.[elementIndex],
-        );
-      }
-      setTimeout(stepData, INTERVAL);
+  const dataElements = document.querySelectorAll(
+    "#live-data td",
+  ) as NodeListOf<HTMLElement>;
+  let index = 0;
+  function stepData() {
+    index = (index + 1) % (liveData.length - 1);
+    for (let elementIndex = 0; elementIndex < 3; elementIndex++) {
+      dataElements[elementIndex].innerText = String(
+        liveData?.[index]?.[elementIndex],
+      );
     }
-    stepData();
-  });
+    setTimeout(stepData, INTERVAL);
+  }
+  stepData();
 </script>
 
 <table id="live-data">
