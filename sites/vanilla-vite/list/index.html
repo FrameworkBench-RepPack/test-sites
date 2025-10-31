@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test site</title>
+    <link rel="stylesheet" href="/src/layouts/global.css" />
+    <link rel="stylesheet" href="/src/layouts/pages.css" />
+    <link rel="stylesheet" href="/src/components/list.css" />
+    <script type="module" src="/src/components/list.ts"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">
+              <img id="icon" src="/favicon.svg" alt="Front page" />
+            </a>
+          </li>
+          <li><a href="/static-1/">Static 1</a></li>
+          <li><a href="/static-2/">Static 2</a></li>
+          <li><a href="/live/">Live</a></li>
+          <li><a href="/tooltips/">Tooltips</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/list/">List</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="page-width">
+      <h1>Filterable list</h1>
+      <p>
+        Nam pulvinar nisi a turpis sodales, id cursus purus malesuada. Mauris
+        vestibulum mollis sapien, at ultrices arcu mollis quis. Nulla tempor
+        nunc sed molestie suscipit. Aliquam egestas mollis sapien nec volutpat.
+        Praesent vitae magna ut purus tristique posuere. Suspendisse eget lacus
+        id nunc egestas aliquam. Sed urna urna, tristique in condimentum ac,
+        molestie ac orci. Aenean lorem diam, condimentum nec nunc sed, maximus
+        vulputate ante.
+      </p>
+      <div id="list" class="sticky">
+        <div class="controls">
+          <form>
+            <label>
+              Sort by:
+              <select name="sort">
+                <option value="name">Name</option>
+                <option value="age">Age</option>
+                <option value="category">Category</option>
+              </select>
+            </label>
+            <fieldset>
+              <legend>Age</legend>
+              <label>
+                From:
+                <input
+                  type="number"
+                  name="age-from"
+                  value="0"
+                  min="0"
+                  max="100"
+                  step="1"
+                />
+              </label>
+              <label>
+                To:
+                <input
+                  type="number"
+                  name="age-to"
+                  value="100"
+                  min="0"
+                  max="100"
+                  step="1"
+                />
+              </label>
+            </fieldset>
+            <fieldset>
+              <legend>Categories</legend>
+              <label>
+                <input type="checkbox" name="category" value="1" checked />
+                Rhoncus </label
+              ><label>
+                <input type="checkbox" name="category" value="2" checked />
+                Metus </label
+              ><label>
+                <input type="checkbox" name="category" value="3" checked />
+                Egestas </label
+              ><label>
+                <input type="checkbox" name="category" value="4" checked />
+                Dapibus
+              </label>
+            </fieldset>
+          </form>
+        </div>
+        <div class="data">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Category</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Accumorbi Temparis</td>
+                <td>31</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Accumsan sed</td>
+                <td>30</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Aenean Arcu</td>
+                <td>38</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Aenean Gravida</td>
+                <td>42</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Aenean Leo</td>
+                <td>21</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Alimpera Imperdus</td>
+                <td>50</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Aliquam luctus</td>
+                <td>63</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Aliquar Lumis</td>
+                <td>40</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Bibelac Curaris</td>
+                <td>22</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Bibendra Solthar</td>
+                <td>25</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Bibendum Euismod</td>
+                <td>26</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Condimassa Porten</td>
+                <td>55</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Congue Etiam</td>
+                <td>33</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Congue Mi</td>
+                <td>33</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Congue Odio</td>
+                <td>32</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Congue Pretium</td>
+                <td>37</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Congue Sed</td>
+                <td>27</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Consectel Ligurium</td>
+                <td>56</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Cras Fermentum</td>
+                <td>56</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Cras Pharetra</td>
+                <td>48</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Cras Sapien</td>
+                <td>24</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Curavol Imperen</td>
+                <td>58</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Dignimor Efficura</td>
+                <td>53</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Donec Erat</td>
+                <td>55</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Donec Nec</td>
+                <td>30</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Donec Sodales</td>
+                <td>41</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Duis Feugard</td>
+                <td>55</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Duvla Feugala</td>
+                <td>44</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Egestan Velora</td>
+                <td>58</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Etiam Felis</td>
+                <td>33</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Etiam Hendrerit</td>
+                <td>39</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Etiam Rhoncus</td>
+                <td>49</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Eu porta</td>
+                <td>41</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Euvola Praesentis</td>
+                <td>35</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Facilisan Pellentra</td>
+                <td>39</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Feumala Praesyn</td>
+                <td>61</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Frinora Pellacis</td>
+                <td>26</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Fusce Massa</td>
+                <td>38</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Fusce Placerat</td>
+                <td>64</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Fusce Tincidunt</td>
+                <td>44</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Iaculor Elementis</td>
+                <td>40</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Integer pretium</td>
+                <td>64</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Interdulis Felicitas</td>
+                <td>36</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Ipsona Varius</td>
+                <td>31</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Lectorius Aliquim</td>
+                <td>63</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Luctanis Eleron</td>
+                <td>53</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Maecen Placeron</td>
+                <td>25</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Maecen Volatus</td>
+                <td>63</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Magna Facilisis</td>
+                <td>54</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Magnor Tempellus</td>
+                <td>34</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Maurit Nullaen</td>
+                <td>28</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Natoque Magnis</td>
+                <td>36</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Nora Blandis</td>
+                <td>28</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Nuncalis Rhonduis</td>
+                <td>24</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Nunciel Tharros</td>
+                <td>52</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Orcenta Magnidus</td>
+                <td>37</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Orcius Penat</td>
+                <td>46</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Orvian Montidus</td>
+                <td>47</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Pellan Nivora</td>
+                <td>49</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Pellentesque Arcu</td>
+                <td>26</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Pellentesque Pharetra</td>
+                <td>43</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Pellentesque Porta</td>
+                <td>32</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Phasellus Mauris</td>
+                <td>37</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Phasora Fringalyn</td>
+                <td>34</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Placerad Dolorem</td>
+                <td>62</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Portique Morven</td>
+                <td>46</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Portivamus Risudor</td>
+                <td>40</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Prae Ipsura</td>
+                <td>21</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Proin malesuada</td>
+                <td>59</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Pulvinor Libacius</td>
+                <td>28</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Quisnara Veldin</td>
+                <td>50</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Rhoncel Odynis</td>
+                <td>60</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Rhoncus Pharetra</td>
+                <td>42</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Rhoncus Porttitor</td>
+                <td>44</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Rhoncus Tincidunt</td>
+                <td>27</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Ridiculon Montaris</td>
+                <td>39</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Risond Vitaeon</td>
+                <td>23</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Sed Fringilla</td>
+                <td>51</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Sedlacinia Quisque</td>
+                <td>38</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Sollicitara Enimor</td>
+                <td>33</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Suspendar Portigen</td>
+                <td>41</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Suspendisse Est</td>
+                <td>44</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Suspendisse Felis</td>
+                <td>50</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Suspendisse Feugiat</td>
+                <td>47</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Suspendisse Tellus</td>
+                <td>29</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Temposis Nivor</td>
+                <td>29</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Ut Elementum</td>
+                <td>34</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Ut Orci</td>
+                <td>48</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Variacus Nuncellus</td>
+                <td>28</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Venenatis Metorlin</td>
+                <td>27</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Vesconda Portaris</td>
+                <td>35</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Vestibalis Sapiden</td>
+                <td>45</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Vestibaro Lethi</td>
+                <td>25</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Vestibulum Consectetur</td>
+                <td>60</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Vestibulum Dui</td>
+                <td>49</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Vestibulum Fringilla</td>
+                <td>35</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Vestibulum Hendrerit</td>
+                <td>62</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Vestibulum Magna</td>
+                <td>61</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Vestibulum Orci</td>
+                <td>59</td>
+                <td data-category="3">Egestas</td>
+              </tr>
+              <tr>
+                <td>Vestibulum Sed</td>
+                <td>30</td>
+                <td data-category="2">Metus</td>
+              </tr>
+              <tr>
+                <td>Vestibulum Vitae</td>
+                <td>36</td>
+                <td data-category="1">Rhoncus</td>
+              </tr>
+              <tr>
+                <td>Vestibulum Volutpat</td>
+                <td>22</td>
+                <td data-category="4">Dapibus</td>
+              </tr>
+              <tr>
+                <td>Viverra Ante</td>
+                <td>43</td>
+                <td data-category="2">Metus</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="no-data-message" hidden>
+            No entries matched the filter settings.
+          </p>
+        </div>
+      </div>
+      <template id="list-row">
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </template>
+      <template id="list-no-data"></template>
+      <p>
+        Aliquam eget nulla at ipsum elementum mattis quis ac felis. Fusce
+        imperdiet quam et dui vulputate, sit amet hendrerit lorem feugiat. Donec
+        convallis bibendum ex. Proin lacinia tortor eu aliquet vulputate. Nam
+        euismod ultrices erat, eget euismod risus tempus sed. Curabitur eu ipsum
+        sollicitudin, elementum mauris luctus, hendrerit nunc. Mauris porttitor
+        mi augue, id auctor arcu condimentum nec. Aenean finibus, leo at
+        accumsan sollicitudin, velit est facilisis quam, et sagittis ligula nisi
+        at mi.
+      </p>
+    </main>
+    <footer>
+      <div id="footer-content">
+        <a href="/" id="footer-logo">Test site</a>
+        <ul>
+          <li><a href="/static-1/">Static 1</a></li>
+          <li><a href="/static-2/">Static 2</a></li>
+          <li><a href="/live/">Live</a></li>
+          <li><a href="/tooltips/">Tooltips</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/list/">List</a></li>
+        </ul>
+        <blockquote>
+          Sed blandit est nec quam vulputate, id vulputate ipsum scelerisque.
+          Etiam in elit ornare, fermentum nisl vel, gravida ipsum.
+        </blockquote>
+      </div>
+    </footer>
+  </body>
+</html>
