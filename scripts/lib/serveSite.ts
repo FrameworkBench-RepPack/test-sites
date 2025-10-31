@@ -1,6 +1,7 @@
 import path from "node:path";
 import Fastify, { type FastifyInstance } from "fastify";
 import fastifyStatic from "@fastify/static";
+import fastifyCompress from "@fastify/compress";
 import { topDistFolder } from "./dirs.ts";
 
 export const DEFAULT_PORT = 3000;
@@ -32,7 +33,9 @@ export async function serveSites(
     return reply.sendFile("index.html");
   });
 
-  fastify.register(fastifyStatic, {
+  await fastify.register(fastifyCompress);
+
+  await fastify.register(fastifyStatic, {
     root: siteFolder,
     prefix: "/",
     index: ["index.html"],
