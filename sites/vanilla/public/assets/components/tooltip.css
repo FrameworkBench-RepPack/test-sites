@@ -1,0 +1,19 @@
+.tooltip {
+  --size: 1.5em;
+
+  padding: 0;
+  border: 0.1em solid black;
+  border-radius: 100%;
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--color-secondary);
+  cursor: pointer;
+}
+.tooltip-contents {
+  max-width: 40rem;
+  padding: 0.5em;
+  border: 0.1em solid black;
+  border-radius: 0.3em;
+  background-color: var(--color-secondary);
+  box-shadow: var(--drop-shadow-large);
+}
