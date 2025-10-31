@@ -19,7 +19,7 @@ definePageMeta({
         <LinksComponent />
       </ul>
     </header>
-    <section class="page-width">
+    <div class="page-width">
       <p>
         Pellentesque finibus urna at ligula aliquet finibus. Ut rutrum dolor
         vitae quam molestie, at dapibus enim blandit. Maecenas sit amet blandit
@@ -328,7 +328,7 @@ definePageMeta({
         sagittis gravida ligula. Quisque facilisis lorem leo, at mattis metus
         vulputate quis.
       </p>
-    </section>
+    </div>
   </main>
 </template>
 
@@ -350,7 +350,7 @@ h1 > a {
   display: flex;
   gap: 2em;
   justify-content: center;
-  padding: none;
+  padding: 0;
   list-style-type: none;
   font-size: 1.3em;
 }
