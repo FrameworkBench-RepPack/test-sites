@@ -142,7 +142,7 @@ const filteredList = computed(() =>
     padding: 1em;
     accent-color: var(--color-tertiary);
 
-    & .categories label {
+    & label:has(> input[name="category"]) {
       display: block;
     }
   }
