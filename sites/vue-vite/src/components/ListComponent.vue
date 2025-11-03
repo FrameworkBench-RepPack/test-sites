@@ -48,7 +48,7 @@ const filteredList = computed(() =>
 </script>
 
 <template>
-  <div class="list" :class="{ sticky }">
+  <div id="list" :class="{ sticky }">
     <div class="controls">
       <form>
         <label>
@@ -131,7 +131,7 @@ const filteredList = computed(() =>
 </template>
 
 <style scoped>
-.list {
+#list {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1em;

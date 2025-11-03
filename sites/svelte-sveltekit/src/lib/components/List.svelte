@@ -46,7 +46,7 @@
 	);
 </script>
 
-<div class="list" class:sticky>
+<div id="list" class:sticky>
 	<div class="controls">
 		<form>
 			<label>
@@ -105,7 +105,7 @@
 </div>
 
 <style>
-	.list {
+	#list {
 		display: grid;
 		grid-template-columns: auto 1fr;
 		gap: 1em;
