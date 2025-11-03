@@ -51,6 +51,9 @@
   :global(header) {
     background-color: var(--color-secondary);
   }
+  :global(:is(header, main) + * *) {
+    scroll-margin-top: var(--header-height);
+  }
   :global(.page-width) {
     max-width: var(--page-width);
     margin: 0 auto;
