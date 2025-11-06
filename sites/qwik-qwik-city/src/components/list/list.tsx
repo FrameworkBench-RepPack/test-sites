@@ -59,7 +59,7 @@ export default component$<ItemProps>(({ listData, sticky }) => {
 
   return (
     <>
-      <div class={["list", styles.list]}>
+      <div id="list" class={[styles.list]}>
         <div class="controls">
           <form class={[styles.form, sticky && styles["sticky-form"]]}>
             <label>
