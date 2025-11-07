@@ -1,0 +1,11 @@
+{
+  "plugins": ["prettier-plugin-marko"],
+  "overrides": [
+    {
+      "files": "*.marko",
+      "options": {
+        "parser": "marko"
+      }
+    }
+  ]
+}

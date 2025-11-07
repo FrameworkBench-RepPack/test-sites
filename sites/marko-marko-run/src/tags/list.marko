@@ -1,0 +1,182 @@
+import { listCategories } from "../assets/listCategory";
+export interface Input {
+  listData: {
+    name: string;
+    age: number;
+    category: number;
+  }[];
+  sticky: boolean;
+}
+
+<style/styles>
+  .list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+  }
+
+  .form {
+    border: 0.1em solid black;
+    border-radius: 0.7em;
+    padding: 1em;
+    accent-color: var(--color-tertiary);
+
+    & label:has(> input[name="category"]) {
+      display: block;
+    }
+  }
+
+  .table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+
+    & th {
+      font-weight: bolder;
+      background-color: var(--color-secondary);
+    }
+
+    & td,
+    & th {
+      border: 0.08em solid black;
+      height: 3.5em;
+    }
+  }
+
+  .noDataMessage {
+    text-align: center;
+  }
+
+  .stickyForm {
+    position: sticky;
+    top: calc(var(--header-height) + var(--page-padding));
+  }
+
+  .stickyTable {
+    & th {
+      top: var(--header-height);
+      position: sticky;
+    }
+  }
+</style>
+static const sortOptions = (
+  new Map<string, string>([
+    ["name", "Name"],
+    ["age", "Age"],
+    ["category", "Category"],
+  ])
+);
+
+<let/sortOption="name">
+
+<let/ageFrom=0>
+<let/ageTo=100>
+
+<let/categories=(
+  [...listCategories.keys()].map((entry) => String(entry)) as string[]
+)>
+
+<const/filteredList=(
+  input.listData
+    .filter(
+      (candidate) =>
+        candidate.age >= ageFrom &&
+        candidate.age <= ageTo &&
+        categories.includes(String(candidate.category)),
+    )
+    .sort((a, b) => {
+      switch (sortOption) {
+        case "name": {
+          return a.name.localeCompare(b.name);
+        }
+        case "age": {
+          return a.age - b.age;
+        }
+        case "category": {
+          return a.category - b.category;
+        }
+        default: {
+          throw TypeError("Unknown option");
+        }
+      }
+    })
+)>
+
+<div id="list" class=[styles.list]>
+  <div class="controls">
+    <form class=[styles.form, input.sticky ? styles.stickyForm : false]>
+      <label>
+        Sort by:${" "}
+        <select name="sort" value:=sortOption>
+          <for|[key, name]| of=sortOptions.entries() by=(entry) => entry[0]>
+            <option value=key>
+              ${name}
+            </option>
+          </for>
+        </select>
+      </label>
+      <fieldset>
+        <legend>${" "}Age${" "}</legend>
+        <label>
+          ${"From: "}
+          <input
+            type="number"
+            name="age-from"
+            value:=ageFrom
+            min="0"
+            max="100"
+            step="1">
+        </label>
+        ${" "}
+        <label>
+          ${"To: "}
+          <input
+            type="number"
+            name="age-to"
+            value:=ageTo
+            min="0"
+            max="100"
+            step="1">
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>${" "}Categories${" "}</legend>
+        <for|[key, name]| of=listCategories.entries() by=(entry) => entry[0]>
+          <label>
+            <input
+              type="checkbox"
+              name="category"
+              value=String(key)
+              checkedValue:=categories>
+            ${name}
+          </label>
+        </for>
+      </fieldset>
+    </form>
+  </div>
+  <div class="data">
+    <table class=[styles.table, input.sticky ? styles.stickyTable : false]>
+      <thead>
+        <tr>
+          <th>${" "}Name${" "}</th>
+          <th>${" "}Age${" "}</th>
+          <th>${" "}Category${" "}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <for|item| of=filteredList by=(item) => item.name>
+          <tr>
+            <td>${item.name}</td>
+            <td>${item.age}</td>
+            <td>${listCategories.get(item.category)}</td>
+          </tr>
+        </for>
+      </tbody>
+    </table>
+    <if=filteredList.length === 0>
+      <p class=["no-data-message", styles.noDataMessage]>
+        No entries matched the filter settings.
+      </p>
+    </if>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+export interface Input {
+  summary: string;
+  content: Marko.Body;
+}
+
+<style/styles>
+  .details {
+    margin: 1.5em 0.5em;
+    padding: 0.5em;
+    background-color: var(--color-secondary);
+    box-shadow: var(--drop-shadow-large);
+  }
+  .summary {
+    margin: 0.2em;
+    font-size: 1.1em;
+    appearance: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &::before {
+      content: "▶";
+      margin-right: 0.8em;
+    }
+  }
+  .openSummary {
+    &::before {
+      content: "▼";
+    }
+  }
+  .contents {
+    margin: 0.2em;
+  }
+</style>
+
+<let/open=false>
+
+<div class=["details", styles.details]>
+  <button
+    class=["summary", [styles.summary], open ? [styles.openSummary] : undefined]
+    onClick() {
+      open = !open;
+    }>
+    ${input.summary}
+  </button>
+  <if=open>
+    <div class=["contents", styles.contents]>
+      <${input.content}/>
+    </div>
+  </if>
+</div>
