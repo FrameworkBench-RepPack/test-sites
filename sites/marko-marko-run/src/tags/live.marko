@@ -1,0 +1,41 @@
+import liveData from "../assets/liveData.json";
+
+<style/styles>
+  .liveData {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+
+    & td {
+      height: 3.5em;
+      border: 0.08em solid black;
+      background-color: var(--color-secondary);
+    }
+  }
+</style>
+
+<let/index=0>
+<let/timeoutId=undefined as number | NodeJS.Timeout | undefined>
+
+<lifecycle
+  onMount() {
+    const INTERVAL = 1000;
+    function stepData() {
+      index = (index + 1) % (liveData.length - 1);
+      timeoutId = setTimeout(stepData, INTERVAL);
+    }
+    stepData();
+  }
+  onDestroy() {
+    clearTimeout(timeoutId);
+  }>
+
+<table id="live-data" class=[styles.liveData]>
+  <tbody>
+    <tr>
+      <td>${liveData?.[index]?.[0]}</td>
+      <td>${liveData?.[index]?.[1]}</td>
+      <td>${liveData?.[index]?.[2]}</td>
+    </tr>
+  </tbody>
+</table>

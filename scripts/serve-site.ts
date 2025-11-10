@@ -17,6 +17,6 @@ if (!args.site) {
   throw new Error("❌ That site does not exist.");
 }
 
-await serveSites({ log: true, site: args.site, port: Number(args.port) });
+await serveSites({ site: args.site, port: Number(args.port) });
 
 console.log(`Serving ${args.site} at http://localhost:${args.port}`);

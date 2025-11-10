@@ -25,6 +25,9 @@ body {
 header {
   background-color: var(--color-secondary);
 }
+:is(header, main) + * * {
+  scroll-margin-top: var(--header-height);
+}
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;

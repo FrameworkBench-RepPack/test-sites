@@ -1,0 +1,225 @@
+---
+import { listCategories } from "../assets/listCategory";
+
+interface Props {
+  listData: { name: string; age: number; category: number }[];
+  sticky: boolean;
+}
+const { listData, sticky } = Astro.props;
+
+const sortOptions = new Map<string, string>([
+  ["name", "Name"],
+  ["age", "Age"],
+  ["category", "Category"],
+]);
+---
+
+<script>
+  const MAX_SLACK_MS = 700;
+
+  const form = document.querySelector(
+    "#list > .controls > form",
+  ) as HTMLFormElement;
+  const tbody = document.querySelector(
+    "#list > .data tbody",
+  ) as HTMLTableSectionElement;
+  const noDataMessage = document.querySelector(
+    "#list > .data .no-data-message",
+  ) as HTMLParagraphElement;
+
+  const rows = [...tbody.querySelectorAll("tr")].map((rowElement) => {
+    const cells = rowElement.querySelectorAll(
+      "td",
+    ) as NodeListOf<HTMLTableCellElement>;
+    const name = cells[0].innerText as string;
+    const age = Number(cells[1].innerText);
+    const category = Number(cells[2].dataset.category);
+    return {
+      element: rowElement,
+      name,
+      age,
+      category,
+    };
+  });
+
+  let idleCallbackId: number;
+  form.addEventListener("input", () => {
+    handleInput();
+  });
+  handleInput();
+  function handleInput() {
+    cancelIdleCallback(idleCallbackId);
+    idleCallbackId = requestIdleCallback(filterList, {
+      timeout: MAX_SLACK_MS,
+    });
+  }
+
+  function filterList() {
+    const data = new FormData(form);
+    const sortOption = String(data.get("sort"));
+    const ageFrom = Number(data.get("age-from"));
+    const ageTo = Number(data.get("age-to"));
+    const categories = data.getAll("category").map((entry) => Number(entry));
+    let noData = true;
+    rows
+      .sort((a, b) => {
+        switch (sortOption) {
+          case "name": {
+            return a.name.localeCompare(b.name);
+          }
+          case "age": {
+            return a.age - b.age;
+          }
+          case "category": {
+            return a.category - b.category;
+          }
+          default: {
+            throw TypeError("Unknown option");
+          }
+        }
+      })
+      .forEach((row) => {
+        tbody.appendChild(tbody.removeChild(row.element));
+        const hidden =
+          row.age < ageFrom ||
+          row.age > ageTo ||
+          !categories.includes(row.category);
+        row.element.hidden = hidden;
+        if (!hidden) noData = false;
+      });
+    noDataMessage.hidden = !noData;
+  }
+</script>
+
+<div id="list" class:list={{ sticky }}>
+  <div class="controls">
+    <form>
+      <label>
+        Sort by: <select name="sort">
+          {
+            sortOptions
+              .entries()
+              .map(([key, name]) => <option value={key}>{name}</option>)
+          }
+        </select>
+      </label>
+      <fieldset>
+        <legend> Age </legend>
+        <label>
+          From: <input
+            type="number"
+            name="age-from"
+            value="0"
+            min="0"
+            max="100"
+            step="1"
+          />
+        </label>
+        <label>
+          To: <input
+            type="number"
+            name="age-to"
+            value="100"
+            min="0"
+            max="100"
+            step="1"
+          />
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend> Categories </legend>
+        {
+          listCategories.entries().map(([key, name]) => (
+            <label>
+              <input type="checkbox" name="category" value={key} checked />
+              {name}
+            </label>
+          ))
+        }
+      </fieldset>
+    </form>
+  </div>
+  <div class="data">
+    <table>
+      <thead>
+        <tr> <th> Name </th> <th> Age </th> <th> Category </th> </tr>
+      </thead>
+      <tbody>
+        {
+          listData.map((item) => (
+            <tr>
+              <td>{item.name}</td>
+              <td>{item.age}</td>
+              <td data-category={item.category}>
+                {listCategories.get(item.category)}
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+    <p class="no-data-message">No entries matched the filter settings.</p>
+  </div>
+</div>
+
+<template id="list-row">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</template>
+<template id="list-no-data"> </template>
+
+<style>
+  #list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+
+    & .controls form {
+      border: 0.1em solid black;
+      border-radius: 0.7em;
+      padding: 1em;
+      accent-color: var(--color-tertiary);
+
+      & label:has(> input[name="category"]) {
+        display: block;
+      }
+    }
+
+    & .data {
+      & table {
+        width: 100%;
+        text-align: center;
+        border-collapse: collapse;
+
+        & th {
+          font-weight: bolder;
+          background-color: var(--color-secondary);
+        }
+
+        & td,
+        & th {
+          border: 0.08em solid black;
+          height: 3.5em;
+        }
+      }
+
+      & .no-data-message {
+        text-align: center;
+      }
+    }
+
+    &.sticky {
+      & .controls form {
+        position: sticky;
+        top: calc(var(--header-height) + var(--page-padding));
+      }
+      & .data thead th {
+        top: var(--header-height);
+        position: sticky;
+      }
+    }
+  }
+</style>

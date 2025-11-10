@@ -1,0 +1,11 @@
+---
+import { pages } from "../assets/pages";
+---
+
+{
+  pages.entries().map(([path, name]) => (
+    <li>
+      <a href={path}>{name}</a>
+    </li>
+  ))
+}

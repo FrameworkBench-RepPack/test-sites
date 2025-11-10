@@ -1,0 +1,10 @@
+import { pages } from "../assets/pages";
+
+<for|[path, name]| of=pages.entries() by=(entry) => entry.path>
+  ${" "}
+  <li>
+    <a href=path>
+      ${name}
+    </a>
+  </li>
+</for>

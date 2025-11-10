@@ -1,0 +1,24 @@
+{
+  "name": "marko-marko-run",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@marko/run-adapter-static": "^2.0.3",
+    "marko": "^6.0.0"
+  },
+  "devDependencies": {
+    "@marko/run": "^0.9.3",
+    "prettier": "^3.6.2",
+    "prettier-plugin-marko": "^3.3.2"
+  },
+  "private": true,
+  "scripts": {
+    "dev": "marko-run",
+    "build": "marko-run build && npm run postprocess",
+    "preview": "marko-run preview",
+    "start": "node --enable-source-maps ./dist/index.mjs",
+    "postprocess": "node --experimental-strip-types ./bin/postprocess.ts",
+    "format": "prettier --write .",
+    "lint": "prettier --check ."
+  }
+}

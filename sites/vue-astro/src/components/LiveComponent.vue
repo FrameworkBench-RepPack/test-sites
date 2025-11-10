@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import liveData from "../assets/liveData.json" with { type: "json" };
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 const INTERVAL = 1000;
 
@@ -14,7 +14,7 @@ function stepData() {
 onMounted(() => {
   stepData();
 });
-onUnmounted(() => {
+onBeforeUnmount(() => {
   clearTimeout(timeoutId);
 });
 </script>

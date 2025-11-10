@@ -48,12 +48,12 @@ const filteredList = computed(() =>
 </script>
 
 <template>
-  <div class="list" :class="{ sticky }">
+  <div id="list" :class="{ sticky }">
     <div class="controls">
       <form>
         <label>
           Sort by:
-          <select v-model="sortOption">
+          <select name="sort" v-model="sortOption">
             <option
               v-for="[key, name] in sortOptions.entries()"
               :key
@@ -67,21 +67,40 @@ const filteredList = computed(() =>
           <legend>Age</legend>
           <label>
             From:
-            <input v-model="ageFrom" type="number" min="0" max="100" step="1" />
+            <input
+              v-model="ageFrom"
+              type="number"
+              name="age-from"
+              min="0"
+              max="100"
+              step="1"
+            />
           </label>
           <label>
             To:
-            <input v-model="ageTo" type="number" min="0" max="100" step="1" />
+            <input
+              v-model="ageTo"
+              type="number"
+              name="age-to"
+              min="0"
+              max="100"
+              step="1"
+            />
           </label>
         </fieldset>
-        <fieldset class="categories">
+        <fieldset>
           <legend>Categories</legend>
           <label
             v-for="[key, name] in listCategories.entries()"
             :key
             :value="key"
           >
-            <input v-model="categories" type="checkbox" :value="key" />
+            <input
+              v-model="categories"
+              type="checkbox"
+              name="category"
+              :value="key"
+            />
             {{ name }}
           </label>
         </fieldset>
@@ -112,7 +131,7 @@ const filteredList = computed(() =>
 </template>
 
 <style scoped>
-.list {
+#list {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1em;
@@ -123,7 +142,7 @@ const filteredList = computed(() =>
     padding: 1em;
     accent-color: var(--color-tertiary);
 
-    & .categories label {
+    & label:has(> input[name="category"]) {
       display: block;
     }
   }

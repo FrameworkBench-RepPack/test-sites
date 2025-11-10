@@ -1,0 +1,46 @@
+{
+  "marko-marko-run": {
+    "src": "X+RPKGvS7xNwggCyLbSRqPaZKqM=",
+    "dist": "BLIxhyuBIDKrZmNJeJB5jyTo+Ac="
+  },
+  "qwik-qwik-city": {
+    "src": "zZheQxpgj+HfYxvR4JLFVAFEvo0=",
+    "dist": "uvwepAIz3vkT2Pakd15IqGbRkZ0="
+  },
+  "svelte-astro": {
+    "src": "GiKlSR/rl4iNB0oCD2sM7RhlHlk=",
+    "dist": "96hxLAwHUnnL5zQly6hRRPSi81c="
+  },
+  "svelte-sveltekit": {
+    "src": "mCpUEQvu+qkHPFEX/6iTC7brx+s=",
+    "dist": "t31Dn85cv03mlrO5Q14nDaGoe0Y="
+  },
+  "svelte-vite-svelte5-router": {
+    "src": "RfqvL0fIXhLMCdsDKO8bUQkdP/4=",
+    "dist": "gAJu5Y4FEqqiC4eeCfFrt81AFBc="
+  },
+  "vanilla": {
+    "src": "QjqvLgJAwO+ikkzwVXxSrYmrlws=",
+    "dist": "+EHFS9xtfmYwbvyOq9oFJRSDp+4="
+  },
+  "vanilla-astro": {
+    "src": "TakNVoXK4QSDkZ0FqGsviO2HIiM=",
+    "dist": "dRQsh2booPBq2f6lKBkkYGLT/ws="
+  },
+  "vanilla-vite": {
+    "src": "FJWi5p9N97glHK56T/T6xyldiWk=",
+    "dist": "Vqc04I5SgtLJ9XVj96mHUpqNP+U="
+  },
+  "vue-astro": {
+    "src": "rdnduE5a5JmvcmjYM2Neaeheo0E=",
+    "dist": "q+AumDp9SR/UnYvjkc6wrfpH10w="
+  },
+  "vue-nuxt": {
+    "src": "z00aKGyx7UqNmpR2zYmld7q1DTY=",
+    "dist": "03tgIf2K3ek980jyF97cdActoFA="
+  },
+  "vue-vite": {
+    "src": "X2ciNeJbu6Ii9eYaVZoxJqqGAqg=",
+    "dist": "FpbuggvlcvuZvHgL3C/tmqaHAFw="
+  }
+}

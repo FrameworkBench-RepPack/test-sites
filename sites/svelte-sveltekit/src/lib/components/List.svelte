@@ -46,11 +46,11 @@
 	);
 </script>
 
-<div class="list" class:sticky>
+<div id="list" class:sticky>
 	<div class="controls">
 		<form>
 			<label>
-				Sort by: <select bind:value={sortOption}>
+				Sort by: <select name="sort" bind:value={sortOption}>
 					{#each sortOptions.entries() as [key, name] (key)}
 						<option value={key}>{name}</option>
 					{/each}
@@ -59,15 +59,24 @@
 			<fieldset>
 				<legend> Age </legend>
 				<label>
-					From: <input type="number" bind:value={ageFrom} min="0" max="100" step="1" />
+					From: <input
+						type="number"
+						name="age-from"
+						bind:value={ageFrom}
+						min="0"
+						max="100"
+						step="1"
+					/>
 				</label>
-				<label> To: <input type="number" bind:value={ageTo} min="0" max="100" step="1" /> </label>
+				<label>
+					To: <input type="number" name="age-to" bind:value={ageTo} min="0" max="100" step="1" />
+				</label>
 			</fieldset>
-			<fieldset class="categories">
+			<fieldset>
 				<legend> Categories </legend>
 				{#each listCategories.entries() as [key, name] (key)}
 					<label>
-						<input type="checkbox" value={key} bind:group={categories} />
+						<input type="checkbox" name="category" value={key} bind:group={categories} />
 						{name}
 					</label>
 				{/each}
@@ -96,7 +105,7 @@
 </div>
 
 <style>
-	.list {
+	#list {
 		display: grid;
 		grid-template-columns: auto 1fr;
 		gap: 1em;
@@ -107,7 +116,7 @@
 			padding: 1em;
 			accent-color: var(--color-tertiary);
 
-			& .categories label {
+			& label:has(> input[name='category']) {
 				display: block;
 			}
 		}
