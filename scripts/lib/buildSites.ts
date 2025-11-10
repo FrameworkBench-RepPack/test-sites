@@ -68,7 +68,7 @@ export async function buildSites(options: BuildOptions) {
     await fs.remove(destDistDir);
 
     try {
-      await execa("npm", ["run", "build", "-w", sitePath], {
+      await execa("npm", ["run", "build", "-w", folderName], {
         stdio: "inherit",
         cwd: topLevelFolder,
       });
