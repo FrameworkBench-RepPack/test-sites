@@ -1,5 +1,10 @@
 # Custom
-/dist
+dist/*
+
+# There is an error where Marko cannot build itself in the benchmark runner,
+# so we include the source files in this repo to hack around that problem
+!dist/lock.json
+!dist/marko-marko-run/
 
 # Fix MacOS
 .DS_Store
@@ -86,7 +91,6 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Gatsby files
 .cache/
