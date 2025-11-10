@@ -1,37 +1,392 @@
 import { Component } from "@angular/core";
+import { LinksComponent } from "../../lib/components/Links.component";
+import { TooltipComponent } from "../../lib/components/Tooltip.component";
+import { LiveComponent } from "../../lib/components/Live.component";
+import { DetailsComponent } from "../../lib/components/Details.component";
+import { ListComponent } from "../../lib/components/List/List.component";
+import listData from "../../lib/assets/listDataPrimary.json" with { type: "json" };
 
 @Component({
   selector: "app-home",
+  standalone: true,
+  imports: [
+    LinksComponent,
+    TooltipComponent,
+    LiveComponent,
+    DetailsComponent,
+    ListComponent,
+  ],
   template: `
-    <h2>Analog</h2>
-
-    <h3>The fullstack meta-framework for Angular!</h3>
-
-    <p class="read-the-docs">
-      <a href="https://analogjs.org" target="_blank">Docs</a> |
-      <a href="https://github.com/analogjs/analog" target="_blank">GitHub</a> |
-      <a href="https://github.com/sponsors/brandonroberts" target="_blank">
-        Sponsor
-      </a>
-    </p>
+    <main>
+      <header>
+        <h1><a [href]="'/'">Test site</a></h1>
+        <ul id="links">
+          <app-links></app-links>
+        </ul>
+      </header>
+      <section class="page-width">
+        <p>
+          Pellentesque finibus urna at ligula aliquet finibus. Ut rutrum dolor
+          vitae quam molestie, at dapibus enim blandit. Maecenas sit amet
+          blandit nisl. Duis et ligula velit. Aliquam facilisis diam eget
+          consectetur porttitor. Phasellus vitae pretium nisl. Nunc lectus nunc,
+          vestibulum quis gravida et, sollicitudin vel justo. Quisque non
+          viverra mi, vitae semper lacus.
+          <app-tooltip>
+            Cras non turpis et erat dapibus mattis. Fusce molestie eleifend
+            sodales. Cras ac cursus libero. Maecenas vel ex lectus. Quisque
+            porttitor vulputate mauris, at tristique mi varius eleifend. Quisque
+            vitae diam non sapien accumsan feugiat. Etiam vel auctor velit, eu
+            pharetra lorem.
+          </app-tooltip>
+          Phasellus id nunc eget sem pretium pulvinar. Sed vel consequat quam.
+          Vestibulum posuere augue id magna sollicitudin accumsan. Sed hendrerit
+          molestie mauris, in sodales elit vulputate eget. Vestibulum non
+          consectetur dolor. Fusce et tincidunt turpis.
+        </p>
+        <app-live />
+        <p>
+          Curabitur ut purus dui. Sed congue dui sed nulla rutrum, non pharetra
+          enim scelerisque. Proin sed libero lorem. Ut consequat nisi non
+          finibus commodo. Fusce quis leo nunc. Maecenas facilisis placerat
+          eros, non sollicitudin ante efficitur in. Aliquam euismod euismod
+          nulla, quis accumsan augue sollicitudin vehicula. Suspendisse ac metus
+          fringilla, finibus urna sed, pharetra urna. Mauris ornare mauris
+          mollis scelerisque iaculis.
+          <app-tooltip>
+            Donec mattis libero enim, vitae varius turpis pharetra non. Aenean
+            hendrerit risus leo, malesuada facilisis risus convallis vitae.
+            Fusce ornare, ex eu blandit ultrices, diam augue efficitur nunc,
+            vitae feugiat lorem libero rhoncus arcu. Sed a euismod mauris,
+            fringilla molestie ligula. Sed vitae pharetra lorem, eget mattis
+            justo. Ut odio lacus, luctus quis dolor sed, facilisis interdum est.
+            Sed molestie auctor viverra.
+          </app-tooltip>
+          Vestibulum vitae mauris sit amet sem porttitor vulputate. Etiam a nunc
+          maximus, feugiat ipsum eu, volutpat nibh. Nam aliquet vehicula tortor
+          id fermentum. Proin tincidunt diam sed vehicula molestie. Phasellus
+          mattis odio ac urna porta mattis at vel magna. Mauris nec leo ante.
+        </p>
+        <app-details summary="Quisque in sodales metus">
+          <p>
+            Ut suscipit magna et vestibulum pretium. Sed felis turpis, dictum
+            vel maximus eget, faucibus tempus dui. Etiam volutpat volutpat quam.
+            Quisque vulputate nunc purus, interdum mattis ex porta a. Fusce
+            scelerisque pretium pellentesque. Phasellus pellentesque auctor
+            odio, vitae venenatis quam posuere elementum. Ut accumsan mauris vel
+            varius elementum. Vivamus ac pellentesque mauris, sollicitudin
+            mattis tellus. Phasellus ex sapien, ullamcorper ut efficitur in,
+            venenatis non est. Nulla purus quam, accumsan nec finibus aliquet,
+            malesuada eget tellus. Proin congue euismod lorem sed gravida. In
+            nec ante non arcu tempus suscipit. Nulla ornare velit augue, quis
+            vestibulum diam porttitor vel. Cras pulvinar elit et consequat
+            convallis.
+          </p>
+        </app-details>
+        <app-details summary="Fusce ac egestas lorem?">
+          <p>
+            Cras sed justo nunc. Aenean tristique libero sed lacus bibendum
+            venenatis. Aenean nec nunc vel augue rutrum venenatis porta eu
+            lectus. Cras feugiat mauris est. Vestibulum nec risus augue. Aliquam
+            erat volutpat. Duis in ante eu neque finibus rutrum. Vivamus odio
+            ex, aliquet a magna eu, rutrum sodales turpis. Phasellus sit amet
+            mattis lacus, sit amet blandit lacus. Nulla sodales quis massa et
+            commodo. Proin sed odio viverra felis fringilla feugiat a eget quam.
+            Proin eleifend, diam nec lacinia fringilla, justo sem sollicitudin
+            urna, in accumsan sapien lectus eu justo.
+          </p>
+        </app-details>
+        <p>
+          Suspendisse ultricies neque nulla, eget ullamcorper ligula ornare sit
+          amet. Pellentesque et velit in nunc posuere porttitor sit amet ut
+          elit. Morbi dignissim eu tortor sed tempus. Nullam ultrices leo
+          egestas vehicula aliquam. Phasellus rhoncus erat nisl, eget mollis
+          purus pulvinar sed. Vestibulum ante ipsum primis in faucibus orci
+          luctus et ultrices posuere cubilia curae; Ut vel tincidunt orci.
+        </p>
+        <p>
+          Nulla ac eros sed orci interdum rutrum. Integer facilisis, nisi
+          blandit rhoncus rhoncus, leo nisl molestie nibh, at fringilla magna
+          enim sit amet lectus. Nullam elementum sit amet ipsum eu malesuada.
+          Aliquam bibendum iaculis pulvinar. Praesent nunc magna, vestibulum vel
+          massa nec, faucibus aliquet tellus. Quisque vulputate vestibulum
+          tristique. Donec quis pretium turpis, id aliquet erat. Quisque
+          tincidunt nisi scelerisque mauris rutrum, ac tempor augue luctus.
+          Vivamus vulputate, lorem in euismod consequat, orci elit mattis mi, in
+          feugiat magna massa vel magna.
+        </p>
+        <component-list [listData]="data" [sticky]="false"></component-list>
+        <p>
+          Quisque dignissim, purus sed cursus ultricies, diam ex blandit quam,
+          quis viverra quam risus in urna. Proin pretium vitae libero a
+          efficitur. Cras eu libero imperdiet, mollis sem sit amet, ornare
+          ligula. Etiam fringilla ipsum in neque egestas lacinia. Cras rutrum,
+          massa nec ullamcorper blandit, eros est congue erat, id aliquet lorem
+          velit quis sem. Aliquam eget laoreet nunc. Pellentesque mattis ante
+          tincidunt rhoncus laoreet. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Mauris elementum volutpat justo, vitae euismod orci
+          euismod at. Donec eget neque arcu. Integer gravida viverra bibendum.
+          Mauris vehicula id risus sit amet pellentesque. Vivamus vitae rhoncus
+          magna, nec pharetra ligula. Donec sed pretium sapien. Interdum et
+          malesuada fames ac ante ipsum primis in faucibus. Nunc pharetra
+          dapibus nibh eget efficitur.
+        </p>
+        <p>
+          Praesent sit amet fermentum turpis. Pellentesque ullamcorper lacinia
+          lorem, in varius ipsum porttitor eget. Praesent vel convallis justo.
+          Fusce porta magna eu posuere blandit. Phasellus bibendum, velit eget
+          suscipit finibus, nisi neque facilisis justo, eget consectetur nisl
+          justo sit amet ipsum.
+          <app-tooltip>
+            Cras suscipit sagittis luctus. Integer rhoncus lectus massa. Aliquam
+            viverra faucibus ligula a sagittis. Phasellus aliquet sit amet ante
+            a posuere. Aenean eu velit vel ligula sagittis porta. Praesent
+            feugiat ligula mi, et rutrum mauris aliquam vel. Nulla non urna eget
+            magna viverra vulputate. Integer sem diam, auctor ut hendrerit ac,
+            consequat quis diam. Sed commodo sagittis nisi ut aliquet.
+          </app-tooltip>
+          Phasellus magna turpis, pharetra sit amet massa ac, porttitor
+          convallis neque. Integer est lacus, ornare et ultricies eu, lobortis
+          vitae tellus. Ut nec dapibus nunc. Aliquam faucibus lacinia sodales.
+          Morbi mauris ligula, eleifend nec metus ut, sollicitudin efficitur
+          metus. Curabitur ullamcorper accumsan mi at condimentum.
+          <app-tooltip>
+            Nunc eu vehicula nisl. Vivamus sed massa ut tellus feugiat elementum
+            sed ut sapien. Sed aliquet eleifend augue, sit amet tincidunt nunc
+            luctus a. Aenean malesuada erat id faucibus ultricies. Aliquam at
+            risus sit amet lacus dignissim dapibus et quis elit. Mauris
+            elementum sapien nisl. Duis odio eros, maximus eget ante at,
+            fermentum luctus orci. Fusce orci ligula, pulvinar ac aliquet sit
+            amet, posuere in sem.
+          </app-tooltip>
+          Maecenas commodo augue sit amet augue pharetra, eu interdum velit
+          tincidunt. Curabitur scelerisque tellus felis, non vestibulum leo
+          malesuada in. Vestibulum ut elit a diam rutrum commodo.
+        </p>
+        <app-details summary="Maecenas aliquet eu lorem et venenatis">
+          <p>
+            In placerat lacus eu nulla vehicula, vel ornare orci finibus.
+            Quisque elementum, nisl pulvinar blandit congue, ante magna tempus
+            enim, et semper enim neque ac tellus. Quisque molestie nisi at
+            aliquet condimentum. Aenean ac scelerisque nulla. Nunc sed enim ut
+            sem euismod facilisis. Quisque dignissim molestie quam, eu pulvinar
+            leo cursus in. Maecenas ac leo enim. Class aptent taciti sociosqu ad
+            litora torquent per conubia nostra, per inceptos himenaeos. Maecenas
+            suscipit enim vel scelerisque tempus. Aenean vitae odio diam.
+          </p>
+        </app-details>
+        <app-details summary="Nullam vitae massa odio">
+          <p>
+            Nullam at ex at diam venenatis pretium quis vel augue. Phasellus
+            volutpat laoreet lectus at tristique. Praesent sollicitudin eleifend
+            turpis sit amet dignissim. Vestibulum lectus est, blandit sit amet
+            sollicitudin a, tempor in tortor. Integer dolor nunc, sagittis et
+            leo vitae, blandit vulputate massa. Sed metus sem, eleifend vitae
+            vestibulum sed, euismod at ligula. Integer commodo odio vitae
+            lobortis vestibulum. Suspendisse tincidunt pharetra augue et porta.
+            Nam facilisis magna et enim placerat facilisis. Cras neque nulla,
+            dignissim at malesuada a, malesuada vel nibh. Morbi a pellentesque
+            neque.
+          </p>
+        </app-details>
+        <app-details summary="In hac habitasse platea dictumst">
+          <p>
+            Quisque lobortis odio tortor, at ultricies urna vehicula at.
+            Pellentesque vehicula ultricies dictum. Morbi vel leo vitae metus
+            sollicitudin malesuada. Mauris ut lorem posuere, aliquam nibh ac,
+            vulputate nulla. Praesent diam ex, consectetur eget leo nec, porta
+            tincidunt risus. In auctor pharetra risus, ac dignissim lorem
+            scelerisque ac. Phasellus sollicitudin congue congue. Ut sed nulla
+            iaculis, dictum urna eu, iaculis enim. Vestibulum efficitur, sem vel
+            auctor congue, elit massa condimentum metus, mollis sagittis tellus
+            magna laoreet elit.
+          </p>
+        </app-details>
+        <p>
+          Nullam sit amet urna tortor. Sed auctor orci eget porttitor tristique.
+          Maecenas scelerisque ornare efficitur. Mauris consequat metus ac dui
+          cursus vulputate. Praesent tincidunt porttitor augue non lacinia.
+          Nulla dui ligula, ornare quis dapibus eget, gravida ac leo.
+          Pellentesque diam dolor, mattis vel nibh sit amet, ultrices suscipit
+          lectus. Morbi convallis, neque quis molestie blandit, leo velit ornare
+          massa, et maximus nisl est eu metus. Duis et ante blandit nulla
+          fermentum accumsan et convallis eros. Maecenas sit amet vestibulum
+          elit.
+          <app-tooltip>
+            Curabitur pretium mauris urna, ut volutpat sapien fermentum varius.
+            In at volutpat quam. Suspendisse non sollicitudin nulla. Nunc vel
+            ullamcorper justo, et iaculis lorem. Curabitur a augue sed urna
+            pharetra mattis. Etiam quis commodo dolor. Nunc laoreet aliquet
+            quam, sit amet pulvinar augue varius rhoncus.
+          </app-tooltip>
+          Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+          per inceptos himenaeos.
+        </p>
+        <p>
+          Sed porttitor sagittis lacinia. Fusce vel dolor at nunc porta
+          malesuada non eget felis. Sed vehicula odio sed elit tempus, ut
+          pellentesque tortor consequat. Phasellus aliquam mattis eros quis
+          cursus. Etiam auctor condimentum bibendum.
+          <app-tooltip>
+            Duis tempor urna lorem, id aliquam felis volutpat et. Fusce
+            convallis porttitor nisl, sit amet posuere arcu. Nullam laoreet
+            tortor et vehicula pretium. Praesent varius leo non est laoreet
+            rhoncus. Donec porta dui in libero euismod fringilla.
+          </app-tooltip>
+          Phasellus quis sem malesuada, placerat nulla in, suscipit elit. Ut
+          tortor nunc, vestibulum non justo vel, malesuada rhoncus felis. Donec
+          eget urna sodales, mollis tortor ut, fermentum massa. Etiam pulvinar
+          tortor massa, vitae varius ipsum semper quis.
+        </p>
+        <p>
+          Curabitur hendrerit auctor eros, eu lacinia quam ornare eu. Mauris
+          vulputate hendrerit faucibus. Duis eros est, dictum rutrum tortor sit
+          amet, congue fringilla eros. Sed at enim vitae elit sagittis eleifend.
+          Nullam mattis, eros a hendrerit pretium, neque ex elementum leo, non
+          feugiat elit urna eget eros. Pellentesque faucibus ac nulla et
+          imperdiet. Ut interdum sit amet purus ut commodo. Vivamus sagittis
+          sollicitudin lorem, a vulputate metus consectetur id. Mauris dictum
+          magna sed pulvinar egestas.
+        </p>
+        <p>
+          Praesent suscipit libero sit amet suscipit condimentum. Cras
+          sollicitudin fringilla viverra. Suspendisse potenti. Donec a mi in
+          neque porta viverra. Donec ex leo, porta nec laoreet sit amet, posuere
+          at velit.
+          <app-tooltip>
+            Nunc tincidunt imperdiet orci, cursus dapibus felis facilisis vitae.
+            Etiam ornare euismod eros. Aliquam eu aliquam nibh. Curabitur at
+            tristique lacus. Vestibulum a laoreet odio, eu maximus dolor.
+            Maecenas sed diam blandit, elementum nisl vitae, sollicitudin risus.
+          </app-tooltip>
+          Pellentesque mattis magna at est rutrum, sit amet tincidunt erat
+          fermentum. Etiam pulvinar sollicitudin odio varius luctus. Donec quam
+          urna, dapibus et porta vel, dictum quis justo.
+        </p>
+        <p>
+          Morbi urna erat, dictum sit amet pharetra in, imperdiet vel elit.
+          Quisque mauris mauris, sodales quis sagittis vel, placerat nec orci.
+          Mauris at nisi sit amet sem laoreet blandit id et dui. Cras nec velit
+          eget diam elementum pharetra non vel felis. Quisque molestie vulputate
+          tellus at faucibus.
+          <app-tooltip>
+            Sed lobortis sem ac rhoncus venenatis. Nullam in sapien ut lectus
+            molestie molestie. Class aptent taciti sociosqu ad litora torquent
+            per conubia nostra, per inceptos himenaeos.
+          </app-tooltip>
+          Proin in suscipit justo. Curabitur aliquet, eros quis facilisis
+          suscipit, nisi ex placerat justo, a faucibus lacus nulla at felis.
+          Phasellus vestibulum urna lorem, mollis vestibulum enim consequat ac.
+          <app-tooltip>
+            Donec fringilla eros vitae eros pharetra porttitor. Cras
+            pellentesque ex vitae nisi aliquam ullamcorper. Donec nec eleifend
+            massa. Sed dapibus ornare lectus id ultricies. Sed egestas, neque
+            sit amet maximus lobortis, turpis mi euismod urna, sit amet suscipit
+            erat urna ut nibh. Sed vel enim sed erat rhoncus maximus non vitae
+            eros. Aliquam ex erat, tincidunt non velit cursus, fringilla luctus
+            nunc. Donec laoreet quam neque, at suscipit magna tincidunt vitae.
+          </app-tooltip>
+          Orci varius natoque penatibus et magnis dis parturient montes,
+          nascetur ridiculus mus. Phasellus vitae dolor in dolor varius
+          molestie. Sed sed pulvinar felis. Sed eu laoreet justo. Ut egestas
+          metus lectus, sit amet luctus lacus varius ac. Vivamus sit amet nibh
+          quis metus molestie gravida.
+        </p>
+        <p>
+          Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam nec
+          est elementum nisl consectetur bibendum. Nam eu est et lectus rutrum
+          semper. Duis vel elit magna. Sed congue interdum sem et laoreet.
+          Praesent consequat justo justo, at ornare turpis rutrum vel.
+          Vestibulum at magna congue, malesuada nibh vel, commodo elit.
+          <app-tooltip>
+            Proin rutrum feugiat fermentum. Nunc aliquam nulla ante, vel congue
+            nibh ornare quis. Vivamus eros velit, tempor id ultrices vel,
+            tincidunt eget nunc. Duis a diam ante. Quisque nunc dolor, suscipit
+            at tempor vel, interdum ac metus. Aenean commodo volutpat finibus.
+            Nunc mattis libero tellus, ac aliquam est ultrices sed. Integer
+            luctus dolor eu tellus tempor auctor. Donec id enim at ipsum mollis
+            elementum. Vestibulum vulputate ipsum sit amet arcu tristique
+            tristique. Proin consectetur dui quis molestie facilisis.
+          </app-tooltip>
+          Suspendisse purus tortor, blandit et iaculis sit amet, elementum quis
+          nunc. Nullam vitae ornare ipsum, eu lobortis dui. Nullam condimentum
+          massa quis aliquet vehicula.
+        </p>
+        <app-details summary="Ut ac diam dolor?">
+          <p>
+            Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+            per inceptos himenaeos. Nunc fringilla porttitor metus, ac vulputate
+            nulla bibendum in. Mauris ornare sapien diam, et ullamcorper nulla
+            porttitor sit amet. Vivamus sagittis pellentesque odio elementum
+            viverra. Cras hendrerit, purus ut cursus condimentum, risus libero
+            semper odio, sit amet bibendum mi erat non justo. Sed at urna
+            imperdiet, fringilla nunc id, euismod diam. Vivamus diam nisi,
+            condimentum a imperdiet et, volutpat a ligula. Praesent ac rhoncus
+            nulla. Etiam elementum, nisi mollis luctus pellentesque, urna diam
+            fermentum mi, eget bibendum lacus elit non augue. In commodo purus a
+            porttitor viverra. Pellentesque sit amet justo quis ante elementum
+            vehicula. Duis hendrerit efficitur blandit.
+          </p>
+        </app-details>
+        <p>
+          Integer eu enim sit amet nibh eleifend tristique. Nulla facilisi.
+          Phasellus tortor turpis, tincidunt vel vulputate vitae, molestie eu
+          ex. Nulla et ligula vitae augue efficitur imperdiet at quis sapien.
+          Vestibulum sed interdum dui. Cras a laoreet tellus. Vestibulum
+          pulvinar facilisis purus, non cursus massa fermentum ut.
+          <app-tooltip>
+            Curabitur rhoncus maximus ex, nec elementum urna sollicitudin nec.
+          </app-tooltip>
+          Ut imperdiet lectus eu nibh placerat, id tempus felis varius. Aliquam
+          porttitor odio at nisl pulvinar, eu iaculis ex semper. Sed quis
+          efficitur mauris, id feugiat nisl. Vivamus dignissim dictum auctor.
+        </p>
+        <p>
+          Sed lobortis ultrices malesuada. Maecenas congue egestas neque quis
+          tincidunt. Fusce tempor feugiat nisi vitae gravida. Sed blandit arcu
+          diam, nec interdum diam sodales quis. Cras ultrices nunc in arcu
+          venenatis convallis. Nullam lectus eros, maximus vel mauris dignissim,
+          sagittis gravida ligula. Quisque facilisis lorem leo, at mattis metus
+          vulputate quis.
+        </p>
+      </section>
+    </main>
   `,
-  styles: `
-    :host {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .read-the-docs > * {
-      color: #910a0aff;
-    }
-
-    @media (prefers-color-scheme: light) {
-      .read-the-docs > * {
-        color: #3f9006ff;
+  styles: [
+    `
+      header {
+        padding-top: var(--header-height);
+        padding-bottom: 5em;
       }
-    }
-  `,
+      h1 {
+        width: 100%;
+        text-align: center;
+        font-size: 5em;
+      }
+      h1 > a {
+        text-decoration: none;
+      }
+      #links {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 2em;
+        justify-content: center;
+        padding: 0;
+        list-style-type: none;
+        font-size: 1.3em;
+        flex-wrap: wrap;
+      }
+      #links > li {
+        display: flex;
+      }
+      /* Make the LinksComponent wrapper not interfere with flex layout */
+      #links > app-links {
+        display: contents;
+      }
+    `,
+  ],
 })
-export default class HomeComponent {}
+export default class HomePage {
+  data = listData;
+}
