@@ -24,7 +24,7 @@ export async function serveSites(
     reply.header("Cross-Origin-Resource-Policy", "same-origin");
     reply.header("Cross-Origin-Embedder-Policy", "require-corp");
     reply.header("Cross-Origin-Opener-Policy", "same-origin");
-    reply.header("X-Frame-Options", "DENY");
+    reply.header("Content-Security-Policy", "default-src 'none'; script-src 'self' 'unsafe-inline' data: ; style-src 'self' 'unsafe-inline' data: ; img-src 'self' data: ; frame-ancestors 'none'; object-src 'none'; base-uri 'none'; form-action 'none';")
     reply.header("X-Content-Type-Options", "nosniff");
     return payload;
   });
