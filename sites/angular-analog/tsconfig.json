@@ -17,10 +17,10 @@
     "moduleResolution": "bundler",
     "isolatedModules": true,
     "importHelpers": true,
-    "target": "ES2022",
+    "target": "esnext",
     "module": "esnext",
     "lib": [
-      "ES2022",
+      "esnext",
       "dom"
     ],
     "useDefineForClassFields": false,

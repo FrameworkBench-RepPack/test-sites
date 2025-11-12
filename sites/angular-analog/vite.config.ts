@@ -6,7 +6,7 @@ import analog from "@analogjs/platform";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   build: {
-    target: ["es2020"],
+    target: ["esnext"],
   },
   resolve: {
     mainFields: ["module"],
@@ -15,7 +15,15 @@ export default defineConfig(({ mode }) => ({
     analog({
       ssr: true,
       prerender: {
-        routes: [],
+        routes: [
+          "/",
+          "/faq",
+          "/list",
+          "/live",
+          "/static-1",
+          "/static-2",
+          "/tooltips",
+        ],
       },
     }),
   ],
