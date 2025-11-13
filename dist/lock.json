@@ -1,7 +1,11 @@
 {
+  "angular": {
+    "src": "U44tHQqKRMAG0BbSGpbdTmIFeeg=",
+    "dist": "gL1cqNEHbwKK0z83N/xMP5k4JPM="
+  },
   "angular-analog": {
-    "src": "hOTsis3bk4/Tj+lZGgW+4u0YJmE=",
-    "dist": "U3Tkq//C9Rk+KrZRfMtmWCFYISM="
+    "src": "z/SDSRaR5jkASVDziT9PuN9FGkw=",
+    "dist": "XQLEnHjnDczIEe75sKx8kKBg4kc="
   },
   "marko-marko-run": {
     "src": "X+RPKGvS7xNwggCyLbSRqPaZKqM=",
@@ -12,7 +16,7 @@
     "dist": "i3YoUzv8zLCIKi1hguTIxKAxSOs="
   },
   "solid-solid-start": {
-    "src": "SOgY+EXfJf2hSc+3xY3ldu4sOKM=",
+    "src": "11GRXscFKRi/1Uh99gFeP7MrGZw=",
     "dist": "nUpx+h93j3GnupiGKlbMezqHv6Q="
   },
   "svelte-astro": {
