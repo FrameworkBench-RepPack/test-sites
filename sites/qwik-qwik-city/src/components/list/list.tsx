@@ -124,7 +124,7 @@ export default component$<ItemProps>(({ listData, sticky }) => {
           <table class={[styles.table, sticky && styles["sticky-table"]]}>
             <thead>
               <tr>
-                <th> Name </th> <th> Age </th> <th> Category </th>
+                <th>Name</th><th>Age</th><th>Category</th>
               </tr>
             </thead>
             <tbody>

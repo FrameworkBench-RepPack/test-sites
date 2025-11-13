@@ -101,7 +101,7 @@
   <div class="data">
     <table>
       <thead>
-        <tr> <th> Name </th> <th> Age </th> <th> Category </th> </tr>
+        <tr> <th>Name</th><th>Age</th><th>Category</th> </tr>
       </thead>
       <tbody>
         {#each filteredList as item (item.name)}
