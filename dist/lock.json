@@ -1,22 +1,30 @@
 {
+  "angular-analog": {
+    "src": "hOTsis3bk4/Tj+lZGgW+4u0YJmE=",
+    "dist": "U3Tkq//C9Rk+KrZRfMtmWCFYISM="
+  },
   "marko-marko-run": {
     "src": "X+RPKGvS7xNwggCyLbSRqPaZKqM=",
     "dist": "BLIxhyuBIDKrZmNJeJB5jyTo+Ac="
   },
   "qwik-qwik-city": {
-    "src": "zZheQxpgj+HfYxvR4JLFVAFEvo0=",
-    "dist": "uvwepAIz3vkT2Pakd15IqGbRkZ0="
+    "src": "i8am355sYPCS+V3Afz5pm70w6vs=",
+    "dist": "i3YoUzv8zLCIKi1hguTIxKAxSOs="
+  },
+  "solid-solid-start": {
+    "src": "SOgY+EXfJf2hSc+3xY3ldu4sOKM=",
+    "dist": "nUpx+h93j3GnupiGKlbMezqHv6Q="
   },
   "svelte-astro": {
-    "src": "GiKlSR/rl4iNB0oCD2sM7RhlHlk=",
+    "src": "fR6hPoBtijOCnUjw3w4Ejd6jwvY=",
     "dist": "96hxLAwHUnnL5zQly6hRRPSi81c="
   },
   "svelte-sveltekit": {
-    "src": "mCpUEQvu+qkHPFEX/6iTC7brx+s=",
-    "dist": "t31Dn85cv03mlrO5Q14nDaGoe0Y="
+    "src": "wgCAJz6yksM0IVnnhAl5elS+Iew=",
+    "dist": "6pWorRjceplot4Vz1wd45xfXvL8="
   },
   "svelte-vite-svelte5-router": {
-    "src": "RfqvL0fIXhLMCdsDKO8bUQkdP/4=",
+    "src": "s9wXIj/cqK0N/Rv+kXDqDniBYds=",
     "dist": "gAJu5Y4FEqqiC4eeCfFrt81AFBc="
   },
   "vanilla": {
@@ -24,8 +32,8 @@
     "dist": "+EHFS9xtfmYwbvyOq9oFJRSDp+4="
   },
   "vanilla-astro": {
-    "src": "TakNVoXK4QSDkZ0FqGsviO2HIiM=",
-    "dist": "dRQsh2booPBq2f6lKBkkYGLT/ws="
+    "src": "lSN4BzTHUhuzQdTzTTnNd/Ge2FU=",
+    "dist": "uCfkAF4fki1F/zaMfOV4GHgr/x8="
   },
   "vanilla-vite": {
     "src": "FJWi5p9N97glHK56T/T6xyldiWk=",
