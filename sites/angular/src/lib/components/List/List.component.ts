@@ -1,26 +1,26 @@
-import { Component, signal, input, computed } from "@angular/core";
-import { FormsModule } from "@angular/forms";
-import { listCategories } from "../../assets/listCategory";
-import { ListItem } from "../../assets/list-item.model";
+import { Component, signal, input, computed } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { listCategories } from '../../assets/listCategory';
+import { ListItem } from '../../assets/list-item.model';
 
 @Component({
-  selector: "component-list",
+  selector: 'component-list',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: "./List.component.html",
-  styleUrl: "./List.component.css",
+  templateUrl: './List.component.html',
+  styleUrl: './List.component.css',
 })
 export class ListComponent {
   listData = input.required<ListItem[]>();
   sticky = input<boolean>(false);
 
   sortOptions = new Map<string, string>([
-    ["name", "Name"],
-    ["age", "Age"],
-    ["category", "Category"],
+    ['name', 'Name'],
+    ['age', 'Age'],
+    ['category', 'Category'],
   ]);
 
-  sortOption = signal("name");
+  sortOption = signal('name');
   ageFrom = signal(0);
   ageTo = signal(100);
   categories = signal<number[]>([...listCategories.keys()]);
@@ -32,18 +32,18 @@ export class ListComponent {
         (candidate) =>
           candidate.age >= this.ageFrom() &&
           candidate.age <= this.ageTo() &&
-          this.categories().includes(candidate.category)
+          this.categories().includes(candidate.category),
       )
       .sort((a, b) => {
         switch (this.sortOption()) {
-          case "name":
+          case 'name':
             return a.name.localeCompare(b.name);
-          case "age":
+          case 'age':
             return a.age - b.age;
-          case "category":
+          case 'category':
             return a.category - b.category;
           default:
-            throw TypeError("Unknown option");
+            throw TypeError('Unknown option');
         }
       });
   });

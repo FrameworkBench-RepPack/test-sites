@@ -1,7 +1,7 @@
-import { Component, signal, computed } from "@angular/core";
+import { Component, signal, computed } from '@angular/core';
 
 @Component({
-  selector: "app-tooltip",
+  selector: 'app-tooltip',
   standalone: true,
   template: `
     <button

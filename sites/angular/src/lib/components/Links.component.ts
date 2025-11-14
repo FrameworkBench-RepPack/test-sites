@@ -1,9 +1,9 @@
-import { Component } from "@angular/core";
-import { RouterLink } from "@angular/router";
-import { pages } from "../assets/pages";
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { pages } from '../assets/pages';
 
 @Component({
-  selector: "app-links",
+  selector: 'app-links',
   imports: [RouterLink],
   template: `
     @for (entry of pagesArray; track entry[0]) {

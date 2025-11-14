@@ -10,7 +10,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:angular": "node dist/angular/server/server.mjs",
-    "postprocess": "node --experimental-strip-types ./bin/postprocess.ts"
+    "postprocess": "node --experimental-strip-types ./bin/postprocess.ts",
+    "format": "prettier --write .",
+    "lint": "prettier --check ."
   },
   "prettier": {
     "printWidth": 100,
@@ -45,6 +47,7 @@
     "@angular/compiler-cli": "^20.3.11",
     "@types/express": "^5.0.5",
     "@types/node": "^24.10.1",
+    "prettier": "^3.6.2",
     "typescript": "^5.9.3"
   }
 }
