@@ -1,14 +1,16 @@
 {
   "name": "angular",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "dev": "ng serve",
-    "build": "ng build",
+    "build": "ng build && npm run postprocess",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:angular": "node dist/angular/server/server.mjs"
+    "serve:ssr:angular": "node dist/angular/server/server.mjs",
+    "postprocess": "node --experimental-strip-types ./bin/postprocess.ts"
   },
   "prettier": {
     "printWidth": 100,
