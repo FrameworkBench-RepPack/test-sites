@@ -2,7 +2,7 @@
   <div class="controls">
     <form>
       <label>
-        Sort by: 
+        Sort by:
         <select [(ngModel)]="sortOption" name="sortOption">
           @for (option of sortOptionsArray; track option[0]) {
             <option [value]="option[0]">{{ option[1] }}</option>
@@ -12,25 +12,25 @@
       <fieldset>
         <legend>Age</legend>
         <label>
-          From: 
-          <input 
-            type="number" 
-            [(ngModel)]="ageFrom" 
+          From:
+          <input
+            type="number"
+            [(ngModel)]="ageFrom"
             name="ageFrom"
-            min="0" 
-            max="100" 
-            step="1" 
+            min="0"
+            max="100"
+            step="1"
           />
         </label>
         <label>
-          To: 
-          <input 
-            type="number" 
-            [(ngModel)]="ageTo" 
+          To:
+          <input
+            type="number"
+            [(ngModel)]="ageTo"
             name="ageTo"
-            min="0" 
-            max="100" 
-            step="1" 
+            min="0"
+            max="100"
+            step="1"
           />
         </label>
       </fieldset>
@@ -38,10 +38,12 @@
         <legend>Categories</legend>
         @for (category of categoriesArray; track category[0]) {
           <label>
-            <input 
-              type="checkbox" 
+            <input
+              type="checkbox"
               [checked]="isCategoryChecked(category[0])"
-              (change)="toggleCategory(category[0], $any($event.target).checked)"
+              (change)="
+                toggleCategory(category[0], $any($event.target).checked)
+              "
             />
             {{ category[1] }}
           </label>
