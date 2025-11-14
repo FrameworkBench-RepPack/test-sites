@@ -1,9 +1,9 @@
-import { Component } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
-import { LinksComponent } from "../../lib/components/Links.component";
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { LinksComponent } from '../../lib/components/Links.component';
 
 @Component({
-  selector: "pages-layout",
+  selector: 'pages-layout',
   standalone: true,
   imports: [RouterOutlet, LinksComponent],
   template: `
