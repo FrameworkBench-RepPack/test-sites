@@ -19,9 +19,9 @@ import { LinksComponent } from "../../lib/components/Links.component";
         </ul>
       </nav>
     </header>
-    <div id="page-width">
+    <main id="page-width">
       <router-outlet />
-    </div>
+    </main>
   `,
   styles: [
     `
