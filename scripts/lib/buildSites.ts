@@ -46,6 +46,7 @@ export async function buildSites(options: BuildOptions) {
     const srcHash = (
       await hashElement(sitePath, {
         folders: { exclude: ["node_modules", "dist", ".*"] },
+        files: { exclude: ["nitro.json"] },
       })
     ).hash;
 
