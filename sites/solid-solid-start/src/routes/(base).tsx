@@ -1,4 +1,4 @@
-import { RouteSectionProps } from "@solidjs/router";
+import { A, RouteSectionProps } from "@solidjs/router";
 import Links from "~/components/Links";
 import styles from "./(base).module.css";
 
@@ -8,9 +8,9 @@ export default function BaseLayout(props: RouteSectionProps) {
       {props.children}
       <footer class={styles.footer}>
         <div id="footer-content" class={styles["footer-content"]}>
-          <a href="/" id="footer-logo" class={styles["footer-logo"]}>
+          <A href="/" id="footer-logo" class={styles["footer-logo"]}>
             Test site
-          </a>
+          </A>
           <ul>
             <Links />
           </ul>
