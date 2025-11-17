@@ -33,6 +33,10 @@ const routes: RouteRecordRaw[] = [
 export const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior() {
+    // always scroll to top when navigating to a new page
+    return { top: 0 }
+  },
 });
 
 createApp(App).use(router).mount("#app");
