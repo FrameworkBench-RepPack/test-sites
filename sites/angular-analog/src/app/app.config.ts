@@ -13,15 +13,20 @@ import {
   withEventReplay,
 } from "@angular/platform-browser";
 import { provideFileRouter, requestContextInterceptor } from "@analogjs/router";
+import { withInMemoryScrolling } from "@angular/router";
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideFileRouter(),
+    provideFileRouter(
+      withInMemoryScrolling({
+        scrollPositionRestoration: "top",
+      })
+    ),
     provideHttpClient(
       withFetch(),
-      withInterceptors([requestContextInterceptor]),
+      withInterceptors([requestContextInterceptor])
     ),
     provideClientHydration(withEventReplay()),
   ],

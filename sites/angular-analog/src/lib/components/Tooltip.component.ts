@@ -1,20 +1,21 @@
-import { Component, signal, computed } from "@angular/core";
+import { Component, signal, ElementRef, HostListener } from "@angular/core";
 
 @Component({
   selector: "app-tooltip",
   standalone: true,
+  imports: [],
   template: `
     <button
       class="tooltip"
-      [class.clicked]="clicked()"
-      (click)="clicked.set(!clicked())"
-      (mouseenter)="hovered.set(true)"
-      (mouseleave)="hovered.set(false)"
+      (click)="toggle()"
+      [attr.aria-expanded]="open()"
+      type="button"
     >
       ?
     </button>
+
     @if (open()) {
-      <div class="contents">
+      <div class="contents" role="tooltip">
         <ng-content></ng-content>
       </div>
     }
@@ -50,7 +51,19 @@ import { Component, signal, computed } from "@angular/core";
   ],
 })
 export class TooltipComponent {
-  clicked = signal(false);
-  hovered = signal(false);
-  open = computed(() => this.clicked() || this.hovered());
+  open = signal(false);
+
+  constructor(private el: ElementRef<HTMLElement>) {}
+
+  toggle() {
+    this.open.update((v) => !v);
+  }
+
+  @HostListener("document:click", ["$event"])
+  onDocClick(ev: MouseEvent) {
+    if (!this.open()) return;
+    if (!this.el.nativeElement.contains(ev.target as Node)) {
+      this.open.set(false);
+    }
+  }
 }
