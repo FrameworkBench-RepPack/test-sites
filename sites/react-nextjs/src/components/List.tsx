@@ -55,7 +55,7 @@ export default function List({ listData, sticky }: Props) {
 
   return (
     <div id={`list`} className={`${s.list} ${sticky ? s.sticky : ""}`}>
-      <div className={s.controls}>
+      <div className={`controls  ${s.controls}`}>
         <form>
           <label>
             Sort by:{" "}
