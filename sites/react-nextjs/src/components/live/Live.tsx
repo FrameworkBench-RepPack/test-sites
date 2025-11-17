@@ -9,11 +9,15 @@ export default function Live() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % liveData.length);
-    }, INTERVAL);
-
-    return () => clearInterval(interval);
+    let timeoutId: number | NodeJS.Timeout;
+    function stepData() {
+      setIndex((curr) => (curr + 1) % (liveData.length - 1));
+      timeoutId = setTimeout(stepData, INTERVAL);
+    }
+    stepData();
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
