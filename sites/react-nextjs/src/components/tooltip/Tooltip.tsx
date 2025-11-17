@@ -1,5 +1,12 @@
 "use client";
-import { ReactNode, RefObject, useEffect, useRef, useState } from "react";
+import {
+  ReactNode,
+  RefObject,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import s from "./Tooltip.module.css";
 
 interface Props {
@@ -8,7 +15,9 @@ interface Props {
 
 export default function Tooltip({ children }: Props) {
   const [open, setOpen] = useState(false);
-  const toggleOpen = () => setOpen((o) => !o);
+  const toggleOpen = useCallback(() => {
+    setOpen((o) => !o);
+  }, []);
 
   const tooltip: RefObject<HTMLButtonElement | null> = useRef(null);
   const contents: RefObject<HTMLSpanElement | null> = useRef(null);
@@ -45,12 +54,12 @@ export default function Tooltip({ children }: Props) {
         ref={tooltip}
       >
         ?
-      </button>{" "}
+      </button>
       {open && (
         <span className={`contents ${s.contents}`} ref={contents}>
           {children}
         </span>
-      )}
+      )}{" "}
     </>
   );
 }

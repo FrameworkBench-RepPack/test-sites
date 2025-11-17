@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode, useState } from "react";
+import { ReactNode, useCallback, useState } from "react";
 import s from "./Details.module.css";
 
 interface Props {
@@ -9,7 +9,9 @@ interface Props {
 
 export default function Details({ summary, children }: Props) {
   const [open, setOpen] = useState(false);
-  const toggleOpen = () => setOpen((o) => !o);
+  const toggleOpen = useCallback(() => {
+    setOpen((o) => !o);
+  }, []);
 
   return (
     <div className={`details ${s.details} ${open ? s.open : ""}`}>
