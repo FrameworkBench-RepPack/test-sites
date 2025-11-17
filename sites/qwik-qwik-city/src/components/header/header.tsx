@@ -6,24 +6,22 @@ import styles from "./header.module.css";
 
 export default component$(() => {
   return (
-    <>
-      <header class={[styles.header]}>
-        <nav>
-          <ul>
-            <li>
-              <Link href="/">
-                <img
-                  id="icon"
-                  class={[styles.icon]}
-                  src={favicon}
-                  alt="Front page"
-                />
-              </Link>
-            </li>
-            <Links />
-          </ul>
-        </nav>
-      </header>
-    </>
+    <header class={[styles.header]}>
+      <nav>
+        <ul>
+          <li>
+            <Link href="/">
+              <img
+                id="icon"
+                class={[styles.icon]}
+                src={favicon}
+                alt="Front page"
+              />
+            </Link>
+          </li>
+          <Links />
+        </ul>
+      </nav>
+    </header>
   );
 });

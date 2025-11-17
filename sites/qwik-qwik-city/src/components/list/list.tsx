@@ -58,96 +58,94 @@ export default component$<ItemProps>(({ listData, sticky }) => {
   });
 
   return (
-    <>
-      <div id="list" class={[styles.list]}>
-        <div class="controls">
-          <form class={[styles.form, sticky && styles["sticky-form"]]}>
+    <div id="list" class={[styles.list]}>
+      <div class="controls">
+        <form class={[styles.form, sticky && styles["sticky-form"]]}>
+          <label>
+            {"Sort by: "}
+            <select name="sort" bind:value={sortOption}>
+              {[
+                ...sortOptions.entries().map(([key, name]) => (
+                  <option key={key} value={key}>
+                    {name}
+                  </option>
+                )),
+              ]}
+            </select>
+          </label>
+          <fieldset>
+            <legend> Age </legend>
             <label>
-              {"Sort by: "}
-              <select name="sort" bind:value={sortOption}>
-                {[
-                  ...sortOptions.entries().map(([key, name]) => (
-                    <option key={key} value={key}>
-                      {name}
-                    </option>
-                  )),
-                ]}
-              </select>
+              {"From: "}
+              <input
+                type="number"
+                name="age-from"
+                bind:value={ageFrom}
+                min="0"
+                max="100"
+                step="1"
+              />
+            </label>{" "}
+            <label>
+              {"To: "}
+              <input
+                type="number"
+                name="age-to"
+                bind:value={ageTo}
+                min="0"
+                max="100"
+                step="1"
+              />
             </label>
-            <fieldset>
-              <legend> Age </legend>
-              <label>
-                {"From: "}
-                <input
-                  type="number"
-                  name="age-from"
-                  bind:value={ageFrom}
-                  min="0"
-                  max="100"
-                  step="1"
-                />
-              </label>{" "}
-              <label>
-                {"To: "}
-                <input
-                  type="number"
-                  name="age-to"
-                  bind:value={ageTo}
-                  min="0"
-                  max="100"
-                  step="1"
-                />
-              </label>
-            </fieldset>
-            <fieldset>
-              <legend> Categories </legend>
-              {[
-                ...listCategories.entries().map(([key, name]) => (
-                  <label key={key}>
-                    <input
-                      type="checkbox"
-                      name="category"
-                      value={key}
-                      checked={categories[key]}
-                      onInput$={(_: Event, element: HTMLInputElement) => {
-                        categories[key] = element.checked;
-                      }}
-                    />
-                    {" " + name}
-                  </label>
-                )),
-              ]}
-            </fieldset>
-          </form>
-        </div>
-        <div class="data">
-          <table class={[styles.table, sticky && styles["sticky-table"]]}>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Category</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                ...filteredList.value.map((item) => (
-                  <tr key={item.name}>
-                    <td>{item.name}</td>
-                    <td>{item.age}</td>
-                    <td>{listCategories.get(item.category)}</td>
-                  </tr>
-                )),
-              ]}
-            </tbody>
-          </table>
-          {filteredList.value.length === 0 && (
-            <p class={["no-data-message", styles["no-data-message"]]}>
-              No entries matched the filter settings.
-            </p>
-          )}
-        </div>
+          </fieldset>
+          <fieldset>
+            <legend> Categories </legend>
+            {[
+              ...listCategories.entries().map(([key, name]) => (
+                <label key={key}>
+                  <input
+                    type="checkbox"
+                    name="category"
+                    value={key}
+                    checked={categories[key]}
+                    onInput$={(_: Event, element: HTMLInputElement) => {
+                      categories[key] = element.checked;
+                    }}
+                  />
+                  {" " + name}
+                </label>
+              )),
+            ]}
+          </fieldset>
+        </form>
       </div>
-    </>
+      <div class="data">
+        <table class={[styles.table, sticky && styles["sticky-table"]]}>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ...filteredList.value.map((item) => (
+                <tr key={item.name}>
+                  <td>{item.name}</td>
+                  <td>{item.age}</td>
+                  <td>{listCategories.get(item.category)}</td>
+                </tr>
+              )),
+            ]}
+          </tbody>
+        </table>
+        {filteredList.value.length === 0 && (
+          <p class={["no-data-message", styles["no-data-message"]]}>
+            No entries matched the filter settings.
+          </p>
+        )}
+      </div>
+    </div>
   );
 });

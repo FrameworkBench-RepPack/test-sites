@@ -20,16 +20,14 @@ export default component$(() => {
   });
 
   return (
-    <>
-      <table id="live-data" class={[styles["live-data"]]}>
-        <tbody>
-          <tr>
-            <td>{liveData?.[index.value]?.[0]}</td>
-            <td>{liveData?.[index.value]?.[1]}</td>
-            <td>{liveData?.[index.value]?.[2]}</td>
-          </tr>
-        </tbody>
-      </table>
-    </>
+    <table id="live-data" class={[styles["live-data"]]}>
+      <tbody>
+        <tr>
+          <td>{liveData?.[index.value]?.[0]}</td>
+          <td>{liveData?.[index.value]?.[1]}</td>
+          <td>{liveData?.[index.value]?.[2]}</td>
+        </tr>
+      </tbody>
+    </table>
   );
 });
