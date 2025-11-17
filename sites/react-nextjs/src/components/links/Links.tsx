@@ -4,8 +4,8 @@ import { pages } from "@/assets/pages";
 export default function Links() {
   return (
     <>
-      {pages.map((page, index) => (
-        <li key={index}>
+      {pages.map((page) => (
+        <li key={page.path}>
           <Link href={page.path}>{page.name}</Link>
         </li>
       ))}

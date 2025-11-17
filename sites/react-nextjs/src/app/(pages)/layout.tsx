@@ -1,6 +1,5 @@
-import Link from "next/link";
+import Header from "@/components/header/Header";
 import s from "./layout.module.css";
-import Links from "@/components/Links";
 
 export default function RootLayout({
   children,
@@ -9,24 +8,7 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <header className={s.header}>
-        <nav>
-          <ul>
-            <li>
-              <Link href={"/"}>
-                <img
-                  id={`icon`}
-                  className={s.icon}
-                  src={"/icon.svg"}
-                  alt="Front page"
-                  loading="lazy"
-                />
-              </Link>
-            </li>
-            <Links />
-          </ul>
-        </nav>
-      </header>
+      <Header />
       <main className={`page-width ${s.main}`}>{children}</main>
     </>
   );

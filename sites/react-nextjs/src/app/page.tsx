@@ -1,9 +1,9 @@
 import Link from "next/link";
-import Live from "@/components/Live";
-import Tooltip from "@/components/Tooltip";
-import Details from "@/components/Details";
-import List from "@/components/List";
-import Links from "@/components/Links";
+import Live from "@/components/live/Live";
+import Tooltip from "@/components/tooltip/Tooltip";
+import Details from "@/components/details/Details";
+import List from "@/components/list/List";
+import Links from "@/components/links/Links";
 
 import listData from "@/assets/listDataPrimary.json";
 import style from "./page.module.css";
