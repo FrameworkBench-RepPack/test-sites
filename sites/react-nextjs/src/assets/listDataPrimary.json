@@ -1,0 +1,10 @@
+[
+	{ "name": "Donec Erat", "age": 55, "category": 1 },
+	{ "name": "Aliquam luctus", "age": 63, "category": 1 },
+	{ "name": "Iaculor Elementis", "age": 40, "category": 2 },
+	{ "name": "Luctanis Eleron", "age": 53, "category": 2 },
+	{ "name": "Pellentesque Pharetra", "age": 43, "category": 3 },
+	{ "name": "Placerad Dolorem", "age": 62, "category": 3 },
+	{ "name": "Natoque Magnis", "age": 36, "category": 4 },
+	{ "name": "Egestan Velora", "age": 58, "category": 4 }
+]
