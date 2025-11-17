@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { LinksComponent } from '../../lib/components/Links.component';
 
 @Component({
   selector: 'pages-layout',
   standalone: true,
-  imports: [RouterOutlet, LinksComponent],
+  imports: [RouterOutlet, LinksComponent, RouterLink],
   template: `
     <header>
       <nav>
         <ul>
           <li>
-            <a href="/">
+            <a [routerLink]="'/'">
               <img id="icon" src="/favicon.svg" alt="Front page" />
             </a>
           </li>
