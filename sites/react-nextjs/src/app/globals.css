@@ -22,7 +22,7 @@ header {
   background-color: var(--color-secondary);
 }
 
-:is(header, main)+* * {
+:is(header, main) + * * {
   scroll-margin-top: var(--header-height);
 }
 
