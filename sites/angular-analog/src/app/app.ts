@@ -1,15 +1,15 @@
 import { Component } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
+import { RouterOutlet, RouterLink } from "@angular/router";
 import { LinksComponent } from "../lib/components/Links.component";
 
 @Component({
   selector: "app-root",
-  imports: [RouterOutlet, LinksComponent],
+  imports: [RouterOutlet, LinksComponent, RouterLink],
   template: `
     <router-outlet />
     <footer>
       <div id="footer-content">
-        <a [href]="'/'" id="footer-logo">Test site</a>
+        <a [routerLink]="'/'" id="footer-logo">Test site</a>
         <ul class="footer-links">
           <app-links></app-links>
         </ul>
