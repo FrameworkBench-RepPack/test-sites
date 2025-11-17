@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-10-27",
   devtools: { enabled: true },
   modules: ["@nuxt/eslint"],
+  telemetry: { enabled: false },
 
   nitro: {
     static: true,
