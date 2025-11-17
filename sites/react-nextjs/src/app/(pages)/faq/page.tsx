@@ -1,4 +1,4 @@
-import Details from "@/components/Details";
+import Details from "@/components/details/Details";
 
 export default function Page() {
   return (

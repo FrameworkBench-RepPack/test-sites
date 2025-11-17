@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Links from "@/components/Links";
 import "./globals.css";
-import Footer from "@/components/Footer";
+import Footer from "@/components/footer/Footer";
 
 export const metadata: Metadata = {
   title: "Test site",

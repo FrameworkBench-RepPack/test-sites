@@ -1,4 +1,4 @@
-import Tooltip from "@/components/Tooltip";
+import Tooltip from "@/components/tooltip/Tooltip";
 
 export default function Page() {
   return (

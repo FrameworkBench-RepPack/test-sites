@@ -1,5 +1,5 @@
 import listData from "@/assets/listData.json";
-import List from "@/components/List";
+import List from "@/components/list/List";
 
 export default function Page() {
   return (
