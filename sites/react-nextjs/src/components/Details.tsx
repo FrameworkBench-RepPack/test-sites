@@ -12,11 +12,11 @@ export default function Details({ summary, children }: Props) {
   const toggleOpen = () => setOpen((o) => !o);
 
   return (
-    <div className={`${s.details} ${open ? s.open : ""}`}>
-      <button className={s.summary} onClick={toggleOpen}>
+    <div className={`details ${s.details} ${open ? s.open : ""}`}>
+      <button className={`summary ${s.summary}`} onClick={toggleOpen}>
         {summary}
       </button>
-      {open && <div className={s.contents}>{children}</div>}
+      {open && <div className={`contents ${s.contents}`}>{children}</div>}
     </div>
   );
 }

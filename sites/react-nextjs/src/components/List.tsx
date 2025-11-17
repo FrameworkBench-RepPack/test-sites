@@ -54,7 +54,7 @@ export default function List({ listData, sticky }: Props) {
   };
 
   return (
-    <div id={s.list} className={sticky ? s.sticky : ""}>
+    <div id={`list ${s.list}`} className={sticky ? s.sticky : ""}>
       <div className={s.controls}>
         <form>
           <label>
@@ -121,7 +121,7 @@ export default function List({ listData, sticky }: Props) {
           </fieldset>
         </form>
       </div>
-      <div className={s.data}>
+      <div className={`data ${s.data}`}>
         <table>
           <thead>
             <tr>
@@ -141,7 +141,7 @@ export default function List({ listData, sticky }: Props) {
           </tbody>
         </table>
         {filteredList.length === 0 && (
-          <p className={s.noDataMessage}>
+          <p className={`no-data-message ${s.noDataMessage}`}>
             No entries matched the filter settings.
           </p>
         )}

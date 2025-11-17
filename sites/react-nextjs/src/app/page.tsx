@@ -11,11 +11,11 @@ import style from "./page.module.css";
 export default function Home() {
   return (
     <main>
-      <header className={style.header}>
+      <header className={`header ${style.header}`}>
         <h1>
           <Link href={"/"}>Test site</Link>
         </h1>
-        <ul>
+        <ul id="links">
           <Links />
         </ul>
       </header>

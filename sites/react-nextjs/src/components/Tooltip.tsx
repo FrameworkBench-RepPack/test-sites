@@ -39,11 +39,15 @@ export default function Tooltip({ children }: Props) {
   return (
     <>
       {" "}
-      <button className={s.tooltip} onClick={toggleOpen} ref={tooltip}>
+      <button
+        className={`tooltip ${s.tooltip}`}
+        onClick={toggleOpen}
+        ref={tooltip}
+      >
         ?
       </button>{" "}
       {open && (
-        <span className={s.contents} ref={contents}>
+        <span className={`contents ${s.contents}`} ref={contents}>
           {children}
         </span>
       )}

@@ -17,7 +17,7 @@ export default function Live() {
   }, []);
 
   return (
-    <table className={s.liveData}>
+    <table id="live-data" className={s.liveData}>
       <tbody>
         <tr>
           <td>{liveData?.[index]?.[0]}</td>
