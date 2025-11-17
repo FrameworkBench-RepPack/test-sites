@@ -11,7 +11,7 @@ import { Component, signal, computed } from "@angular/core";
       (mouseenter)="hovered.set(true)"
       (mouseleave)="hovered.set(false)"
     >
-      <p>?</p>
+      ?
     </button>
     @if (open()) {
       <div class="contents">
@@ -24,31 +24,22 @@ import { Component, signal, computed } from "@angular/core";
       .tooltip {
         --size: 1.5em;
 
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
         padding: 0;
         border: 0.1em solid black;
         border-radius: 100%;
         width: var(--size);
         height: var(--size);
         background-color: var(--color-secondary);
-
-        &.clicked {
-          background-color: var(--color-tertiary);
-        }
-
-        & p {
-          margin: 0;
-          padding: 0;
-          font-size: 0.9em;
-        }
+        cursor: pointer;
       }
       .contents {
-        --width: 40rem;
-        position: absolute;
-        left: calc(50vw - calc(var(--width) / 2));
-        width: var(--width);
+        display: block;
+        position: fixed;
+        max-width: 40rem;
+        width: fit-content;
+        height: fit-content;
+        margin: auto;
+        inset: 0px;
         padding: 0.5em;
         border: 0.1em solid black;
         border-radius: 0.3em;

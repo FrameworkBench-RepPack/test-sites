@@ -1,10 +1,6 @@
 # Custom
-dist/*
-
-# There is an error where Marko cannot build itself in the benchmark runner,
-# so we include the source files in this repo to hack around that problem
-!dist/lock.json
-!dist/marko-marko-run/
+dist
+package-lock.json
 
 # Fix MacOS
 .DS_Store

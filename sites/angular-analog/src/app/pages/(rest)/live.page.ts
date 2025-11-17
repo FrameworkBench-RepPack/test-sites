@@ -2,10 +2,6 @@ import { Component } from "@angular/core";
 import { LiveComponent } from "../../../lib/components/Live.component";
 import { RouteMeta } from "@analogjs/router";
 
-export const routeMeta: RouteMeta = {
-  title: "Live Data",
-};
-
 @Component({
   selector: "live",
   standalone: true,

@@ -47,16 +47,6 @@ import { LinksComponent } from "../lib/components/Links.component";
           & blockquote {
             width: 19rem;
           }
-
-          & ul.footer-links {
-            list-style: disc;
-            list-style-position: inside;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-          }
         }
       }
     `,

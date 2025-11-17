@@ -1,2 +1,0 @@
-import{a as _,s as a,c as s,q as n,n as o,p as c,t as i,u as m}from"./_BB_PiaY5.js";const e="_summary_19w2v_8",r="_openSummary_19w2v_21",u="_contents_19w2v_26";const d=t=>{n(t[0],["contents",u]),f._(t)},l=m(1),f=i(3,0,t=>l(t,t._[7])),y=c("<div><!></div>"," D%l",d),v=o(3,y),k=_("c0",t=>a(t[1],"click",function(){w(t,!t[8])})),w=s(8,t=>{n(t[1],["summary",[e],t[8]?[r]:void 0]),v(t,t[8]?0:1),k(t)});
-//# sourceMappingURL=_BkM4MEc2.js.map

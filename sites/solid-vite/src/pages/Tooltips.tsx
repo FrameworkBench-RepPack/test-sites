@@ -1,0 +1,371 @@
+import Tooltip from "../components/Tooltip";
+
+export default function TooltipsPage() {
+  return (
+    <>
+      <h1>Tooltip page</h1>
+      <p>
+        Praesent suscipit in quam at commodo. Nulla ornare molestie enim, eget
+        sagittis nulla semper ac. Donec quis finibus odio, id fringilla purus.
+        Donec quis bibendum ex. Morbi quis rutrum risus. Quisque egestas nibh
+        pretium justo malesuada rhoncus.
+        <Tooltip>
+          Aliquam sollicitudin mauris sit amet cursus ultricies. Fusce laoreet
+          porta lacus sed feugiat. Sed vel risus nec enim ultricies tempor eu
+          quis tellus.
+        </Tooltip>
+        Vivamus venenatis auctor lorem et auctor. Nullam gravida vitae ligula
+        viverra semper. Sed pharetra neque at purus porta, eget porttitor lacus
+        mattis.
+      </p>
+      <p>
+        Orci varius natoque penatibus et magnis dis parturient montes, nascetur
+        ridiculus mus. Maecenas lacinia lacus eget consectetur venenatis.
+        Vestibulum laoreet libero non diam lobortis tincidunt. Nunc tempor metus
+        at gravida lobortis. Vivamus pharetra rutrum dui eget vulputate. Duis
+        ullamcorper ultricies tortor et laoreet.
+        <Tooltip>
+          Aenean sit amet massa eros. Nunc ut efficitur erat. In hac habitasse
+          platea dictumst.
+        </Tooltip>
+        Pellentesque efficitur sagittis pulvinar.
+        <Tooltip>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+          sollicitudin lacus vel turpis accumsan, eu tempus libero euismod.
+          Morbi gravida tortor diam, quis imperdiet quam pharetra vestibulum.
+          Nam non odio nisl. Vestibulum viverra purus nec risus vulputate,
+          pharetra scelerisque nisl iaculis. Duis vitae varius magna, vel
+          commodo libero. Integer ultricies scelerisque cursus. Mauris mattis,
+          felis nec finibus bibendum, erat urna luctus nibh, bibendum imperdiet
+          nulla nulla ut purus. Cras sed sapien augue. Vestibulum sagittis
+          sodales sagittis. Vestibulum ante ipsum primis in faucibus orci luctus
+          et ultrices posuere cubilia curae; Ut venenatis velit enim, eu porta
+          purus volutpat id. Nullam consequat ornare suscipit. Integer at nunc
+          congue, iaculis sem a, condimentum ipsum.
+        </Tooltip>
+        Aliquam erat volutpat. Praesent euismod tellus tortor, sit amet sagittis
+        enim luctus sit amet. Praesent ante purus, tempor sed lectus id,
+        facilisis interdum purus.
+      </p>
+      <p>
+        Morbi dignissim orci eget dui elementum vulputate. Pellentesque a
+        malesuada dolor, nec aliquet nisi. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Donec tincidunt sem eu magna vestibulum
+        gravida. Nulla in nulla quis odio consequat tincidunt hendrerit ac
+        massa. Donec sed tortor varius, tempor elit maximus, efficitur leo. In
+        hac habitasse platea dictumst. Aenean facilisis nibh quis velit euismod,
+        ac convallis nisi euismod. Vivamus aliquam turpis mauris, et consequat
+        dui consectetur non. Nam id interdum tortor, dignissim dignissim dolor.
+        Nulla facilisi.
+      </p>
+      <p>
+        Vivamus tincidunt augue eu ligula rhoncus ullamcorper. Cras placerat
+        nibh non ligula faucibus fringilla. Phasellus euismod, tellus sit amet
+        lacinia porta, urna nisi blandit ex, in pulvinar arcu lectus et lorem.
+        Mauris molestie pulvinar pharetra.
+        <Tooltip>
+          Suspendisse dictum orci nec ligula gravida lacinia. Phasellus porta
+          lorem at pulvinar ultricies. Curabitur sit amet fringilla tortor.
+          Phasellus ante massa, imperdiet in vehicula vitae, porttitor at ante.
+          Vestibulum vitae leo quis justo maximus condimentum sit amet vel nunc.
+          Cras ultricies lectus a mi molestie egestas.
+        </Tooltip>
+        Nam viverra dapibus euismod. Morbi malesuada dapibus lectus vel
+        porttitor. Duis consectetur est hendrerit viverra blandit. Aliquam
+        rhoncus arcu ipsum, quis hendrerit lacus tempus id. Vestibulum ante
+        ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+        Sed justo massa, pretium eu odio quis, mattis maximus diam.
+      </p>
+      <p>
+        Nunc at tempus enim. Phasellus porttitor erat sit amet ipsum hendrerit
+        tempor. Nam placerat lectus erat, eu condimentum lorem posuere sed.
+        Integer et metus turpis. Morbi hendrerit lacus a sollicitudin vehicula.
+        In pellentesque non turpis ut finibus. In hac habitasse platea dictumst.
+        Integer id eros libero. Quisque ultrices id tortor vel sagittis. Sed
+        sollicitudin ac justo non tempus. Quisque posuere, urna non posuere
+        feugiat, est mauris porta leo, eget rutrum sapien mi eget ipsum. Vivamus
+        nunc arcu, maximus eget fringilla quis, sollicitudin a mi. Praesent at
+        volutpat est.
+      </p>
+      <p>
+        Duis vel nunc tempor, posuere dolor id, euismod erat. Pellentesque eget
+        sagittis massa. Class aptent taciti sociosqu ad litora torquent per
+        conubia nostra, per inceptos himenaeos. Cras velit nibh, imperdiet sed
+        neque vel, dictum elementum quam.
+        <Tooltip>
+          Aliquam sed libero non lacus tincidunt tristique eu eget dui.
+          Phasellus egestas porta aliquam. Maecenas a nunc eget turpis tincidunt
+          ornare.
+        </Tooltip>
+        Morbi finibus diam vitae nibh sodales porta. Pellentesque vel cursus
+        metus, a semper arcu. Ut imperdiet dolor sed lectus lobortis varius
+        tempus faucibus erat. Nam metus diam, viverra ut ante id, congue
+        tincidunt odio. Cras a lectus nisl. Praesent sem orci, gravida a justo
+        quis, fermentum ultrices augue.
+        <Tooltip>
+          Ut ac mattis neque, imperdiet hendrerit dolor. Nullam dapibus nisl eu
+          magna tempor congue. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit. Morbi pharetra enim at leo finibus, non porta libero
+          iaculis. Phasellus nec arcu felis. In hac habitasse platea dictumst.
+          Curabitur ut lacinia augue. Pellentesque lobortis diam vitae porttitor
+          congue. Suspendisse et nibh nisi. Cras a euismod diam. Aenean
+          tristique ligula nec erat pellentesque, et vulputate velit vehicula.
+          Maecenas et ipsum felis. Aenean finibus tellus in diam consectetur,
+          sodales lacinia diam venenatis. Phasellus maximus felis vitae mollis
+          aliquet.
+        </Tooltip>
+        Curabitur vel tortor vel mi vulputate lobortis a quis neque. Suspendisse
+        nec mi ac ipsum sagittis lobortis.
+      </p>
+      <p>
+        Donec blandit facilisis nulla, ac iaculis nibh molestie sed. Vivamus
+        feugiat est tellus, a mollis est pretium vitae. Ut et nunc non odio
+        bibendum maximus ac eget orci.
+        <Tooltip>
+          Vestibulum tempor nec est ultrices eleifend. Curabitur accumsan, orci
+          vitae pharetra pharetra, libero dui facilisis lectus, ut ultricies
+          ligula massa ac nulla.
+        </Tooltip>
+        In at orci nisl. Duis mollis iaculis sapien, quis faucibus odio euismod
+        at. Maecenas ornare eros eu enim rutrum, ut egestas ipsum rutrum. Ut
+        venenatis eget magna eget pretium. Quisque non urna congue, pretium
+        dolor sit amet, fermentum est. Nullam consectetur cursus feugiat.
+        <Tooltip>
+          Cras nec faucibus sem, sit amet interdum tellus. Sed blandit dui eget
+          lacus ornare, eget laoreet enim egestas. Aliquam a consequat ante, id
+          eleifend magna. Donec venenatis risus feugiat, convallis odio quis,
+          commodo nulla. Quisque efficitur dapibus nisl, eget dapibus massa
+          tristique id. Curabitur vehicula, odio eget iaculis pellentesque,
+          risus odio vulputate neque, vel accumsan diam eros a diam.
+        </Tooltip>
+        Nulla condimentum dui in ullamcorper viverra. Curabitur nisl nisi,
+        pellentesque in lobortis ac, viverra a sem. Nunc imperdiet tempus nibh,
+        vitae varius eros tincidunt in. Fusce nec arcu egestas, auctor ipsum et,
+        hendrerit nulla. In eget consequat dui. Suspendisse dignissim posuere
+        mauris vehicula tincidunt.
+      </p>
+      <p>
+        Nam in faucibus purus. Suspendisse sit amet augue sollicitudin ante
+        sagittis convallis nec ac mauris. Proin vel ante ante. Nulla vitae
+        ornare ligula. Nullam enim sem, blandit ut magna sed, faucibus placerat
+        est. Morbi ornare quam nec nisl laoreet, et consectetur lectus accumsan.
+        Suspendisse id mauris ornare, tincidunt libero vel, pharetra diam. Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit.
+        <Tooltip>
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+          posuere cubilia curae; Vivamus dictum ante ut ex tincidunt dictum. Nam
+          egestas, tortor vitae vehicula tempus, purus ipsum imperdiet turpis,
+          gravida tincidunt purus lorem ac dui. Suspendisse non dolor iaculis,
+          malesuada enim ut, molestie ligula.
+        </Tooltip>
+        In hac habitasse platea dictumst. Fusce vulputate feugiat metus, quis
+        auctor odio tristique et. Sed gravida mauris sit amet ex volutpat
+        sollicitudin. Maecenas maximus tristique est nec euismod. Quisque id
+        dignissim odio, nec blandit sem. Etiam facilisis augue quis velit
+        euismod iaculis. Phasellus ac velit nec nibh luctus ultricies non non
+        mi. Fusce placerat at turpis quis tempus.
+      </p>
+      <p>
+        Phasellus varius cursus leo. Class aptent taciti sociosqu ad litora
+        torquent per conubia nostra, per inceptos himenaeos. Quisque hendrerit
+        vulputate lorem, eget fermentum nulla pulvinar vitae. Sed mauris ipsum,
+        pretium ut justo ac, egestas egestas sem. Phasellus vel feugiat mauris,
+        tempus suscipit urna. Etiam molestie rhoncus sollicitudin. Nullam
+        pulvinar, diam ut fermentum porta, ligula metus aliquet metus, eget
+        iaculis libero ipsum ac sapien. Vivamus malesuada ipsum a massa viverra
+        tincidunt. In mauris ligula, fringilla faucibus molestie rutrum,
+        pulvinar eget lectus.
+      </p>
+      <p>
+        Morbi aliquet quis mauris facilisis scelerisque. Aenean et metus mauris.
+        Sed quam justo, interdum vitae sapien nec, egestas pellentesque sem. In
+        molestie purus ut ligula mollis malesuada. Maecenas ex neque, vulputate
+        vitae placerat ac, porta sed nulla. Curabitur porttitor sed turpis ut
+        tincidunt. Vestibulum vitae massa ex. Fusce condimentum at lectus vitae
+        elementum. In hac habitasse platea dictumst. Aliquam congue nulla ac
+        suscipit feugiat.
+      </p>
+      <p>
+        Morbi accumsan erat eget quam elementum, at volutpat quam egestas.
+        Curabitur non malesuada ante, quis tincidunt sem. Nulla suscipit, nisl
+        id faucibus faucibus, massa risus ultricies felis, sed faucibus lorem
+        diam nec lectus. Donec non sodales mi, in consequat velit. Curabitur
+        vitae congue erat. Nunc vitae tellus iaculis, imperdiet nisi id,
+        molestie risus. Praesent eu dictum magna. Aliquam varius purus dui, a
+        gravida orci pellentesque at. Aenean in lectus a urna tempor efficitur.
+        Sed dignissim ex sit amet lorem finibus tristique. Aliquam semper porta
+        nibh et rutrum. Nullam accumsan diam a dui vulputate egestas.
+      </p>
+      <p>
+        Quisque euismod magna quis massa dignissim, eget finibus purus gravida.
+        Phasellus at eleifend libero. Aliquam erat volutpat.
+        <Tooltip>
+          Mauris in erat non mauris iaculis lacinia et vel elit. Nam mollis
+          vestibulum rhoncus. Interdum et malesuada fames ac ante ipsum primis
+          in faucibus. Quisque lectus sapien, finibus id ipsum vitae, fermentum
+          blandit augue. Curabitur auctor urna sed sapien accumsan finibus. Duis
+          finibus ligula scelerisque orci molestie finibus. Aenean tristique
+          augue nunc.
+        </Tooltip>
+        Pellentesque non sollicitudin ante, quis accumsan orci. Ut a tortor nec
+        arcu tempor mollis. Fusce rhoncus tincidunt tellus, a lacinia ex sodales
+        fringilla. Phasellus pharetra ultricies suscipit. Curabitur tortor quam,
+        fermentum egestas odio sit amet, dapibus ornare enim. Aliquam eu elit
+        justo. Duis porttitor nisl at mauris imperdiet, id ultricies felis
+        dapibus. Suspendisse eu pretium justo, a scelerisque quam.
+        <Tooltip>Phasellus vestibulum suscipit mattis.</Tooltip> Maecenas id
+        vestibulum nibh. Donec augue sapien, facilisis et sem non, condimentum
+        blandit mauris. Cras facilisis dignissim augue, sit amet porttitor elit
+        tempus eget. Nulla volutpat leo dapibus eros cursus, in faucibus quam
+        viverra.
+      </p>
+      <p>
+        Aliquam volutpat ipsum id purus consectetur porta. Curabitur sed elit
+        consequat magna maximus rhoncus sed sed purus. Nam ac arcu sed lacus
+        auctor feugiat et id diam. Ut id tincidunt lectus. Praesent non ligula
+        arcu. Morbi non arcu viverra, iaculis neque id, aliquam nibh.
+        <Tooltip>
+          Mauris ac nibh posuere, viverra tortor id, tincidunt diam. Nullam
+          tincidunt vulputate viverra. Curabitur a massa ut neque imperdiet
+          vestibulum eu eget elit. Mauris molestie eget ante eu vehicula.
+        </Tooltip>
+        Nam nec accumsan nunc, vitae accumsan turpis.
+      </p>
+      <p>
+        Sed pretium venenatis maximus.
+        <Tooltip>
+          Aliquam laoreet congue purus vel malesuada. Aliquam aliquam cursus
+          euismod. Praesent semper leo ut odio congue, vitae aliquet turpis
+          vulputate. Sed eu erat eu turpis egestas rhoncus. Proin ut pharetra
+          neque, in mollis lorem. Etiam feugiat ornare felis, sed bibendum mi
+          porta quis. Cras pulvinar efficitur iaculis.
+        </Tooltip>
+        Morbi purus quam, elementum at diam ac, scelerisque vestibulum massa. Ut
+        sed nulla sed ex accumsan rutrum ut et nunc. Mauris luctus tortor eu
+        rhoncus aliquam. Donec et mauris turpis. Ut fringilla malesuada sapien
+        in sagittis. Etiam porta interdum augue, condimentum placerat ipsum
+        semper vel.
+      </p>
+      <p>
+        Duis pretium libero nisl, quis congue mi euismod fringilla.
+        <Tooltip>
+          Etiam at erat ut nisl vehicula molestie. Aenean pharetra ante et ante
+          tincidunt tincidunt. Donec placerat magna in consectetur iaculis.
+          Phasellus sodales blandit massa a bibendum. Pellentesque vulputate
+          felis a erat aliquam, id suscipit tellus dignissim. Nam interdum
+          tincidunt fermentum. Nam mattis lacus ac vulputate tincidunt.
+        </Tooltip>
+        Quisque fermentum placerat ligula, sed ultrices odio dictum eget. Donec
+        vitae leo sit amet elit vestibulum malesuada. Quisque eu felis ut diam
+        blandit auctor. Curabitur fringilla risus sit amet nisl malesuada
+        tempus. Curabitur ac sapien volutpat, porta sem ac, tristique orci. Nunc
+        a fermentum magna. Donec sed est risus. Sed convallis ullamcorper
+        tincidunt.
+      </p>
+      <p>
+        Donec dolor tellus, finibus molestie mattis nec, mattis et nisl.
+        Phasellus tempor nisi vitae leo tempor tempor. Nulla pellentesque, eros
+        ut faucibus feugiat, odio orci laoreet lacus, vitae semper odio ex et
+        arcu. Aliquam congue dapibus fermentum. Morbi vel accumsan mauris. Nam
+        diam urna, aliquam quis vulputate quis, convallis id felis.
+        <Tooltip>
+          Duis maximus sem ac nibh scelerisque lobortis. Curabitur ullamcorper
+          ultrices nisi at scelerisque. In porttitor est quis risus mattis, non
+          pellentesque eros accumsan. Integer vitae posuere mauris. Integer vel
+          pulvinar ante. In hac habitasse platea dictumst. Phasellus viverra
+          libero tellus. Nullam placerat accumsan ante. Nam id urna eu augue
+          lacinia fringilla.
+        </Tooltip>
+        Pellentesque habitant morbi tristique senectus et netus et malesuada
+        fames ac turpis egestas. Integer vitae scelerisque orci. Donec aliquam
+        ex eget leo cursus molestie.
+      </p>
+      <p>
+        Curabitur hendrerit ante quis felis molestie, ut viverra quam bibendum.
+        Nulla tincidunt mi et sem dapibus auctor.
+        <Tooltip>
+          usce id tristique ex, a iaculis diam. Sed at commodo massa. Phasellus
+          consectetur, felis non imperdiet ultricies, erat eros dignissim
+          turpis, non mattis mi ex ac ipsum. Integer pretium nibh et blandit
+          scelerisque. Proin sit amet semper nisi. Donec tincidunt pretium enim,
+          non gravida lectus efficitur eget.
+        </Tooltip>
+        Sed consectetur enim a dictum placerat. Praesent ullamcorper sodales
+        porttitor. Suspendisse molestie vehicula auctor. Cras cursus velit ac
+        augue vulputate, et volutpat ante gravida. Maecenas pharetra libero
+        vitae mi lobortis, commodo mollis nisl sodales. Fusce sit amet sem et
+        nibh mollis placerat.
+        <Tooltip>
+          Vivamus interdum pharetra quam finibus placerat. Maecenas rhoncus elit
+          sit amet sem porta iaculis. In non augue ligula. Vivamus iaculis
+          pharetra mauris, vel imperdiet ex rhoncus eget.
+        </Tooltip>
+        Nam lacinia lorem vel porttitor aliquam. Mauris elementum metus in
+        finibus malesuada. Suspendisse id ipsum ipsum. Donec ex orci,
+        sollicitudin sit amet suscipit sit amet, consequat a dui. Praesent
+        auctor purus justo, vel lobortis nibh fermentum quis.
+        <Tooltip>
+          Curabitur eleifend turpis non velit porta placerat. Fusce sollicitudin
+          arcu id elit vulputate dictum. Phasellus vel nunc at libero rutrum
+          rutrum in vitae velit. Etiam vulputate sit amet purus eget venenatis.
+          Donec volutpat neque sed arcu ultricies malesuada. Quisque ultrices
+          felis nec ipsum mattis fermentum. Donec ac pretium neque. Donec turpis
+          neque, semper non neque at, iaculis ullamcorper dui. Curabitur
+          accumsan aliquam lorem, at sollicitudin urna dignissim eu.
+        </Tooltip>
+        Donec mollis purus viverra sem hendrerit elementum. Curabitur fringilla
+        eu lacus at commodo.
+      </p>
+      <p>
+        Nulla porta leo dictum sem tempor, sed euismod odio volutpat. Vestibulum
+        eu auctor quam. Cras eleifend volutpat imperdiet. Donec id rhoncus est.
+        Ut feugiat orci eu ipsum tincidunt, sit amet mattis tortor facilisis.
+        Pellentesque porta turpis at molestie bibendum. Nam fringilla erat nec
+        urna blandit pharetra. Nunc vehicula, ante eget venenatis porttitor,
+        metus purus sollicitudin ex, sit amet sodales justo purus ac dui. Morbi
+        blandit fermentum iaculis. Aliquam erat volutpat. Duis volutpat eleifend
+        ante. Pellentesque dolor nibh, pellentesque in nisl ut, vulputate
+        venenatis lorem. Praesent eget sollicitudin lectus, at finibus orci.
+        Integer blandit quam a elit iaculis, nec pellentesque quam hendrerit. Ut
+        scelerisque orci urna, id commodo magna consectetur nec.
+      </p>
+      <p>
+        Mauris a ligula eu orci rhoncus hendrerit. Aenean sed lorem luctus,
+        aliquet arcu vitae, tempor dui. Pellentesque pellentesque tellus eget
+        tellus tincidunt facilisis. Aenean tellus nulla, tempus eget tortor ut,
+        pulvinar mattis massa. Proin augue ex, auctor ut mattis in, laoreet id
+        ipsum. Maecenas eros lectus, posuere non quam in, pellentesque pharetra
+        erat.
+        <Tooltip>
+          Mauris ac semper lectus. Suspendisse gravida bibendum est, id congue
+          nulla gravida sed. Praesent venenatis consectetur nisl ut ullamcorper.
+          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+          posuere cubilia curae; Curabitur urna enim, vulputate nec laoreet ac,
+          egestas eget risus.
+        </Tooltip>
+        In lacinia pulvinar nulla, quis convallis augue vulputate nec. Donec
+        quis erat ipsum. Nulla at placerat nibh, eget fermentum nibh. Donec non
+        sem justo. Integer lorem libero, ultrices id lectus quis, ultrices
+        facilisis sapien. Etiam augue mauris, vehicula sed sodales eu, elementum
+        at eros.
+      </p>
+      <p>
+        Aliquam rutrum pellentesque hendrerit. Nulla maximus lacus a tellus
+        fermentum tempus. Aenean est mauris, tincidunt vel sodales et, faucibus
+        eu turpis. Proin nec tortor lectus. Proin et vehicula nulla, at
+        convallis ante. Ut id orci non ligula pharetra vulputate a sit amet
+        augue. Curabitur consectetur dolor a diam ultrices semper. Pellentesque
+        habitant morbi tristique senectus et netus et malesuada fames ac turpis
+        egestas. Fusce consectetur posuere ipsum, quis consectetur neque
+        convallis in.
+        <Tooltip>
+          Aliquam consequat justo arcu, a auctor urna finibus ut. Curabitur
+          tristique ipsum sem, eget vulputate diam vehicula id. Ut leo sem,
+          bibendum blandit tortor non, gravida faucibus odio.
+        </Tooltip>
+        Vestibulum mattis, purus sit amet aliquam luctus, magna velit cursus
+        dui, at pellentesque mauris tellus non eros. Quisque id cursus justo.
+      </p>
+    </>
+  );
+}

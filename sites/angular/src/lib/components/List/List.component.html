@@ -1,9 +1,9 @@
-<div class="list" [class.sticky]="sticky()">
+<div id="list" [class.sticky]="sticky()">
   <div class="controls">
     <form>
       <label>
-        Sort by: 
-        <select [(ngModel)]="sortOption" name="sortOption">
+        Sort by:
+        <select [(ngModel)]="sortOption" name="sort">
           @for (option of sortOptionsArray; track option[0]) {
             <option [value]="option[0]">{{ option[1] }}</option>
           }
@@ -12,34 +12,21 @@
       <fieldset>
         <legend>Age</legend>
         <label>
-          From: 
-          <input 
-            type="number" 
-            [(ngModel)]="ageFrom" 
-            name="ageFrom"
-            min="0" 
-            max="100" 
-            step="1" 
-          />
+          From:
+          <input type="number" [(ngModel)]="ageFrom" name="age-from" min="0" max="100" step="1" />
         </label>
         <label>
-          To: 
-          <input 
-            type="number" 
-            [(ngModel)]="ageTo" 
-            name="ageTo"
-            min="0" 
-            max="100" 
-            step="1" 
-          />
+          To:
+          <input type="number" [(ngModel)]="ageTo" name="age-to" min="0" max="100" step="1" />
         </label>
       </fieldset>
-      <fieldset class="categories">
+      <fieldset>
         <legend>Categories</legend>
         @for (category of categoriesArray; track category[0]) {
           <label>
-            <input 
-              type="checkbox" 
+            <input
+              type="checkbox"
+              name="category"
               [checked]="isCategoryChecked(category[0])"
               (change)="toggleCategory(category[0], $any($event.target).checked)"
             />

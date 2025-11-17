@@ -1,47 +1,47 @@
-.list {
+#list {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1em;
 }
 
-.list .controls form {
+#list .controls form {
   border: 0.1em solid black;
   border-radius: 0.7em;
   padding: 1em;
   accent-color: var(--color-tertiary);
 }
 
-.list .controls form .categories label {
+#list .controls form label:has(> input[name='category']) {
   display: block;
 }
 
-.list .data table {
+#list .data table {
   width: 100%;
   text-align: center;
   border-collapse: collapse;
 }
 
-.list .data table th {
+#list .data table th {
   font-weight: bolder;
   background-color: var(--color-secondary);
 }
 
-.list .data table td,
-.list .data table th {
+#list .data table td,
+#list .data table th {
   border: 0.08em solid black;
   height: 3.5em;
 }
 
-.list .data .no-data-message {
+#list .data .no-data-message {
   text-align: center;
 }
 
-.list.sticky .controls form {
+#list.sticky .controls form {
   position: sticky;
   top: calc(var(--header-height) + var(--page-padding));
 }
 
-.list.sticky .data thead th {
+#list.sticky .data thead th {
   top: var(--header-height);
   position: sticky;
 }

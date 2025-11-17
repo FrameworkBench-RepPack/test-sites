@@ -32,7 +32,7 @@ export class ListComponent {
         (candidate) =>
           candidate.age >= this.ageFrom() &&
           candidate.age <= this.ageTo() &&
-          this.categories().includes(candidate.category)
+          this.categories().includes(candidate.category),
       )
       .sort((a, b) => {
         switch (this.sortOption()) {

@@ -1,4 +1,5 @@
 import listData from "~/assets/listDataPrimary.json" with { type: "json" };
+import { A } from "@solidjs/router";
 import Links from "~/components/Links";
 import Tooltip from "~/components/Tooltip";
 import Live from "~/components/Live";
@@ -11,7 +12,7 @@ export default function HomePage() {
     <main>
       <header class={styles.header}>
         <h1 class={styles.h1}>
-          <a href="/">Test site</a>
+          <A href="/">Test site</A>
         </h1>
         <ul id="links" class={styles.links}>
           <Links />

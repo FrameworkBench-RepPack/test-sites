@@ -19,9 +19,9 @@ import { LinksComponent } from "../../lib/components/Links.component";
         </ul>
       </nav>
     </header>
-    <div id="page-width">
+    <main id="page-width">
       <router-outlet />
-    </div>
+    </main>
   `,
   styles: [
     `
@@ -62,6 +62,10 @@ import { LinksComponent } from "../../lib/components/Links.component";
       }
       #page-width {
         margin-top: var(--header-height);
+        max-width: var(--page-width);
+        margin-left: auto;
+        margin-right: auto;
+        padding: var(--page-padding);
       }
     `,
   ],

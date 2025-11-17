@@ -1,10 +1,10 @@
-import { Component, OnInit, OnDestroy, inject } from "@angular/core";
-import { isPlatformBrowser } from "@angular/common";
-import { PLATFORM_ID } from "@angular/core";
-import liveData from "../assets/liveData.json" with { type: "json" };
+import { Component, OnInit, OnDestroy, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
+import liveData from '../assets/liveData.json' with { type: 'json' };
 
 @Component({
-  selector: "app-live",
+  selector: 'app-live',
   standalone: true,
   template: `
     <table id="live-data">

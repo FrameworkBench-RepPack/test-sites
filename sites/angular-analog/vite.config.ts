@@ -15,12 +15,12 @@ export default defineConfig(({ mode }) => ({
       prerender: {
         routes: [
           "/",
-          "/faq",
-          "/list",
-          "/live",
-          "/static-1",
-          "/static-2",
-          "/tooltips",
+          "/faq/",
+          "/list/",
+          "/live/",
+          "/static-1/",
+          "/static-2/",
+          "/tooltips/",
         ],
       },
     }),

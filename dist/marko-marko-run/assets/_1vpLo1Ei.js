@@ -1,2 +1,0 @@
-import{a as o,s as c,v as i,c as l,n as e,w as r,$ as f,p as u,q as g,t as d,u as m}from"./_BB_PiaY5.js";const k="_contents_c1aqu_13";const _=r("j0","d1"),h=t=>{g(t[0],["contents",k]),q._(t)},p=m(1),q=d(1,0,t=>p(t,t._[4])),y=u("<span><!></span>"," D%l",h),v=e(1,y),b=o("g0",t=>c(t[0],"click",function(){a(t,!t[5])})),a=l(5,t=>{v(t,t[5]?0:1),b(t)});o("g1",t=>i(t,6,{onMount:function(){console.log("run"),document.addEventListener("click",s=>{const n=s.target;_(t)?.()&&n!==t[0]&&n!==_(t)()&&!_(t)().contains(n)&&a(t,!1)},{signal:f(t,0)})}}));
-//# sourceMappingURL=_1vpLo1Ei.js.map

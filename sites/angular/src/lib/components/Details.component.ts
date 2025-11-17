@@ -1,7 +1,7 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: "app-details",
+  selector: 'app-details',
   standalone: true,
   imports: [],
   template: `
@@ -23,7 +23,7 @@ import { Component, Input } from "@angular/core";
         box-shadow: var(--drop-shadow-large);
 
         &.open .summary::before {
-          content: "▼";
+          content: '▼';
         }
       }
       .summary {
@@ -35,7 +35,7 @@ import { Component, Input } from "@angular/core";
         cursor: pointer;
 
         &::before {
-          content: "▶";
+          content: '▶';
           margin-right: 0.8em;
         }
       }
@@ -46,7 +46,7 @@ import { Component, Input } from "@angular/core";
   ],
 })
 export class DetailsComponent {
-  @Input() summary: string = "";
+  @Input() summary: string = '';
   open: boolean = false;
 
   toggle(): void {
