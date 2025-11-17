@@ -15,7 +15,8 @@ export default function RootLayout({
             <li>
               <Link href={"/"}>
                 <img
-                  id={`icon ${s.icon}`}
+                  id={`icon`}
+                  className={s.icon}
                   src={"/icon.svg"}
                   alt="Front page"
                   loading="lazy"

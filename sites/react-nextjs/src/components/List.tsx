@@ -54,7 +54,7 @@ export default function List({ listData, sticky }: Props) {
   };
 
   return (
-    <div id={`list ${s.list}`} className={sticky ? s.sticky : ""}>
+    <div id={`list`} className={`${s.list} ${sticky ? s.sticky : ""}`}>
       <div className={s.controls}>
         <form>
           <label>
@@ -65,7 +65,6 @@ export default function List({ listData, sticky }: Props) {
               onChange={(e) => setSortOption(e.target.value)}
             >
               {Array.from(sortOptions).map(([key, name]) => {
-                console.log(key);
                 return (
                   <option key={key} value={key}>
                     {name}

@@ -27,7 +27,7 @@
     }
 }
 
-#icon {
+.icon {
     height: var(--header-height);
     aspect-ratio: 1;
     padding: 1em;
