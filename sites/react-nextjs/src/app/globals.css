@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 :root {
   --header-height: 5rem;
   --page-width: 60rem;
@@ -12,20 +13,25 @@
   --drop-shadow-small: 0.15rem 0.15rem 1rem rgba(0, 0, 0, 0.1);
   --drop-shadow-large: 0 0 1rem rgba(0, 0, 0, 0.15);
 }
+
 body {
   margin: 0;
 }
+
 header {
   background-color: var(--color-secondary);
 }
-:is(header, main + * *) {
+
+:is(header, main)+* * {
   scroll-margin-top: var(--header-height);
 }
+
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
   padding: var(--page-padding);
 }
+
 a {
   display: inline-block;
   color: CanvasText;
@@ -43,6 +49,7 @@ a {
       0.07em 0.03em 0 CanvasText;
   }
 }
+
 footer {
   width: 100%;
   padding: 0 var(--page-padding);
