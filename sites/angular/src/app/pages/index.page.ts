@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { LinksComponent } from '../../lib/components/Links.component';
 import { TooltipComponent } from '../../lib/components/Tooltip.component';
 import { LiveComponent } from '../../lib/components/Live.component';
@@ -9,11 +10,18 @@ import listData from '../../lib/assets/listDataPrimary.json' with { type: 'json'
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [LinksComponent, TooltipComponent, LiveComponent, DetailsComponent, ListComponent],
+  imports: [
+    LinksComponent,
+    TooltipComponent,
+    LiveComponent,
+    DetailsComponent,
+    ListComponent,
+    RouterLink,
+  ],
   template: `
     <main>
       <header>
-        <h1><a [href]="'/'">Test site</a></h1>
+        <h1><a [routerLink]="'/'">Test site</a></h1>
         <ul id="links">
           <app-links></app-links>
         </ul>
