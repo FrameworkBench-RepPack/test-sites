@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   output: "export",
   distDir: "dist",
+  trailingSlash: true,
 };
 
 export default nextConfig;
