@@ -19,7 +19,9 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
+    "babel-plugin-react-compiler": "^1.0.0",
     "prettier": "^3.6.2",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "react-compiler-runtime": "^1.0.0"
   }
 }
