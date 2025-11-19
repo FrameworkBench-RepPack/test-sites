@@ -5,17 +5,10 @@ import { Component, signal, ElementRef, HostListener } from "@angular/core";
   standalone: true,
   imports: [],
   template: `
-    <button
-      class="tooltip"
-      (click)="toggle()"
-      [attr.aria-expanded]="open()"
-      type="button"
-    >
-      ?
-    </button>
+    <button class="tooltip" (click)="toggle()">?</button>
 
     @if (open()) {
-      <div class="contents" role="tooltip">
+      <div class="contents">
         <ng-content></ng-content>
       </div>
     }

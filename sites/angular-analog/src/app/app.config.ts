@@ -22,11 +22,11 @@ export const appConfig: ApplicationConfig = {
     provideFileRouter(
       withInMemoryScrolling({
         scrollPositionRestoration: "top",
-      })
+      }),
     ),
     provideHttpClient(
       withFetch(),
-      withInterceptors([requestContextInterceptor])
+      withInterceptors([requestContextInterceptor]),
     ),
     provideClientHydration(withEventReplay()),
   ],
