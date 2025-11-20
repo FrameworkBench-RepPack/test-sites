@@ -28,11 +28,11 @@ export default function Tooltip({ children }: Props) {
     }
 
     // Attach the event listener to the document
-    document.addEventListener("click", handleLightDismiss);
+    globalThis.document?.addEventListener("click", handleLightDismiss);
 
     // Cleanup on unmount
     return () => {
-      document.removeEventListener("click", handleLightDismiss);
+      globalThis.document?.removeEventListener("click", handleLightDismiss);
     };
   });
 
