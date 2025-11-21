@@ -34,7 +34,7 @@ import liveData from '../assets/liveData.json' with { type: 'json' };
   ],
 })
 export class LiveComponent implements OnInit, OnDestroy {
-  private readonly INTERVAL = 1000;
+  private readonly INTERVAL = 800;
   protected index = 0;
   protected readonly liveData = liveData;
   private timeoutId?: ReturnType<typeof setTimeout>;

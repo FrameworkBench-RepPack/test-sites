@@ -2,7 +2,7 @@ import liveData from "~/assets/liveData.json" with { type: "json" };
 import { createSignal, onCleanup, onMount } from "solid-js";
 import styles from "./Live.module.css";
 
-const INTERVAL = 1000;
+const INTERVAL = 800;
 
 export default function Live() {
   const [index, setIndex] = createSignal(0);

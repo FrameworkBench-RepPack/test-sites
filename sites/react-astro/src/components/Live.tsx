@@ -4,7 +4,7 @@ import liveData from "../assets/liveData.json" with { type: "json" };
 import s from "./Live.module.css";
 
 export default function Live() {
-  const INTERVAL = 1000 as const;
+  const INTERVAL = 800 as const;
 
   const [index, setIndex] = useState(0);
 

@@ -2,7 +2,7 @@
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import liveData from "../assets/liveData.json" with { type: "json" };
 
-const INTERVAL = 1000;
+const INTERVAL = 800;
 
 const index = ref(0);
 let timeoutId: number;

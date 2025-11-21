@@ -2,7 +2,7 @@
 import liveData from "../assets/liveData.json" with { type: "json" };
 import { ref, onMounted, onBeforeUnmount } from "vue";
 
-const INTERVAL = 1000;
+const INTERVAL = 800;
 
 const index = ref(0);
 let timeoutId: number | NodeJS.Timeout;

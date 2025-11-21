@@ -4,7 +4,7 @@ import s from "./Live.module.css";
 import { useEffect } from "preact/hooks";
 
 export default function Live() {
-  const INTERVAL = 1000 as const;
+  const INTERVAL = 800 as const;
 
   const index = useSignal(0);
 

@@ -2,7 +2,7 @@ import { component$, useSignal, useVisibleTask$ } from "@builder.io/qwik";
 import liveData from "~/assets/liveData.json" with { import: "json" };
 import styles from "./live.module.css";
 
-const INTERVAL = 1000;
+const INTERVAL = 800;
 
 export default component$(() => {
   const index = useSignal(0);

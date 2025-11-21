@@ -1,6 +1,6 @@
 import liveData from "../assets/liveData.json" with { type: "json" };
 
-const INTERVAL = 1000;
+const INTERVAL = 800;
 
 const dataElements = document.querySelectorAll(
   "#live-data td",

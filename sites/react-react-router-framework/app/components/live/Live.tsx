@@ -3,7 +3,7 @@ import s from "./Live.module.css";
 import { useEffect, useState } from "react";
 
 export default function Live() {
-  const INTERVAL = 1000 as const;
+  const INTERVAL = 800 as const;
 
   const [index, setIndex] = useState(0);
 

@@ -2,7 +2,7 @@
   import liveData from "../assets/liveData.json" with { type: "json" };
   import { onDestroy, onMount } from "svelte";
 
-  const INTERVAL = 1000;
+  const INTERVAL = 800;
 
   let index = $state(0);
   let timeoutId: number | NodeJS.Timeout;
