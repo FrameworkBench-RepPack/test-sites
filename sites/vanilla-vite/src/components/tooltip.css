@@ -9,7 +9,7 @@
   background-color: var(--color-secondary);
   cursor: pointer;
 }
-.tooltip-contents {
+.tooltip + .contents {
   max-width: 40rem;
   padding: 0.5em;
   border: 0.1em solid black;
