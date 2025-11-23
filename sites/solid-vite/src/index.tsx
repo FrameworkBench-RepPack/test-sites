@@ -15,9 +15,9 @@ import "./index.css";
 render(
   () => (
     <Router>
-      <Route path="/" component={BaseLayout} >
+      <Route path="/" component={BaseLayout}>
         <Route path="/" component={HomePage} />
-        <Route path="/" component={PagesLayout} >
+        <Route path="/" component={PagesLayout}>
           <Route path="/static-1/" component={Static1Page} />
           <Route path="/static-2/" component={Static2Page} />
           <Route path="/live/" component={LivePage} />

@@ -5,6 +5,7 @@ import {
   createRenderEffect,
   createSignal,
   For,
+  onCleanup,
   Show,
 } from "solid-js";
 import { listCategories } from "~/assets/listCategory";
@@ -16,9 +17,14 @@ function numberInputModel(
 ) {
   const [field, setField] = value();
   createRenderEffect(() => (element.value = String(field())));
-  element.addEventListener("input", ({ target }: Event) =>
-    setField(Number((target as HTMLInputElement).value)),
-  );
+
+  const handleInput = () => {
+    setField(Number(element.value));
+  };
+  element.addEventListener("input", handleInput);
+  onCleanup(() => {
+    element.removeEventListener("input", handleInput);
+  });
 }
 
 function stringInputModel(
@@ -27,9 +33,14 @@ function stringInputModel(
 ) {
   const [field, setField] = value();
   createRenderEffect(() => (element.value = field()));
-  element.addEventListener("input", ({ target }: Event) =>
-    setField((target as HTMLInputElement).value),
-  );
+
+  const handleInput = () => {
+    setField(element.value);
+  };
+  element.addEventListener("input", handleInput);
+  onCleanup(() => {
+    element.removeEventListener("input", handleInput);
+  });
 }
 
 function numberCheckboxesModel(
@@ -37,14 +48,20 @@ function numberCheckboxesModel(
   values: Accessor<Signal<number[]>>,
 ) {
   const [items, setItems] = values();
-  const value = Number(element.value);
   createRenderEffect(() => {
-    element.checked = items().includes(value);
+    element.checked =
+      element.value === "on" ? true : items().includes(Number(element.value));
   });
-  element.addEventListener("input", () => {
+
+  const handleInput = () => {
+    const value = Number(element.value);
     setItems((prev) =>
       element.checked ? [...prev, value] : prev.filter((i) => i !== value),
     );
+  };
+  element.addEventListener("input", handleInput);
+  onCleanup(() => {
+    element.removeEventListener("input", handleInput);
   });
 }
 
