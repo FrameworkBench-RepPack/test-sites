@@ -11,7 +11,7 @@ export default function Live() {
   useEffect(() => {
     let timeoutId: number;
     function stepData() {
-      setIndex((curr) => (curr + 1) % (liveData.length));
+      setIndex((curr) => (curr + 1) % liveData.length);
       timeoutId = setTimeout(stepData, INTERVAL);
     }
     stepData();

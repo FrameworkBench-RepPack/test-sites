@@ -10,7 +10,7 @@ export default component$(() => {
   useVisibleTask$(() => {
     let timeoutId: number | NodeJS.Timeout;
     function stepData() {
-      index.value = (index.value + 1) % (liveData.length);
+      index.value = (index.value + 1) % liveData.length;
       timeoutId = setTimeout(stepData, INTERVAL);
     }
     stepData();

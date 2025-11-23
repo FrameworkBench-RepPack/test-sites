@@ -54,7 +54,7 @@ export class LiveComponent implements OnInit, OnDestroy {
   }
 
   private stepData(): void {
-    this.index = (this.index + 1) % (this.liveData.length);
+    this.index = (this.index + 1) % this.liveData.length;
     this.timeoutId = setTimeout(() => this.stepData(), this.INTERVAL);
   }
 }

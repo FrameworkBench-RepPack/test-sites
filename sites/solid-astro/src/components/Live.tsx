@@ -8,7 +8,7 @@ export default function Live() {
   const [index, setIndex] = createSignal(0);
   let timeoutId: number | NodeJS.Timeout;
   function stepData() {
-    setIndex((index() + 1) % (liveData.length));
+    setIndex((index() + 1) % liveData.length);
     timeoutId = setTimeout(stepData, INTERVAL);
   }
 

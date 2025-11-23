@@ -21,7 +21,7 @@ import liveData from "../assets/liveData.json";
   onMount() {
     const INTERVAL = 800;
     function stepData() {
-      index = (index + 1) % (liveData.length);
+      index = (index + 1) % liveData.length;
       timeoutId = setTimeout(stepData, INTERVAL);
     }
     stepData();
