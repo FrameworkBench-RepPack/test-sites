@@ -7,7 +7,7 @@
   let index = $state(0);
   let timeoutId: number | NodeJS.Timeout;
   function stepData() {
-    index = (index + 1) % (liveData.length - 1);
+    index = (index + 1) % (liveData.length);
     timeoutId = setTimeout(stepData, INTERVAL);
   }
 

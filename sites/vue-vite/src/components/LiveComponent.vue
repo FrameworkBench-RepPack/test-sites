@@ -7,7 +7,7 @@ const INTERVAL = 800;
 const index = ref(0);
 let timeoutId: number;
 function stepData() {
-  index.value = (index.value + 1) % (liveData.length - 1);
+  index.value = (index.value + 1) % (liveData.length);
   timeoutId = setTimeout(stepData, INTERVAL);
 }
 
