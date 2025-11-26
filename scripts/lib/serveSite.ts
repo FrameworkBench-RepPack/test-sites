@@ -21,6 +21,7 @@ export async function serveSites(
   const fastify = Fastify();
 
   fastify.addHook("onSend", async (request, reply, payload) => {
+    reply.header("Cache-Control", "max-age=604800");
     reply.header("Cross-Origin-Resource-Policy", "same-origin");
     reply.header("Cross-Origin-Embedder-Policy", "require-corp");
     reply.header("Cross-Origin-Opener-Policy", "same-origin");
