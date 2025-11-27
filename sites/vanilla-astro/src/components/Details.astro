@@ -5,12 +5,21 @@ interface Props {
 const { summary } = Astro.props;
 ---
 
-<details class="details">
-  <summary class="summary">{summary}</summary>
+<script>
+  for (const details of document.querySelectorAll(".details")) {
+    const button = details.querySelector(".summary")!;
+    button.addEventListener("click", () => {
+      details.classList.toggle("open");
+    });
+  }
+</script>
+
+<div class="details">
+  <button class="summary">{summary}</button>
   <div class="contents">
     <slot />
   </div>
-</details>
+</div>
 
 <style>
   .details {
@@ -18,6 +27,15 @@ const { summary } = Astro.props;
     padding: 0.5em;
     background-color: var(--color-secondary);
     box-shadow: var(--drop-shadow-large);
+
+    &:not(.open) {
+      & .summary::before {
+        content: "▶";
+      }
+      & .contents {
+        display: none;
+      }
+    }
   }
   .summary {
     margin: 0.2em;
@@ -26,6 +44,11 @@ const { summary } = Astro.props;
     border: none;
     background: none;
     cursor: pointer;
+
+    &::before {
+      content: "▼";
+      margin-right: 0.8em;
+    }
   }
   .contents {
     margin: 0.2em;

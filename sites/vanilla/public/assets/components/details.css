@@ -3,15 +3,30 @@
   padding: 0.5em;
   background-color: var(--color-secondary);
   box-shadow: var(--drop-shadow-large);
-}
-.summary {
-  margin: 0.2em;
-  font-size: 1.1em;
-  appearance: none;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-.details .contents {
-  margin: 0.2em;
+
+  &:not(.open) {
+    & .summary::before {
+      content: "▶";
+    }
+    & .contents {
+      display: none;
+    }
+  }
+  
+  & .summary {
+    margin: 0.2em;
+    font-size: 1.1em;
+    appearance: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &::before {
+      content: "▼";
+      margin-right: 0.8em;
+    }
+  }
+  & .contents {
+    margin: 0.2em;
+  }
 }

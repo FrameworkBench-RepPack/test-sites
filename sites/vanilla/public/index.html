@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/assets/components/tooltip.css" />
     <link rel="stylesheet" href="/assets/components/details.css" />
     <link rel="stylesheet" href="/assets/components/list.css" />
+    <script type="module" src="/assets/components/details.js"></script>
     <script type="module" src="/assets/components/live.js"></script>
     <script type="module" src="/assets/components/list.js"></script>
   </head>
@@ -94,8 +95,8 @@
           id fermentum. Proin tincidunt diam sed vehicula molestie. Phasellus
           mattis odio ac urna porta mattis at vel magna. Mauris nec leo ante.
         </p>
-        <details class="details">
-          <summary class="summary">Quisque in sodales metus</summary>
+        <div class="details">
+          <button class="summary">Quisque in sodales metus</button>
           <div class="contents">
             Ut suscipit magna et vestibulum pretium. Sed felis turpis, dictum
             vel maximus eget, faucibus tempus dui. Etiam volutpat volutpat quam.
@@ -110,9 +111,9 @@
             vestibulum diam porttitor vel. Cras pulvinar elit et consequat
             convallis.
           </div>
-        </details>
-        <details class="details">
-          <summary class="summary">Fusce ac egestas lorem?</summary>
+        </div>
+        <div class="details">
+          <button class="summary">Fusce ac egestas lorem?</button>
           <div class="contents">
             Cras sed justo nunc. Aenean tristique libero sed lacus bibendum
             venenatis. Aenean nec nunc vel augue rutrum venenatis porta eu
@@ -124,7 +125,7 @@
             Proin eleifend, diam nec lacinia fringilla, justo sem sollicitudin
             urna, in accumsan sapien lectus eu justo.
           </div>
-        </details>
+        </div>
         <p>
           Suspendisse ultricies neque nulla, eget ullamcorper ligula ornare sit
           amet. Pellentesque et velit in nunc posuere porttitor sit amet ut
@@ -324,10 +325,10 @@
           tincidunt. Curabitur scelerisque tellus felis, non vestibulum leo
           malesuada in. Vestibulum ut elit a diam rutrum commodo.
         </p>
-        <details class="details">
-          <summary class="summary">
+        <div class="details">
+          <button class="summary">
             Maecenas aliquet eu lorem et venenatis
-          </summary>
+          </button>
           <div class="contents">
             In placerat lacus eu nulla vehicula, vel ornare orci finibus.
             Quisque elementum, nisl pulvinar blandit congue, ante magna tempus
@@ -338,9 +339,9 @@
             litora torquent per conubia nostra, per inceptos himenaeos. Maecenas
             suscipit enim vel scelerisque tempus. Aenean vitae odio diam.
           </div>
-        </details>
-        <details class="details">
-          <summary class="summary">Nullam vitae massa odio</summary>
+        </div>
+        <div class="details">
+          <button class="summary">Nullam vitae massa odio</button>
           <div class="contents">
             Nullam at ex at diam venenatis pretium quis vel augue. Phasellus
             volutpat laoreet lectus at tristique. Praesent sollicitudin eleifend
@@ -353,9 +354,9 @@
             dignissim at malesuada a, malesuada vel nibh. Morbi a pellentesque
             neque.
           </div>
-        </details>
-        <details class="details">
-          <summary class="summary">In hac habitasse platea dictumst</summary>
+        </div>
+        <div class="details">
+          <button class="summary">In hac habitasse platea dictumst</button>
           <div class="contents">
             Quisque lobortis odio tortor, at ultricies urna vehicula at.
             Pellentesque vehicula ultricies dictum. Morbi vel leo vitae metus
@@ -367,7 +368,7 @@
             auctor congue, elit massa condimentum metus, mollis sagittis tellus
             magna laoreet elit.
           </div>
-        </details>
+        </div>
         <p>
           Nullam sit amet urna tortor. Sed auctor orci eget porttitor tristique.
           Maecenas scelerisque ornare efficitur. Mauris consequat metus ac dui
@@ -520,8 +521,8 @@
           nunc. Nullam vitae ornare ipsum, eu lobortis dui. Nullam condimentum
           massa quis aliquet vehicula.
         </p>
-        <details class="details">
-          <summary class="summary">Ut ac diam dolor?</summary>
+        <div class="details">
+          <button class="summary">Ut ac diam dolor?</button>
           <div class="contents">
             Class aptent taciti sociosqu ad litora torquent per conubia nostra,
             per inceptos himenaeos. Nunc fringilla porttitor metus, ac vulputate
@@ -536,7 +537,7 @@
             porttitor viverra. Pellentesque sit amet justo quis ante elementum
             vehicula. Duis hendrerit efficitur blandit.
           </div>
-        </details>
+        </div>
         <p>
           Integer eu enim sit amet nibh eleifend tristique. Nulla facilisi.
           Phasellus tortor turpis, tincidunt vel vulputate vitae, molestie eu
