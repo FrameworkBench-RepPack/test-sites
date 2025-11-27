@@ -1,0 +1,57 @@
+<script lang="ts">
+	import favicon from '$lib/assets/favicon.svg';
+	import Links from '$lib/components/Links.svelte';
+	import { resolve } from '$app/paths';
+
+	let { children } = $props();
+</script>
+
+<header>
+	<nav>
+		<ul>
+			<li><a href={resolve('/')}> <img id="icon" src={favicon} alt="Front page" /> </a></li>
+			<Links />
+		</ul>
+	</nav>
+</header>
+<main class="page-width">
+	{@render children?.()}
+</main>
+
+<style>
+	header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: var(--header-height);
+		padding: 0 var(--page-padding);
+		background-color: var(--color-secondary);
+		box-shadow: var(--drop-shadow-small);
+
+		& nav {
+			height: 100%;
+			max-width: var(--page-width);
+			margin-left: auto;
+			margin-right: auto;
+			& > ul {
+				display: flex;
+				align-items: center;
+				gap: 3em;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+			}
+		}
+	}
+	#icon {
+		height: var(--header-height);
+		aspect-ratio: 1;
+		padding: 1em;
+	}
+	main {
+		margin-top: var(--header-height);
+	}
+</style>
