@@ -26,7 +26,7 @@ export default function List({ listData, sticky }: Props) {
         (candidate) =>
           candidate.age >= ageFrom &&
           candidate.age <= ageTo &&
-          categories.includes(candidate.category)
+          categories.includes(candidate.category),
       )
       .sort((a, b) => {
         switch (sortOption) {
@@ -48,7 +48,7 @@ export default function List({ listData, sticky }: Props) {
 
   const handleCategoryChange = (key: number, checked: boolean) => {
     setCategories((prev) =>
-      checked ? [...prev, key] : prev.filter((item) => item !== key)
+      checked ? [...prev, key] : prev.filter((item) => item !== key),
     );
   };
 
