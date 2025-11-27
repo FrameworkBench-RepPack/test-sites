@@ -22,6 +22,7 @@ import LinksComponent from "./components/LinksComponent.vue";
 
 <style>
 * {
+  font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }
 :root {
