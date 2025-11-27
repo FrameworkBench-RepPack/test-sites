@@ -34,5 +34,5 @@ createRoot(document.getElementById("root")!).render(
         </Routes>
       </ScrollResetWrapper>
     </BrowserRouter>
-  </StrictMode>
+  </StrictMode>,
 );
