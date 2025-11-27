@@ -35,7 +35,7 @@ export const router = createRouter({
   routes,
   scrollBehavior() {
     // always scroll to top when navigating to a new page
-    return { top: 0 }
+    return { top: 0 };
   },
 });
 
