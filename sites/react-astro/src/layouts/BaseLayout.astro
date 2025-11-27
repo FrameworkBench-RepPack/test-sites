@@ -63,16 +63,13 @@ import Links from "../components/Links.astro";
     transition-property: color, translate, text-shadow;
     transition-timing-function: ease-out;
     transition-duration: 0.1s;
-
-    &:hover,
-    &:focus-visible,
-    &:active {
-      color: rgba(255, 0, 255, 0.7);
-      translate: -0.05em -0.025em;
-      text-shadow:
-        0.1em 0.05em 0 rgba(0, 255, 255, 0.7),
-        0.07em 0.03em 0 CanvasText;
-    }
+  }
+  :global(a:hover, a:focus-visible, a:active) {
+    color: rgba(255, 0, 255, 0.7);
+    translate: -0.05em -0.025em;
+    text-shadow:
+      0.1em 0.05em 0 rgba(0, 255, 255, 0.7),
+      0.07em 0.03em 0 CanvasText;
   }
   footer {
     width: 100%;
