@@ -1,11 +1,37 @@
 ---
-const id = `tooltip-content-${crypto.randomUUID()}`;
+interface Props {
+  contents: string;
+}
+const { contents } = Astro.props;
 ---
 
-<button commandfor={id} command="toggle-popover" class="tooltip">?</button>
-<span id={id} class="contents" popover>
-  <slot />
-</span>
+<script>
+  const contents = document.createElement("span");
+  contents.classList.add("contents");
+  let tooltipOpen: HTMLElement | undefined;
+
+  document.addEventListener("click", (event: Event) => {
+    const element = event.target as HTMLElement;
+    if (tooltipOpen) {
+      if (
+        element !== tooltipOpen &&
+        element !== contents &&
+        !contents.contains(element)
+      ) {
+        contents.remove();
+        tooltipOpen = undefined;
+      }
+    } else {
+      if (element?.classList?.contains("tooltip")) {
+        contents.innerText = element.dataset.contents!;
+        element.insertAdjacentElement("afterend", contents);
+        tooltipOpen = element;
+      }
+    }
+  });
+</script>
+
+<button class="tooltip" data-contents={contents}>?</button>
 
 <style>
   .tooltip {
@@ -19,8 +45,14 @@ const id = `tooltip-content-${crypto.randomUUID()}`;
     background-color: var(--color-secondary);
     cursor: pointer;
   }
-  .contents {
+  :global(.tooltip + .contents) {
+    display: block;
+    position: fixed;
     max-width: 40rem;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    inset: 0px;
     padding: 0.5em;
     border: 0.1em solid black;
     border-radius: 0.3em;

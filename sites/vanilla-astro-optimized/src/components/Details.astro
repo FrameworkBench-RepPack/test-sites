@@ -1,24 +1,29 @@
 ---
 interface Props {
   summary: string;
+  contents: string;
 }
-const { summary } = Astro.props;
+const { summary, contents } = Astro.props;
 ---
 
 <script>
-  for (const details of document.querySelectorAll(".details")) {
-    const button = details.querySelector(".summary")!;
-    button.addEventListener("click", () => {
-      details.classList.toggle("open");
-    });
-  }
+  document.addEventListener("click", (event: Event) => {
+    const element = (event.target as HTMLElement)?.parentElement;
+    if (!element?.classList?.contains("details")) return;
+
+    if (element.classList.toggle("open")) {
+      const contents = document.createElement("div");
+      contents.classList.add("contents");
+      contents.innerHTML = `<p>${element.dataset.contents}</p>`;
+      element.appendChild(contents);
+    } else {
+      element.querySelector(".contents")?.remove();
+    }
+  });
 </script>
 
-<div class="details">
+<div class="details" data-contents={contents}>
   <button class="summary">{summary}</button>
-  <div class="contents">
-    <slot />
-  </div>
 </div>
 
 <style>
@@ -28,15 +33,11 @@ const { summary } = Astro.props;
     background-color: var(--color-secondary);
     box-shadow: var(--drop-shadow-large);
 
-    &:not(.open) {
-      & .summary::before {
-        content: "▶";
-      }
-      & .contents {
-        display: none;
-      }
+    &.open .summary::before {
+      content: "▼";
     }
   }
+
   .summary {
     margin: 0.2em;
     font-size: 1.1em;
@@ -46,11 +47,11 @@ const { summary } = Astro.props;
     cursor: pointer;
 
     &::before {
-      content: "▼";
+      content: "▶";
       margin-right: 0.8em;
     }
   }
-  .contents {
+  :global(.details .contents) {
     margin: 0.2em;
   }
 </style>
