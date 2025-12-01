@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/assets/components/tooltip.css" />
     <link rel="stylesheet" href="/assets/components/details.css" />
     <link rel="stylesheet" href="/assets/components/list.css" />
+    <script type="module" src="/assets/components/tooltip.js"></script>
+    <script type="module" src="/assets/components/details.js"></script>
     <script type="module" src="/assets/components/live.js"></script>
     <script type="module" src="/assets/components/list.js"></script>
   </head>
@@ -38,19 +40,11 @@
           vestibulum quis gravida et, sollicitudin vel justo. Quisque non
           viverra mi, vitae semper lacus.
           <button
-            commandfor="tooltip-content-1"
-            command="toggle-popover"
             class="tooltip"
+            data-contents="Cras non turpis et erat dapibus mattis. Fusce molestie eleifend sodales. Cras ac cursus libero. Maecenas vel ex lectus. Quisque porttitor vulputate mauris, at tristique mi varius eleifend. Quisque vitae diam non sapien accumsan feugiat. Etiam vel auctor velit, eu pharetra lorem."
           >
             ?
           </button>
-          <span id="tooltip-content-1" class="contents" popover>
-            Cras non turpis et erat dapibus mattis. Fusce molestie eleifend
-            sodales. Cras ac cursus libero. Maecenas vel ex lectus. Quisque
-            porttitor vulputate mauris, at tristique mi varius eleifend. Quisque
-            vitae diam non sapien accumsan feugiat. Etiam vel auctor velit, eu
-            pharetra lorem.
-          </span>
           Phasellus id nunc eget sem pretium pulvinar. Sed vel consequat quam.
           Vestibulum posuere augue id magna sollicitudin accumsan. Sed hendrerit
           molestie mauris, in sodales elit vulputate eget. Vestibulum non
@@ -74,57 +68,28 @@
           fringilla, finibus urna sed, pharetra urna. Mauris ornare mauris
           mollis scelerisque iaculis.
           <button
-            commandfor="tooltip-content-2"
-            command="toggle-popover"
             class="tooltip"
+            data-contents="Donec mattis libero enim, vitae varius turpis pharetra non. Aenean hendrerit risus leo, malesuada facilisis risus convallis vitae. Fusce ornare, ex eu blandit ultrices, diam augue efficitur nunc, vitae feugiat lorem libero rhoncus arcu. Sed a euismod mauris, fringilla molestie ligula. Sed vitae pharetra lorem, eget mattis justo. Ut odio lacus, luctus quis dolor sed, facilisis interdum est. Sed molestie auctor viverra."
           >
             ?
           </button>
-          <span id="tooltip-content-2" class="contents" popover>
-            Donec mattis libero enim, vitae varius turpis pharetra non. Aenean
-            hendrerit risus leo, malesuada facilisis risus convallis vitae.
-            Fusce ornare, ex eu blandit ultrices, diam augue efficitur nunc,
-            vitae feugiat lorem libero rhoncus arcu. Sed a euismod mauris,
-            fringilla molestie ligula. Sed vitae pharetra lorem, eget mattis
-            justo. Ut odio lacus, luctus quis dolor sed, facilisis interdum est.
-            Sed molestie auctor viverra.
-          </span>
           Vestibulum vitae mauris sit amet sem porttitor vulputate. Etiam a nunc
           maximus, feugiat ipsum eu, volutpat nibh. Nam aliquet vehicula tortor
           id fermentum. Proin tincidunt diam sed vehicula molestie. Phasellus
           mattis odio ac urna porta mattis at vel magna. Mauris nec leo ante.
         </p>
-        <details class="details">
-          <summary class="summary">Quisque in sodales metus</summary>
-          <div class="contents">
-            Ut suscipit magna et vestibulum pretium. Sed felis turpis, dictum
-            vel maximus eget, faucibus tempus dui. Etiam volutpat volutpat quam.
-            Quisque vulputate nunc purus, interdum mattis ex porta a. Fusce
-            scelerisque pretium pellentesque. Phasellus pellentesque auctor
-            odio, vitae venenatis quam posuere elementum. Ut accumsan mauris vel
-            varius elementum. Vivamus ac pellentesque mauris, sollicitudin
-            mattis tellus. Phasellus ex sapien, ullamcorper ut efficitur in,
-            venenatis non est. Nulla purus quam, accumsan nec finibus aliquet,
-            malesuada eget tellus. Proin congue euismod lorem sed gravida. In
-            nec ante non arcu tempus suscipit. Nulla ornare velit augue, quis
-            vestibulum diam porttitor vel. Cras pulvinar elit et consequat
-            convallis.
-          </div>
-        </details>
-        <details class="details">
-          <summary class="summary">Fusce ac egestas lorem?</summary>
-          <div class="contents">
-            Cras sed justo nunc. Aenean tristique libero sed lacus bibendum
-            venenatis. Aenean nec nunc vel augue rutrum venenatis porta eu
-            lectus. Cras feugiat mauris est. Vestibulum nec risus augue. Aliquam
-            erat volutpat. Duis in ante eu neque finibus rutrum. Vivamus odio
-            ex, aliquet a magna eu, rutrum sodales turpis. Phasellus sit amet
-            mattis lacus, sit amet blandit lacus. Nulla sodales quis massa et
-            commodo. Proin sed odio viverra felis fringilla feugiat a eget quam.
-            Proin eleifend, diam nec lacinia fringilla, justo sem sollicitudin
-            urna, in accumsan sapien lectus eu justo.
-          </div>
-        </details>
+        <div
+          class="details"
+          data-contents="Ut suscipit magna et vestibulum pretium. Sed felis turpis, dictum vel maximus eget, faucibus tempus dui. Etiam volutpat volutpat quam. Quisque vulputate nunc purus, interdum mattis ex porta a. Fusce scelerisque pretium pellentesque. Phasellus pellentesque auctor odio, vitae venenatis quam posuere elementum. Ut accumsan mauris vel varius elementum. Vivamus ac pellentesque mauris, sollicitudin mattis tellus. Phasellus ex sapien, ullamcorper ut efficitur in, venenatis non est. Nulla purus quam, accumsan nec finibus aliquet, malesuada eget tellus. Proin congue euismod lorem sed gravida. In nec ante non arcu tempus suscipit. Nulla ornare velit augue, quis vestibulum diam porttitor vel. Cras pulvinar elit et consequat convallis."
+        >
+          <button class="summary">Quisque in sodales metus</button>
+        </div>
+        <div
+          class="details"
+          data-contents="Cras sed justo nunc. Aenean tristique libero sed lacus bibendum venenatis. Aenean nec nunc vel augue rutrum venenatis porta eu lectus. Cras feugiat mauris est. Vestibulum nec risus augue. Aliquam erat volutpat. Duis in ante eu neque finibus rutrum. Vivamus odio ex, aliquet a magna eu, rutrum sodales turpis. Phasellus sit amet mattis lacus, sit amet blandit lacus. Nulla sodales quis massa et commodo. Proin sed odio viverra felis fringilla feugiat a eget quam. Proin eleifend, diam nec lacinia fringilla, justo sem sollicitudin urna, in accumsan sapien lectus eu justo."
+        >
+          <button class="summary">Fusce ac egestas lorem?</button>
+        </div>
         <p>
           Suspendisse ultricies neque nulla, eget ullamcorper ligula ornare sit
           amet. Pellentesque et velit in nunc posuere porttitor sit amet ut
@@ -250,9 +215,6 @@
                 </tr>
               </tbody>
             </table>
-            <p class="no-data-message" hidden>
-              No entries matched the filter settings.
-            </p>
           </div>
         </div>
         <template id="list-row">
@@ -285,89 +247,46 @@
           suscipit finibus, nisi neque facilisis justo, eget consectetur nisl
           justo sit amet ipsum.
           <button
-            commandfor="tooltip-content-3"
-            command="toggle-popover"
             class="tooltip"
+            data-contents="Cras suscipit sagittis luctus. Integer rhoncus lectus massa. Aliquam viverra faucibus ligula a sagittis. Phasellus aliquet sit amet ante a posuere. Aenean eu velit vel ligula sagittis porta. Praesent feugiat ligula mi, et rutrum mauris aliquam vel. Nulla non urna eget magna viverra vulputate. Integer sem diam, auctor ut hendrerit ac, consequat quis diam. Sed commodo sagittis nisi ut aliquet."
           >
             ?
           </button>
-          <span id="tooltip-content-3" class="contents" popover>
-            Cras suscipit sagittis luctus. Integer rhoncus lectus massa. Aliquam
-            viverra faucibus ligula a sagittis. Phasellus aliquet sit amet ante
-            a posuere. Aenean eu velit vel ligula sagittis porta. Praesent
-            feugiat ligula mi, et rutrum mauris aliquam vel. Nulla non urna eget
-            magna viverra vulputate. Integer sem diam, auctor ut hendrerit ac,
-            consequat quis diam. Sed commodo sagittis nisi ut aliquet.
-          </span>
           Phasellus magna turpis, pharetra sit amet massa ac, porttitor
           convallis neque. Integer est lacus, ornare et ultricies eu, lobortis
           vitae tellus. Ut nec dapibus nunc. Aliquam faucibus lacinia sodales.
           Morbi mauris ligula, eleifend nec metus ut, sollicitudin efficitur
           metus. Curabitur ullamcorper accumsan mi at condimentum.
           <button
-            commandfor="tooltip-content-4"
-            command="toggle-popover"
             class="tooltip"
+            data-contents="Nunc eu vehicula nisl. Vivamus sed massa ut tellus feugiat elementum sed ut sapien. Sed aliquet eleifend augue, sit amet tincidunt nunc luctus a. Aenean malesuada erat id faucibus ultricies. Aliquam at risus sit amet lacus dignissim dapibus et quis elit. Mauris elementum sapien nisl. Duis odio eros, maximus eget ante at, fermentum luctus orci. Fusce orci ligula, pulvinar ac aliquet sit amet, posuere in sem."
           >
             ?
           </button>
-          <span id="tooltip-content-4" class="contents" popover>
-            Nunc eu vehicula nisl. Vivamus sed massa ut tellus feugiat elementum
-            sed ut sapien. Sed aliquet eleifend augue, sit amet tincidunt nunc
-            luctus a. Aenean malesuada erat id faucibus ultricies. Aliquam at
-            risus sit amet lacus dignissim dapibus et quis elit. Mauris
-            elementum sapien nisl. Duis odio eros, maximus eget ante at,
-            fermentum luctus orci. Fusce orci ligula, pulvinar ac aliquet sit
-            amet, posuere in sem.
-          </span>
           Maecenas commodo augue sit amet augue pharetra, eu interdum velit
           tincidunt. Curabitur scelerisque tellus felis, non vestibulum leo
           malesuada in. Vestibulum ut elit a diam rutrum commodo.
         </p>
-        <details class="details">
-          <summary class="summary">
+        <div
+          class="details"
+          data-contents="In placerat lacus eu nulla vehicula, vel ornare orci finibus. Quisque elementum, nisl pulvinar blandit congue, ante magna tempus enim, et semper enim neque ac tellus. Quisque molestie nisi at aliquet condimentum. Aenean ac scelerisque nulla. Nunc sed enim ut sem euismod facilisis. Quisque dignissim molestie quam, eu pulvinar leo cursus in. Maecenas ac leo enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas suscipit enim vel scelerisque tempus. Aenean vitae odio diam."
+        >
+          <button class="summary">
             Maecenas aliquet eu lorem et venenatis
-          </summary>
-          <div class="contents">
-            In placerat lacus eu nulla vehicula, vel ornare orci finibus.
-            Quisque elementum, nisl pulvinar blandit congue, ante magna tempus
-            enim, et semper enim neque ac tellus. Quisque molestie nisi at
-            aliquet condimentum. Aenean ac scelerisque nulla. Nunc sed enim ut
-            sem euismod facilisis. Quisque dignissim molestie quam, eu pulvinar
-            leo cursus in. Maecenas ac leo enim. Class aptent taciti sociosqu ad
-            litora torquent per conubia nostra, per inceptos himenaeos. Maecenas
-            suscipit enim vel scelerisque tempus. Aenean vitae odio diam.
-          </div>
-        </details>
-        <details class="details">
-          <summary class="summary">Nullam vitae massa odio</summary>
-          <div class="contents">
-            Nullam at ex at diam venenatis pretium quis vel augue. Phasellus
-            volutpat laoreet lectus at tristique. Praesent sollicitudin eleifend
-            turpis sit amet dignissim. Vestibulum lectus est, blandit sit amet
-            sollicitudin a, tempor in tortor. Integer dolor nunc, sagittis et
-            leo vitae, blandit vulputate massa. Sed metus sem, eleifend vitae
-            vestibulum sed, euismod at ligula. Integer commodo odio vitae
-            lobortis vestibulum. Suspendisse tincidunt pharetra augue et porta.
-            Nam facilisis magna et enim placerat facilisis. Cras neque nulla,
-            dignissim at malesuada a, malesuada vel nibh. Morbi a pellentesque
-            neque.
-          </div>
-        </details>
-        <details class="details">
-          <summary class="summary">In hac habitasse platea dictumst</summary>
-          <div class="contents">
-            Quisque lobortis odio tortor, at ultricies urna vehicula at.
-            Pellentesque vehicula ultricies dictum. Morbi vel leo vitae metus
-            sollicitudin malesuada. Mauris ut lorem posuere, aliquam nibh ac,
-            vulputate nulla. Praesent diam ex, consectetur eget leo nec, porta
-            tincidunt risus. In auctor pharetra risus, ac dignissim lorem
-            scelerisque ac. Phasellus sollicitudin congue congue. Ut sed nulla
-            iaculis, dictum urna eu, iaculis enim. Vestibulum efficitur, sem vel
-            auctor congue, elit massa condimentum metus, mollis sagittis tellus
-            magna laoreet elit.
-          </div>
-        </details>
+          </button>
+        </div>
+        <div
+          class="details"
+          data-contents="Nullam at ex at diam venenatis pretium quis vel augue. Phasellus volutpat laoreet lectus at tristique. Praesent sollicitudin eleifend turpis sit amet dignissim. Vestibulum lectus est, blandit sit amet sollicitudin a, tempor in tortor. Integer dolor nunc, sagittis et leo vitae, blandit vulputate massa. Sed metus sem, eleifend vitae vestibulum sed, euismod at ligula. Integer commodo odio vitae lobortis vestibulum. Suspendisse tincidunt pharetra augue et porta. Nam facilisis magna et enim placerat facilisis. Cras neque nulla, dignissim at malesuada a, malesuada vel nibh. Morbi a pellentesque neque."
+        >
+          <button class="summary">Nullam vitae massa odio</button>
+        </div>
+        <div
+          class="details"
+          data-contents="Quisque lobortis odio tortor, at ultricies urna vehicula at. Pellentesque vehicula ultricies dictum. Morbi vel leo vitae metus sollicitudin malesuada. Mauris ut lorem posuere, aliquam nibh ac, vulputate nulla. Praesent diam ex, consectetur eget leo nec, porta tincidunt risus. In auctor pharetra risus, ac dignissim lorem scelerisque ac. Phasellus sollicitudin congue congue. Ut sed nulla iaculis, dictum urna eu, iaculis enim. Vestibulum efficitur, sem vel auctor congue, elit massa condimentum metus, mollis sagittis tellus magna laoreet elit."
+        >
+          <button class="summary">In hac habitasse platea dictumst</button>
+        </div>
         <p>
           Nullam sit amet urna tortor. Sed auctor orci eget porttitor tristique.
           Maecenas scelerisque ornare efficitur. Mauris consequat metus ac dui
@@ -379,19 +298,11 @@
           fermentum accumsan et convallis eros. Maecenas sit amet vestibulum
           elit.
           <button
-            commandfor="tooltip-content-5"
-            command="toggle-popover"
             class="tooltip"
+            data-contents="Curabitur pretium mauris urna, ut volutpat sapien fermentum varius. In at volutpat quam. Suspendisse non sollicitudin nulla. Nunc vel ullamcorper justo, et iaculis lorem. Curabitur a augue sed urna pharetra mattis. Etiam quis commodo dolor. Nunc laoreet aliquet quam, sit amet pulvinar augue varius rhoncus."
           >
             ?
           </button>
-          <span id="tooltip-content-5" class="contents" popover>
-            Curabitur pretium mauris urna, ut volutpat sapien fermentum varius.
-            In at volutpat quam. Suspendisse non sollicitudin nulla. Nunc vel
-            ullamcorper justo, et iaculis lorem. Curabitur a augue sed urna
-            pharetra mattis. Etiam quis commodo dolor. Nunc laoreet aliquet
-            quam, sit amet pulvinar augue varius rhoncus.
-          </span>
           Class aptent taciti sociosqu ad litora torquent per conubia nostra,
           per inceptos himenaeos.
         </p>
@@ -401,18 +312,11 @@
           pellentesque tortor consequat. Phasellus aliquam mattis eros quis
           cursus. Etiam auctor condimentum bibendum.
           <button
-            commandfor="tooltip-content-6"
-            command="toggle-popover"
             class="tooltip"
+            data-contents="Duis tempor urna lorem, id aliquam felis volutpat et. Fusce convallis porttitor nisl, sit amet posuere arcu. Nullam laoreet tortor et vehicula pretium. Praesent varius leo non est laoreet rhoncus. Donec porta dui in libero euismod fringilla."
           >
             ?
           </button>
-          <span id="tooltip-content-6" class="contents" popover>
-            Duis tempor urna lorem, id aliquam felis volutpat et. Fusce
-            convallis porttitor nisl, sit amet posuere arcu. Nullam laoreet
-            tortor et vehicula pretium. Praesent varius leo non est laoreet
-            rhoncus. Donec porta dui in libero euismod fringilla.
-          </span>
           Phasellus quis sem malesuada, placerat nulla in, suscipit elit. Ut
           tortor nunc, vestibulum non justo vel, malesuada rhoncus felis. Donec
           eget urna sodales, mollis tortor ut, fermentum massa. Etiam pulvinar
@@ -434,18 +338,11 @@
           neque porta viverra. Donec ex leo, porta nec laoreet sit amet, posuere
           at velit.
           <button
-            commandfor="tooltip-content-7"
-            command="toggle-popover"
             class="tooltip"
+            data-contents="Nunc tincidunt imperdiet orci, cursus dapibus felis facilisis vitae. Etiam ornare euismod eros. Aliquam eu aliquam nibh. Curabitur at tristique lacus. Vestibulum a laoreet odio, eu maximus dolor. Maecenas sed diam blandit, elementum nisl vitae, sollicitudin risus."
           >
             ?
           </button>
-          <span id="tooltip-content-7" class="contents" popover>
-            Nunc tincidunt imperdiet orci, cursus dapibus felis facilisis vitae.
-            Etiam ornare euismod eros. Aliquam eu aliquam nibh. Curabitur at
-            tristique lacus. Vestibulum a laoreet odio, eu maximus dolor.
-            Maecenas sed diam blandit, elementum nisl vitae, sollicitudin risus.
-          </span>
           Pellentesque mattis magna at est rutrum, sit amet tincidunt erat
           fermentum. Etiam pulvinar sollicitudin odio varius luctus. Donec quam
           urna, dapibus et porta vel, dictum quis justo.
@@ -457,36 +354,20 @@
           eget diam elementum pharetra non vel felis. Quisque molestie vulputate
           tellus at faucibus.
           <button
-            commandfor="tooltip-content-8"
-            command="toggle-popover"
             class="tooltip"
+            data-contents="Sed lobortis sem ac rhoncus venenatis. Nullam in sapien ut lectus molestie molestie. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos."
           >
             ?
           </button>
-          <span id="tooltip-content-8" class="contents" popover>
-            Sed lobortis sem ac rhoncus venenatis. Nullam in sapien ut lectus
-            molestie molestie. Class aptent taciti sociosqu ad litora torquent
-            per conubia nostra, per inceptos himenaeos.
-          </span>
           Proin in suscipit justo. Curabitur aliquet, eros quis facilisis
           suscipit, nisi ex placerat justo, a faucibus lacus nulla at felis.
           Phasellus vestibulum urna lorem, mollis vestibulum enim consequat ac.
           <button
-            commandfor="tooltip-content-9"
-            command="toggle-popover"
             class="tooltip"
+            data-contents="Donec fringilla eros vitae eros pharetra porttitor. Cras pellentesque ex vitae nisi aliquam ullamcorper. Donec nec eleifend massa. Sed dapibus ornare lectus id ultricies. Sed egestas, neque sit amet maximus lobortis, turpis mi euismod urna, sit amet suscipit erat urna ut nibh. Sed vel enim sed erat rhoncus maximus non vitae eros. Aliquam ex erat, tincidunt non velit cursus, fringilla luctus nunc. Donec laoreet quam neque, at suscipit magna tincidunt vitae."
           >
             ?
           </button>
-          <span id="tooltip-content-9" class="contents" popover>
-            Donec fringilla eros vitae eros pharetra porttitor. Cras
-            pellentesque ex vitae nisi aliquam ullamcorper. Donec nec eleifend
-            massa. Sed dapibus ornare lectus id ultricies. Sed egestas, neque
-            sit amet maximus lobortis, turpis mi euismod urna, sit amet suscipit
-            erat urna ut nibh. Sed vel enim sed erat rhoncus maximus non vitae
-            eros. Aliquam ex erat, tincidunt non velit cursus, fringilla luctus
-            nunc. Donec laoreet quam neque, at suscipit magna tincidunt vitae.
-          </span>
           Orci varius natoque penatibus et magnis dis parturient montes,
           nascetur ridiculus mus. Phasellus vitae dolor in dolor varius
           molestie. Sed sed pulvinar felis. Sed eu laoreet justo. Ut egestas
@@ -500,43 +381,21 @@
           Praesent consequat justo justo, at ornare turpis rutrum vel.
           Vestibulum at magna congue, malesuada nibh vel, commodo elit.
           <button
-            commandfor="tooltip-content-10"
-            command="toggle-popover"
             class="tooltip"
+            data-contents="Proin rutrum feugiat fermentum. Nunc aliquam nulla ante, vel congue nibh ornare quis. Vivamus eros velit, tempor id ultrices vel, tincidunt eget nunc. Duis a diam ante. Quisque nunc dolor, suscipit at tempor vel, interdum ac metus. Aenean commodo volutpat finibus. Nunc mattis libero tellus, ac aliquam est ultrices sed. Integer luctus dolor eu tellus tempor auctor. Donec id enim at ipsum mollis elementum. Vestibulum vulputate ipsum sit amet arcu tristique tristique. Proin consectetur dui quis molestie facilisis."
           >
             ?
           </button>
-          <span id="tooltip-content-10" class="contents" popover>
-            Proin rutrum feugiat fermentum. Nunc aliquam nulla ante, vel congue
-            nibh ornare quis. Vivamus eros velit, tempor id ultrices vel,
-            tincidunt eget nunc. Duis a diam ante. Quisque nunc dolor, suscipit
-            at tempor vel, interdum ac metus. Aenean commodo volutpat finibus.
-            Nunc mattis libero tellus, ac aliquam est ultrices sed. Integer
-            luctus dolor eu tellus tempor auctor. Donec id enim at ipsum mollis
-            elementum. Vestibulum vulputate ipsum sit amet arcu tristique
-            tristique. Proin consectetur dui quis molestie facilisis.
-          </span>
           Suspendisse purus tortor, blandit et iaculis sit amet, elementum quis
           nunc. Nullam vitae ornare ipsum, eu lobortis dui. Nullam condimentum
           massa quis aliquet vehicula.
         </p>
-        <details class="details">
-          <summary class="summary">Ut ac diam dolor?</summary>
-          <div class="contents">
-            Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-            per inceptos himenaeos. Nunc fringilla porttitor metus, ac vulputate
-            nulla bibendum in. Mauris ornare sapien diam, et ullamcorper nulla
-            porttitor sit amet. Vivamus sagittis pellentesque odio elementum
-            viverra. Cras hendrerit, purus ut cursus condimentum, risus libero
-            semper odio, sit amet bibendum mi erat non justo. Sed at urna
-            imperdiet, fringilla nunc id, euismod diam. Vivamus diam nisi,
-            condimentum a imperdiet et, volutpat a ligula. Praesent ac rhoncus
-            nulla. Etiam elementum, nisi mollis luctus pellentesque, urna diam
-            fermentum mi, eget bibendum lacus elit non augue. In commodo purus a
-            porttitor viverra. Pellentesque sit amet justo quis ante elementum
-            vehicula. Duis hendrerit efficitur blandit.
-          </div>
-        </details>
+        <div
+          class="details"
+          data-contents="Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc fringilla porttitor metus, ac vulputate nulla bibendum in. Mauris ornare sapien diam, et ullamcorper nulla porttitor sit amet. Vivamus sagittis pellentesque odio elementum viverra. Cras hendrerit, purus ut cursus condimentum, risus libero semper odio, sit amet bibendum mi erat non justo. Sed at urna imperdiet, fringilla nunc id, euismod diam. Vivamus diam nisi, condimentum a imperdiet et, volutpat a ligula. Praesent ac rhoncus nulla. Etiam elementum, nisi mollis luctus pellentesque, urna diam fermentum mi, eget bibendum lacus elit non augue. In commodo purus a porttitor viverra. Pellentesque sit amet justo quis ante elementum vehicula. Duis hendrerit efficitur blandit."
+        >
+          <button class="summary">Ut ac diam dolor?</button>
+        </div>
         <p>
           Integer eu enim sit amet nibh eleifend tristique. Nulla facilisi.
           Phasellus tortor turpis, tincidunt vel vulputate vitae, molestie eu
@@ -544,15 +403,11 @@
           Vestibulum sed interdum dui. Cras a laoreet tellus. Vestibulum
           pulvinar facilisis purus, non cursus massa fermentum ut.
           <button
-            commandfor="tooltip-content-11"
-            command="toggle-popover"
             class="tooltip"
+            data-contents="Curabitur rhoncus maximus ex, nec elementum urna sollicitudin nec."
           >
             ?
           </button>
-          <span id="tooltip-content-11" class="contents" popover>
-            Curabitur rhoncus maximus ex, nec elementum urna sollicitudin nec.
-          </span>
           Ut imperdiet lectus eu nibh placerat, id tempus felis varius. Aliquam
           porttitor odio at nisl pulvinar, eu iaculis ex semper. Sed quis
           efficitur mauris, id feugiat nisl. Vivamus dignissim dictum auctor.
