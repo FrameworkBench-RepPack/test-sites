@@ -4,13 +4,8 @@
   background-color: var(--color-secondary);
   box-shadow: var(--drop-shadow-large);
 
-  &:not(.open) {
-    & .summary::before {
-      content: "▶";
-    }
-    & .contents {
-      display: none;
-    }
+  &.open .summary::before {
+    content: "▼";
   }
 
   & .summary {
@@ -22,7 +17,7 @@
     cursor: pointer;
 
     &::before {
-      content: "▼";
+      content: "▶";
       margin-right: 0.8em;
     }
   }
