@@ -2,7 +2,7 @@ const contents = document.createElement("span");
 contents.classList.add("contents");
 let tooltipOpen: HTMLElement | undefined;
 
-document.body.addEventListener("click", (event: Event) => {
+document.addEventListener("click", (event: Event) => {
   const element = event.target as HTMLElement;
   if (tooltipOpen) {
     if (

@@ -1,4 +1,4 @@
-document.body.addEventListener("click", (event: Event) => {
+document.addEventListener("click", (event: Event) => {
   const element = (event.target as HTMLElement)?.parentElement;
   if (!element?.classList?.contains("details")) return;
 
