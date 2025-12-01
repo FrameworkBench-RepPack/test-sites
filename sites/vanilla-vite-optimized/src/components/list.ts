@@ -6,9 +6,11 @@ const form = document.querySelector(
 const tbody = document.querySelector(
   "#list > .data tbody",
 ) as HTMLTableSectionElement;
-const noDataMessage = document.querySelector(
-  "#list > .data .no-data-message",
-) as HTMLParagraphElement;
+const table = tbody.parentElement as HTMLTableElement;
+
+const noDataMessage = document.createElement("p");
+noDataMessage.classList.add("no-data-message");
+noDataMessage.innerText = "No entries matched the filter settings.";
 
 const rows = [...tbody.querySelectorAll("tr")].map((rowElement) => {
   const cells = rowElement.querySelectorAll(
@@ -44,31 +46,38 @@ function filterList() {
   const ageTo = Number(data.get("age-to"));
   const categories = data.getAll("category").map((entry) => Number(entry));
   let noData = true;
-  rows
-    .sort((a, b) => {
-      switch (sortOption) {
-        case "name": {
-          return a.name.localeCompare(b.name);
-        }
-        case "age": {
-          return a.age - b.age;
-        }
-        case "category": {
-          return a.category - b.category;
-        }
-        default: {
-          throw TypeError("Unknown option");
-        }
+  const sortedRows = rows.sort((a, b) => {
+    switch (sortOption) {
+      case "name": {
+        return a.name.localeCompare(b.name);
       }
-    })
-    .forEach((row) => {
-      tbody.appendChild(tbody.removeChild(row.element));
-      const hidden =
-        row.age < ageFrom ||
-        row.age > ageTo ||
-        !categories.includes(row.category);
-      row.element.hidden = hidden;
-      if (!hidden) noData = false;
-    });
-  noDataMessage.hidden = !noData;
+      case "age": {
+        return a.age - b.age;
+      }
+      case "category": {
+        return a.category - b.category;
+      }
+      default: {
+        throw TypeError("Unknown option");
+      }
+    }
+  });
+  tbody.remove();
+  for (const row of sortedRows) {
+    const hidden =
+      row.age < ageFrom ||
+      row.age > ageTo ||
+      !categories.includes(row.category);
+    row.element.remove();
+    if (!hidden) {
+      tbody.appendChild(row.element);
+      noData = false;
+    }
+  }
+  noDataMessage.remove();
+  if (noData) {
+    table.insertAdjacentElement("afterend", noDataMessage);
+  } else {
+    table.appendChild(tbody);
+  }
 }
