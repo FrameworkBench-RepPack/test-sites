@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/src/components/tooltip.css" />
     <link rel="stylesheet" href="/src/components/details.css" />
     <link rel="stylesheet" href="/src/components/list.css" />
+    <script type="module" src="/src/components/tooltip.ts"></script>
     <script type="module" src="/src/components/details.ts"></script>
     <script type="module" src="/src/components/live.ts"></script>
     <script type="module" src="/src/components/list.ts"></script>
@@ -39,19 +40,15 @@
           vestibulum quis gravida et, sollicitudin vel justo. Quisque non
           viverra mi, vitae semper lacus.
           <button
-            commandfor="tooltip-content-1"
-            command="toggle-popover"
             class="tooltip"
-          >
-            ?
-          </button>
-          <span id="tooltip-content-1" class="contents" popover>
-            Cras non turpis et erat dapibus mattis. Fusce molestie eleifend
+            data-contents="Cras non turpis et erat dapibus mattis. Fusce molestie eleifend
             sodales. Cras ac cursus libero. Maecenas vel ex lectus. Quisque
             porttitor vulputate mauris, at tristique mi varius eleifend. Quisque
             vitae diam non sapien accumsan feugiat. Etiam vel auctor velit, eu
-            pharetra lorem.
-          </span>
+            pharetra lorem."
+          >
+            ?
+          </button>
           Phasellus id nunc eget sem pretium pulvinar. Sed vel consequat quam.
           Vestibulum posuere augue id magna sollicitudin accumsan. Sed hendrerit
           molestie mauris, in sodales elit vulputate eget. Vestibulum non
@@ -75,21 +72,17 @@
           fringilla, finibus urna sed, pharetra urna. Mauris ornare mauris
           mollis scelerisque iaculis.
           <button
-            commandfor="tooltip-content-2"
-            command="toggle-popover"
             class="tooltip"
-          >
-            ?
-          </button>
-          <span id="tooltip-content-2" class="contents" popover>
-            Donec mattis libero enim, vitae varius turpis pharetra non. Aenean
+            data-contents="Donec mattis libero enim, vitae varius turpis pharetra non. Aenean
             hendrerit risus leo, malesuada facilisis risus convallis vitae.
             Fusce ornare, ex eu blandit ultrices, diam augue efficitur nunc,
             vitae feugiat lorem libero rhoncus arcu. Sed a euismod mauris,
             fringilla molestie ligula. Sed vitae pharetra lorem, eget mattis
             justo. Ut odio lacus, luctus quis dolor sed, facilisis interdum est.
-            Sed molestie auctor viverra.
-          </span>
+            Sed molestie auctor viverra."
+          >
+            ?
+          </button>
           Vestibulum vitae mauris sit amet sem porttitor vulputate. Etiam a nunc
           maximus, feugiat ipsum eu, volutpat nibh. Nam aliquet vehicula tortor
           id fermentum. Proin tincidunt diam sed vehicula molestie. Phasellus
@@ -286,41 +279,33 @@
           suscipit finibus, nisi neque facilisis justo, eget consectetur nisl
           justo sit amet ipsum.
           <button
-            commandfor="tooltip-content-3"
-            command="toggle-popover"
             class="tooltip"
-          >
-            ?
-          </button>
-          <span id="tooltip-content-3" class="contents" popover>
-            Cras suscipit sagittis luctus. Integer rhoncus lectus massa. Aliquam
+            data-contents="Cras suscipit sagittis luctus. Integer rhoncus lectus massa. Aliquam
             viverra faucibus ligula a sagittis. Phasellus aliquet sit amet ante
             a posuere. Aenean eu velit vel ligula sagittis porta. Praesent
             feugiat ligula mi, et rutrum mauris aliquam vel. Nulla non urna eget
             magna viverra vulputate. Integer sem diam, auctor ut hendrerit ac,
-            consequat quis diam. Sed commodo sagittis nisi ut aliquet.
-          </span>
+            consequat quis diam. Sed commodo sagittis nisi ut aliquet."
+          >
+            ?
+          </button>
           Phasellus magna turpis, pharetra sit amet massa ac, porttitor
           convallis neque. Integer est lacus, ornare et ultricies eu, lobortis
           vitae tellus. Ut nec dapibus nunc. Aliquam faucibus lacinia sodales.
           Morbi mauris ligula, eleifend nec metus ut, sollicitudin efficitur
           metus. Curabitur ullamcorper accumsan mi at condimentum.
           <button
-            commandfor="tooltip-content-4"
-            command="toggle-popover"
             class="tooltip"
-          >
-            ?
-          </button>
-          <span id="tooltip-content-4" class="contents" popover>
-            Nunc eu vehicula nisl. Vivamus sed massa ut tellus feugiat elementum
+            data-contents="Nunc eu vehicula nisl. Vivamus sed massa ut tellus feugiat elementum
             sed ut sapien. Sed aliquet eleifend augue, sit amet tincidunt nunc
             luctus a. Aenean malesuada erat id faucibus ultricies. Aliquam at
             risus sit amet lacus dignissim dapibus et quis elit. Mauris
             elementum sapien nisl. Duis odio eros, maximus eget ante at,
             fermentum luctus orci. Fusce orci ligula, pulvinar ac aliquet sit
-            amet, posuere in sem.
-          </span>
+            amet, posuere in sem."
+          >
+            ?
+          </button>
           Maecenas commodo augue sit amet augue pharetra, eu interdum velit
           tincidunt. Curabitur scelerisque tellus felis, non vestibulum leo
           malesuada in. Vestibulum ut elit a diam rutrum commodo.
@@ -380,19 +365,15 @@
           fermentum accumsan et convallis eros. Maecenas sit amet vestibulum
           elit.
           <button
-            commandfor="tooltip-content-5"
-            command="toggle-popover"
             class="tooltip"
-          >
-            ?
-          </button>
-          <span id="tooltip-content-5" class="contents" popover>
-            Curabitur pretium mauris urna, ut volutpat sapien fermentum varius.
+            data-contents="Curabitur pretium mauris urna, ut volutpat sapien fermentum varius.
             In at volutpat quam. Suspendisse non sollicitudin nulla. Nunc vel
             ullamcorper justo, et iaculis lorem. Curabitur a augue sed urna
             pharetra mattis. Etiam quis commodo dolor. Nunc laoreet aliquet
-            quam, sit amet pulvinar augue varius rhoncus.
-          </span>
+            quam, sit amet pulvinar augue varius rhoncus."
+          >
+            ?
+          </button>
           Class aptent taciti sociosqu ad litora torquent per conubia nostra,
           per inceptos himenaeos.
         </p>
@@ -402,18 +383,14 @@
           pellentesque tortor consequat. Phasellus aliquam mattis eros quis
           cursus. Etiam auctor condimentum bibendum.
           <button
-            commandfor="tooltip-content-6"
-            command="toggle-popover"
             class="tooltip"
+            data-contents="Duis tempor urna lorem, id aliquam felis volutpat et. Fusce
+            convallis porttitor nisl, sit amet posuere arcu. Nullam laoreet
+            tortor et vehicula pretium. Praesent varius leo non est laoreet
+            rhoncus. Donec porta dui in libero euismod fringilla."
           >
             ?
           </button>
-          <span id="tooltip-content-6" class="contents" popover>
-            Duis tempor urna lorem, id aliquam felis volutpat et. Fusce
-            convallis porttitor nisl, sit amet posuere arcu. Nullam laoreet
-            tortor et vehicula pretium. Praesent varius leo non est laoreet
-            rhoncus. Donec porta dui in libero euismod fringilla.
-          </span>
           Phasellus quis sem malesuada, placerat nulla in, suscipit elit. Ut
           tortor nunc, vestibulum non justo vel, malesuada rhoncus felis. Donec
           eget urna sodales, mollis tortor ut, fermentum massa. Etiam pulvinar
@@ -435,18 +412,14 @@
           neque porta viverra. Donec ex leo, porta nec laoreet sit amet, posuere
           at velit.
           <button
-            commandfor="tooltip-content-7"
-            command="toggle-popover"
             class="tooltip"
+            data-contents="Nunc tincidunt imperdiet orci, cursus dapibus felis facilisis vitae.
+            Etiam ornare euismod eros. Aliquam eu aliquam nibh. Curabitur at
+            tristique lacus. Vestibulum a laoreet odio, eu maximus dolor.
+            Maecenas sed diam blandit, elementum nisl vitae, sollicitudin risus."
           >
             ?
           </button>
-          <span id="tooltip-content-7" class="contents" popover>
-            Nunc tincidunt imperdiet orci, cursus dapibus felis facilisis vitae.
-            Etiam ornare euismod eros. Aliquam eu aliquam nibh. Curabitur at
-            tristique lacus. Vestibulum a laoreet odio, eu maximus dolor.
-            Maecenas sed diam blandit, elementum nisl vitae, sollicitudin risus.
-          </span>
           Pellentesque mattis magna at est rutrum, sit amet tincidunt erat
           fermentum. Etiam pulvinar sollicitudin odio varius luctus. Donec quam
           urna, dapibus et porta vel, dictum quis justo.
@@ -458,36 +431,28 @@
           eget diam elementum pharetra non vel felis. Quisque molestie vulputate
           tellus at faucibus.
           <button
-            commandfor="tooltip-content-8"
-            command="toggle-popover"
             class="tooltip"
+            data-contents="Sed lobortis sem ac rhoncus venenatis. Nullam in sapien ut lectus
+            molestie molestie. Class aptent taciti sociosqu ad litora torquent
+            per conubia nostra, per inceptos himenaeos."
           >
             ?
           </button>
-          <span id="tooltip-content-8" class="contents" popover>
-            Sed lobortis sem ac rhoncus venenatis. Nullam in sapien ut lectus
-            molestie molestie. Class aptent taciti sociosqu ad litora torquent
-            per conubia nostra, per inceptos himenaeos.
-          </span>
           Proin in suscipit justo. Curabitur aliquet, eros quis facilisis
           suscipit, nisi ex placerat justo, a faucibus lacus nulla at felis.
           Phasellus vestibulum urna lorem, mollis vestibulum enim consequat ac.
           <button
-            commandfor="tooltip-content-9"
-            command="toggle-popover"
             class="tooltip"
-          >
-            ?
-          </button>
-          <span id="tooltip-content-9" class="contents" popover>
-            Donec fringilla eros vitae eros pharetra porttitor. Cras
+            data-contents="Donec fringilla eros vitae eros pharetra porttitor. Cras
             pellentesque ex vitae nisi aliquam ullamcorper. Donec nec eleifend
             massa. Sed dapibus ornare lectus id ultricies. Sed egestas, neque
             sit amet maximus lobortis, turpis mi euismod urna, sit amet suscipit
             erat urna ut nibh. Sed vel enim sed erat rhoncus maximus non vitae
             eros. Aliquam ex erat, tincidunt non velit cursus, fringilla luctus
-            nunc. Donec laoreet quam neque, at suscipit magna tincidunt vitae.
-          </span>
+            nunc. Donec laoreet quam neque, at suscipit magna tincidunt vitae."
+          >
+            ?
+          </button>
           Orci varius natoque penatibus et magnis dis parturient montes,
           nascetur ridiculus mus. Phasellus vitae dolor in dolor varius
           molestie. Sed sed pulvinar felis. Sed eu laoreet justo. Ut egestas
@@ -501,22 +466,18 @@
           Praesent consequat justo justo, at ornare turpis rutrum vel.
           Vestibulum at magna congue, malesuada nibh vel, commodo elit.
           <button
-            commandfor="tooltip-content-10"
-            command="toggle-popover"
             class="tooltip"
-          >
-            ?
-          </button>
-          <span id="tooltip-content-10" class="contents" popover>
-            Proin rutrum feugiat fermentum. Nunc aliquam nulla ante, vel congue
+            data-contents="Proin rutrum feugiat fermentum. Nunc aliquam nulla ante, vel congue
             nibh ornare quis. Vivamus eros velit, tempor id ultrices vel,
             tincidunt eget nunc. Duis a diam ante. Quisque nunc dolor, suscipit
             at tempor vel, interdum ac metus. Aenean commodo volutpat finibus.
             Nunc mattis libero tellus, ac aliquam est ultrices sed. Integer
             luctus dolor eu tellus tempor auctor. Donec id enim at ipsum mollis
             elementum. Vestibulum vulputate ipsum sit amet arcu tristique
-            tristique. Proin consectetur dui quis molestie facilisis.
-          </span>
+            tristique. Proin consectetur dui quis molestie facilisis."
+          >
+            ?
+          </button>
           Suspendisse purus tortor, blandit et iaculis sit amet, elementum quis
           nunc. Nullam vitae ornare ipsum, eu lobortis dui. Nullam condimentum
           massa quis aliquet vehicula.
@@ -545,15 +506,11 @@
           Vestibulum sed interdum dui. Cras a laoreet tellus. Vestibulum
           pulvinar facilisis purus, non cursus massa fermentum ut.
           <button
-            commandfor="tooltip-content-11"
-            command="toggle-popover"
             class="tooltip"
+            data-contents="Curabitur rhoncus maximus ex, nec elementum urna sollicitudin nec."
           >
             ?
           </button>
-          <span id="tooltip-content-11" class="contents" popover>
-            Curabitur rhoncus maximus ex, nec elementum urna sollicitudin nec.
-          </span>
           Ut imperdiet lectus eu nibh placerat, id tempus felis varius. Aliquam
           porttitor odio at nisl pulvinar, eu iaculis ex semper. Sed quis
           efficitur mauris, id feugiat nisl. Vivamus dignissim dictum auctor.
