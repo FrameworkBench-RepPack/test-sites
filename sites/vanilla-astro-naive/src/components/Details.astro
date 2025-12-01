@@ -1,0 +1,33 @@
+---
+interface Props {
+  summary: string;
+}
+const { summary } = Astro.props;
+---
+
+<details class="details">
+  <summary class="summary">{summary}</summary>
+  <div class="contents">
+    <slot />
+  </div>
+</details>
+
+<style>
+  .details {
+    margin: 1.5em 0.5em;
+    padding: 0.5em;
+    background-color: var(--color-secondary);
+    box-shadow: var(--drop-shadow-large);
+  }
+  .summary {
+    margin: 0.2em;
+    font-size: 1.1em;
+    appearance: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  .contents {
+    margin: 0.2em;
+  }
+</style>

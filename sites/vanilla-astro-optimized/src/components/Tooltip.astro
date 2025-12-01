@@ -1,0 +1,30 @@
+---
+const id = `tooltip-content-${crypto.randomUUID()}`;
+---
+
+<button commandfor={id} command="toggle-popover" class="tooltip">?</button>
+<span id={id} class="contents" popover>
+  <slot />
+</span>
+
+<style>
+  .tooltip {
+    --size: 1.5em;
+
+    padding: 0;
+    border: 0.1em solid black;
+    border-radius: 100%;
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--color-secondary);
+    cursor: pointer;
+  }
+  .contents {
+    max-width: 40rem;
+    padding: 0.5em;
+    border: 0.1em solid black;
+    border-radius: 0.3em;
+    background-color: var(--color-secondary);
+    box-shadow: var(--drop-shadow-large);
+  }
+</style>
